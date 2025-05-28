@@ -20,5 +20,14 @@ public class ObjectPratice {
         book1.isCheckedOut();
         book2.isCheckedOut();
 
+        // Part 3 Bank Account
+        BankAccount acct1 = new BankAccount("Ryan", 5000);
+        BankAccount acct2 = acct1;
+
+        acct2.deposit(500);
+
+        acct1.getAcctInfo();
+        acct2.getAcctInfo();
+
     }
 }
