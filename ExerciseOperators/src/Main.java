@@ -57,7 +57,35 @@ public class Main {
         int xpToNextLevel = 1500;
         boolean levelUp;
 
+        // Arithmetic Operators
+        int completeQuest = 300;
+        xpToNextLevel -= currentXP;
+        boolean doubleXP = false; // completeQuest *= 2
+
+        if (doubleXP == true) {
+            completeQuest *= 2;
+        }
+        currentXP += completeQuest;
+
+        if (currentXP >= xpToNextLevel){
+            levelUp = true;
+            xpToNextLevel += 1500;
+        } else {
+            levelUp = false;
+        }
+
+        currentXP += completeQuest;
 
 
+        // comparison operators
+        System.out.println("Current XP greater than XP to next level: " + (currentXP > xpToNextLevel));
+        System.out.println("Player has reached level 10: " + (level == 10));
+
+        // Logical Operators
+        System.out.println("Can level up: " + ((level < 10) && (xpToNextLevel <= 0)));
+        System.out.println("Player is a pro: " + ((level > 7) && (currentXP > 5000)));
+
+        System.out.println("Current XP: " + currentXP);
+        System.out.println("levelUp: " + levelUp);
     }
 }
