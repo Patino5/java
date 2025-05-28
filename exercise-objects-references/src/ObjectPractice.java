@@ -1,4 +1,4 @@
-public class ObjectPratice {
+public class ObjectPractice {
     public static void main(String[] args) {
         // Part one Car Dealership System
         Car car1 = new Car("Toyota", "Corolla", 2020);
