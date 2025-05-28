@@ -22,7 +22,7 @@ public class ObjectPractice {
 
         // Part 3 Bank Account
         BankAccount acct1 = new BankAccount("Ryan", 5000);
-        BankAccount acct2 = acct1;
+        BankAccount acct2 = acct1; // any changes to acct2 will affect acct1 as well
 
         acct2.deposit(500);
 
@@ -34,7 +34,9 @@ public class ObjectPractice {
         Employee employee2 = new Employee("Bill");
         Employee employee3 = new Employee("Bob");
 
+        // needed to make totalEmployeeCount() method a static member to access the Employee class
         Employee.totalEmployeeCount();
+
 
     }
 }
