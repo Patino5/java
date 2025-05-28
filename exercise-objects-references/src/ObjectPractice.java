@@ -29,5 +29,12 @@ public class ObjectPractice {
         acct1.getAcctInfo();
         acct2.getAcctInfo();
 
+        // Part 4 Using static  Members
+        Employee employee1 = new Employee("Ryan");
+        Employee employee2 = new Employee("Bill");
+        Employee employee3 = new Employee("Bob");
+
+        Employee.totalEmployeeCount();
+
     }
 }
