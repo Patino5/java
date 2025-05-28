@@ -56,10 +56,17 @@ public class Main {
         boolean isWeekend = false;
         boolean attendedClass = true;
 
+        // part 4
         System.out.println("Do I have homework? " + hasHomework);
         System.out.println("Is it the weekend? " + isWeekend);
         System.out.println("Did I attend class today? " + attendedClass);
 
+        //part 5
+        char firstInitial = 'R';
+        char lastInitial = 'P';
+        char favoriteGrade = 'A';
+
+        System.out.printf("My first initial is %c and my last initial is %c. I always want to get an %c on my projects.", firstInitial, lastInitial, favoriteGrade);
 
 
     }
