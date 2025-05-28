@@ -31,5 +31,33 @@ public class Main {
         System.out.println("Affordable: " + affordable);
         System.out.println("Expensive: " + expensive);
 
+        // Weather - Temperature Conversion & Forecast Analysis
+        double temperatureCelsius = 25.0; // Current temperature in Celsius
+        boolean isRaining = false; // Indicates if it's raining
+        int windSpeedKmh = 10; // Wind speed in km/h
+
+        // Convert Celsius to Fahrenheit
+        double temperatureFahrenheit = (temperatureCelsius * 9/5) + 32;
+
+        // Assignment Operators
+        temperatureCelsius += 5;
+        windSpeedKmh += 5;
+
+        // comparison operators
+        System.out.println("Temp in Fahrenheit exceeds 85F: " + (temperatureFahrenheit > 85));
+        System.out.println("Wind speed is greater than 20 km/h: " + (windSpeedKmh > 20));
+        // Logical operators
+        System.out.println("It a good day to go outside: " + (isRaining == false &&  (60 < temperatureFahrenheit )&& (temperatureFahrenheit < 85)));
+        System.out.println("Weather warning: " + (windSpeedKmh > 30 || temperatureCelsius < 0));
+
+
+        // Gaming - Player Score and Level Up System
+        int currentXP = 1200; // experience points
+        int level = 5;
+        int xpToNextLevel = 1500;
+        boolean levelUp;
+
+
+
     }
 }
