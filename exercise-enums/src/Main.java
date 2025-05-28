@@ -33,6 +33,13 @@ public class Main {
         SUNDAY
     }
 
+    enum AlertLevel {
+        LOW,
+        MODERATE,
+        HIGH,
+        SEVERE
+    }
+
     public static void main(String[] args) {
 
         // Part 1 Coffee Size Order
@@ -52,6 +59,25 @@ public class Main {
         Weekday workDay = Weekday.WEDNESDAY;
         System.out.println("Workday selected: " + workDay);
         System.out.println("Is it a weekend? " + (workDay == Weekday.SATURDAY || workDay == Weekday.SUNDAY));
+
+        //Part 5 Emergency Alert System
+        AlertLevel currentAlert = AlertLevel.SEVERE;
+        System.out.println("Current Alert Level: " + currentAlert);
+        switch (currentAlert){
+            case LOW:
+                System.out.println("No immediate danger.");
+                break;
+            case MODERATE:
+                System.out.println("Stay alert and aware.");
+                break;
+            case HIGH:
+                System.out.println("Take precautions and stay informed");
+                break;
+            case SEVERE:
+                System.out.println("Immediate action required!");
+                break;
+        }
+
 
     }
 }
