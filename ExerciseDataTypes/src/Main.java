@@ -1,15 +1,66 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String playerName = "Lionel Messi";
+        int jerseyNumber = 10;
+        String position = "Forward";
+        boolean isStarter = true;
+        String teamName = "Inter Miami";
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        String movieTitle = "Super Troopers";
+        int releaseYear = 2002;
+        String rating = "R";
+        boolean isSequel = true;
+        String leadActor = "Jay Chandrasekhar";
+
+        String cityName = "Leander";
+        int temperature = 87;
+        boolean isRaining = false;
+        String humidity = "55%";
+        String weatherCondition = "Sunny";
+
+
+        String flightNumber = "AA256";
+        String departureCity = "New York";
+        String arrivalCity = "Los Angeles";
+        int gateNumber = 5;
+        char terminal = 'B';
+        boolean isDelayed = false;
+
+        System.out.println("Soccer Player: " + playerName + " wears jersey number " +
+                jerseyNumber + " and plays as a " + position + " for " + teamName + ".");
+        System.out.println("The movie " + movieTitle + " was released in " +
+                releaseYear + " and stars " + leadActor + ".");
+        System.out.println("Weather Report: " + cityName + " has a temperature of " +
+                temperature + "°F with " + weatherCondition + ".");
+        System.out.printf("My flight number: %s, from %s to %s, leaving from terminal: %c Gate: %n is Delayed: %d", flightNumber, departureCity, arrivalCity,terminal,gateNumber,isDelayed);
+
+        jerseyNumber = 5;
+        isStarter = false;
+
+        rating = "PG-13";
+        isSequel = false;
+
+        temperature = 75;
+        weatherCondition = "Cloudy with a chance of meatballs";
+
+        gateNumber = 4;
+        isDelayed = true;
+
+        System.out.printf("%s and %s", jerseyNumber, isStarter);
+        System.out.println(rating + " " + isSequel);
+        System.out.println("temp: " + temperature + " and  weather is " + weatherCondition );
+        System.out.println("Gate Number: " + gateNumber + " and is Delayed: " + isDelayed);
+
+        boolean hasHomework = true;
+        boolean isWeekend = false;
+        boolean attendedClass = true;
+
+        System.out.println("Do I have homework? " + hasHomework);
+        System.out.println("Is it the weekend? " + isWeekend);
+        System.out.println("Did I attend class today? " + attendedClass);
+
+
+
     }
 }
