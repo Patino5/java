@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -13,6 +15,13 @@ public class Main {
         PREMIUM,
         VIP
     }
+
+    enum TrafficLight {
+        RED,
+        YELLOW,
+        GREEN
+    }
+
     public static void main(String[] args) {
 
         CoffeeSize order = CoffeeSize.SMALL;
@@ -23,6 +32,8 @@ public class Main {
         System.out.println(SeatSection.PREMIUM + " is assigned value: " + SeatSection.PREMIUM.ordinal());
         System.out.println(SeatSection.VIP + " is assigned value: " + SeatSection.VIP.ordinal());
 
+        TrafficLight[]  values = TrafficLight.values();
+        System.out.println("Traffic light signal: "+ values[1]);
 
     }
 }
