@@ -19,5 +19,12 @@ public class Main {
         System.out.println("Second word: " + sentence.substring(9,13));
         System.out.println("Last word: " + sentence.substring(17));
 
+        //Part 3 Splitting Strings
+        String csvData = "apple,banana,grape,orange";
+        String[] fruits = csvData.split(",");
+
+        for (int i = 0; i < fruits.length; i++){
+            System.out.printf("Fruit %d: %s%n", i, fruits[i]);
+        }
     }
 }
