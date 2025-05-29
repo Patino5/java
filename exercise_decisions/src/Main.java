@@ -4,9 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner io = new Scanner(System.in);
         System.out.println("Welcome to the text based adventure game");
-        System.out.print("Enter the cave? (y/n): ");
-        String decision = io.nextLine();
-
+        String decision;
+        do {
+            System.out.print("Enter the cave? (y/n): ");
+            decision = io.nextLine();
+            if (!decision.equalsIgnoreCase("y") && !decision.equalsIgnoreCase("n")){
+                System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            }
+        } while (!decision.equalsIgnoreCase("y") && !decision.equalsIgnoreCase("n"));
         // if they enter, present two paths (left or right)
         if (decision.equalsIgnoreCase("y")) {
             System.out.println("You have entered the cave...");
@@ -14,21 +19,21 @@ public class Main {
             System.out.print("Go left or right? (l/r)");
             String leftOrRight = io.nextLine().toLowerCase();
 
-            if (leftOrRight.equalsIgnoreCase("l")){
+            if (leftOrRight.equalsIgnoreCase("l")) {
                 System.out.println("You chose to go left, and have encountered a creature");
                 System.out.print("Do you want to fight or flee? ");
                 String fightOrFlee = io.nextLine().toLowerCase();
 
-                if (fightOrFlee.equalsIgnoreCase("fight")){
+                if (fightOrFlee.equalsIgnoreCase("fight")) {
                     System.out.println("The creature is way stronger than you thought...");
                     System.out.println("You lose");
-                } else if (fightOrFlee.equalsIgnoreCase("flee")){
+                } else if (fightOrFlee.equalsIgnoreCase("flee")) {
                     System.out.println("Good decision... You run back!");
                 } else {
                     System.out.println("Invalid input... must fight or flee.");
                 }
 
-            } else if (leftOrRight.equalsIgnoreCase("r")){
+            } else if (leftOrRight.equalsIgnoreCase("r")) {
                 System.out.println("You went right, and found a secret treasure room");
                 System.out.println("You are presented three artifacts");
                 System.out.println("G - Gem");
@@ -51,8 +56,7 @@ public class Main {
                         System.out.println("You picked the book");
                         break;
                     }
-                    default:
-                    {
+                    default: {
                         System.out.println("Invalid input... Pick (G)em/(K)ey/(B)ook");
                         break;
                     }
