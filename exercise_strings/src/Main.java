@@ -1,5 +1,3 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         String firstName = "Harry";
@@ -32,6 +30,13 @@ public class Main {
         System.out.println(sentence2);
         System.out.println("Modified sentence: " + sentence2.replace("quick", "slow").replace(" ", "_"));
 
+        // Part 5 Handling Null and Empty strings
+        String s1 = null;
+        String s2 = "";
+        if (s1 == null){
+            System.out.println("The string is null, cannot compute length");
+        }
+        System.out.println("Empty string length: " + s2.length());
 
     }
 }
