@@ -50,7 +50,7 @@ public class ShoppingCartApp {
         promoCode = io.nextLine();
 
         // print details from data collection
-        System.out.println("Details");
+        System.out.println("\nDetails:");
         System.out.printf("Tax-Exempt:     %s%n", taxExempt);
         System.out.printf("Shipping:       %s%n", shipping);
         System.out.printf("Order quantity: %d%n", orderQuantity);
