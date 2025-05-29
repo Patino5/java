@@ -26,5 +26,12 @@ public class Main {
         double potentialProfit = (profit * productQuantity);
         System.out.println("Potential total profit: " + potentialProfit);
 
+        // Exercise for Shopping Cart Strings
+        String businessName = "Visa";
+        String contactInformation = "visa.com";
+        String productDescription = "A global payments technology company";
+
+        System.out.printf("Business name: %s%nContact Information: %s%nProduct Description: %s%n", businessName, contactInformation, productDescription);
+
     }
 }
