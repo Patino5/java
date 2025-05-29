@@ -13,6 +13,11 @@ public class Main {
         System.out.println("First character: " + firstLetter);
         System.out.println("Index of 'r': " + fullName.indexOf('r'));
 
+        // Part 2 Extracting Parts of a String
+        String sentence = "Learning Java is fun!";
+        System.out.println("First word: " + sentence.substring(0, 8));
+        System.out.println("Second word: " + sentence.substring(9,13));
+        System.out.println("Last word: " + sentence.substring(17));
 
     }
 }
