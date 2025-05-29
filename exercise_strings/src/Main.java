@@ -26,5 +26,12 @@ public class Main {
         for (int i = 0; i < fruits.length; i++){
             System.out.printf("Fruit %d: %s%n", i, fruits[i]);
         }
+
+        // Part 4 Replacing Strings
+        String sentence2 = "The quick brown fox.";
+        System.out.println(sentence2);
+        System.out.println("Modified sentence: " + sentence2.replace("quick", "slow").replace(" ", "_"));
+
+
     }
 }
