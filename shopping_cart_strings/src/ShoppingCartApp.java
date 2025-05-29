@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-public class Main {
+public class ShoppingCartApp {
     public static void main(String[] args) {
 
         // Product Info
