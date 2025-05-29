@@ -1,6 +1,7 @@
+import java.util.Scanner;
+
 public class ShoppingCartApp {
     public static void main(String[] args) {
-
         // Product Info
         byte productId = 1;
         byte productCategory = 2;
@@ -30,6 +31,30 @@ public class ShoppingCartApp {
         String productDescription = "A global payments technology company";
 
         System.out.printf("Business name: %s%nContact Information: %s%nProduct Description: %s%n", businessName, contactInformation, productDescription);
+
+        // console io additions
+        Scanner io = new Scanner(System.in);
+        String taxExempt;
+        String shipping;
+        int orderQuantity;
+        String promoCode;
+
+        // collect data
+        System.out.print("Are you tax-exempt? (y/n) ");
+        taxExempt = io.nextLine();
+        System.out.print("Shipping (y/n) ");
+        shipping = io.nextLine();
+        System.out.print("Order quantity? ");
+        orderQuantity = Integer.parseInt(io.nextLine());
+        System.out.print("Promo code for free shipping: ");
+        promoCode = io.nextLine();
+
+        // print details from data collection
+        System.out.println("Details");
+        System.out.printf("Tax-Exempt:     %s%n", taxExempt);
+        System.out.printf("Shipping:       %s%n", shipping);
+        System.out.printf("Order quantity: %d%n", orderQuantity);
+        System.out.printf("Promo code:     %s%n", promoCode);
 
     }
 }
