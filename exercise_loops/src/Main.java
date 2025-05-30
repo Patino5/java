@@ -42,7 +42,15 @@ public class Main {
             System.out.println(i + " * " + number + " = "+ (number * i));
         }
 
-        //
+        // Password Validator (While Loop)
+        // Ask user to enter a password
+        // keep asking until they enter the correct password "letmein"
+        String password = "";
+
+        while (!password.equals("letmein")){
+            System.out.print("Enter the password: ");
+            password = io.next();
+        }
 
     }
 }
