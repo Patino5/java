@@ -102,30 +102,40 @@ public class Main {
 
         // Prime number checker While loop
         // ask for number
-        System.out.print("Enter a number: ");
-        int checkPrime = Integer.parseInt(io.nextLine());
-        boolean isPrime = true;
+//        System.out.print("Enter a number: ");
+//        int checkPrime = Integer.parseInt(io.nextLine());
+//        boolean isPrime = true;
+//
+//        if (checkPrime <= 1) {
+//            isPrime = false; // 0 and 1 are not prime
+//        } else {
+//            int i = 2;
+//            while (i <= Math.sqrt(checkPrime)) {
+//                if (checkPrime % i == 0) {
+//                    isPrime = false; // Found a divisor
+//                    break;
+//                }
+//                i++;
+//            }
+//        }
+//
+//        // Output the result
+//        if (isPrime) {
+//            System.out.println(checkPrime + " is a prime number.");
+//        } else {
+//            System.out.println(checkPrime + " is not a prime number.");
+//        }
 
-        if (checkPrime <= 1) {
-            isPrime = false; // 0 and 1 are not prime
-        } else {
-            int i = 2;
-            while (i <= Math.sqrt(checkPrime)) {
-                if (checkPrime % i == 0) {
-                    isPrime = false; // Found a divisor
-                    break;
-                }
-                i++;
-            }
+        // Word counter (for loop with split)
+        // ask user for sentence
+        System.out.print("Enter a sentence: ");
+        String sentence = io.nextLine();
+        String[] splitSentence = sentence.split(" ");
+
+        for (int i = 0; i < splitSentence.length; i++) {
+            System.out.println((i + 1) + " " + splitSentence[i] + ".");
+
         }
-
-        // Output the result
-        if (isPrime) {
-            System.out.println(checkPrime + " is a prime number.");
-        } else {
-            System.out.println(checkPrime + " is not a prime number.");
-        }
-
 
     }
 }
