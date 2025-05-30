@@ -1,6 +1,21 @@
+import java.lang.classfile.attribute.SourceFileAttribute;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
+
+    public static boolean isPrime(int number) {
+        if (number <= 1) return false;
+        if (number == 2) return true;
+        if (number % 2 == 0) return false;
+
+        for (int i = 3; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) return false;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         // Basic loops Practice
         // count up (for Loop)
@@ -140,16 +155,41 @@ public class Main {
         // Break & Continue Challenges
         // Skip negative Numbers
 
-        int numbers=1;
+//        int numbers=1;
+//
+//        while (numbers != 0){
+//            System.out.print("Enter a number: 0 to quit. ");
+//            numbers = Integer.parseInt(io.nextLine());
+//            if (numbers % 2 != 0){
+//                continue;
+//            }
+//            System.out.println(numbers);
+//        }
 
-        while (numbers != 0){
-            System.out.print("Enter a number: 0 to quit. ");
-            numbers = Integer.parseInt(io.nextLine());
-            if (numbers % 2 != 0){
-                continue;
+        // Find the first Prime Number (Break Statement)
+        // ask for a range
+        // for loop to find first prime number in range then stop checking
+        int min;
+        int max;
+        boolean found = false;
+
+        System.out.print("Enter a min value: ");
+        min = Integer.parseInt(io.nextLine());
+        System.out.print("Enter max value: ");
+        max = Integer.parseInt(io.nextLine());
+
+        for (int i = min; i <= max; i++) {
+            if (isPrime(i)) {
+                System.out.println("First prime number in range: " + i);
+                found = true;
+                break;
             }
-            System.out.println(numbers);
         }
+
+        if (!found){
+            System.out.println("No prime numbers in range");
+        }
+
 
     }
 }
