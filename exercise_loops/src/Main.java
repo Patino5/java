@@ -21,5 +21,15 @@ public class Main {
             }
         }
 
+        // guess the number
+        // generate random number between 0.0 and 1 exclusive Math.random()
+        // random number between 0 and 100
+        int randomNum = (int)(Math.random() * 51);
+        int guess;
+        do {
+            System.out.print("Guess a number between 1 and 50: ");
+            guess = Integer.parseInt(io.nextLine());
+        } while (guess != randomNum);
+
     }
 }
