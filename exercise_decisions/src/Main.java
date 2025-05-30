@@ -96,7 +96,7 @@ public class Main {
                         }
                     } while (!validArtifact);
 
-                    break; // exit from path choice and end game
+                    break; // exit from path choice while loop and end game
 
                 }
 
