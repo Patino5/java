@@ -64,29 +64,40 @@ public class Main {
                     System.out.println("K - Key");
                     System.out.println("B - Book");
                     System.out.println("--------");
-                    System.out.print("Which item will you pick: (G/K/B): ");
-                    String artifact = io.nextLine().toUpperCase();
 
-                    // switch statement for choosing Artifact
-                    switch (artifact) {
-                        case "G": {
-                            System.out.println("You picked the gem");
-                            break;
+
+                    // Validate artifact selection
+                    String artifact;
+                    boolean validArtifact = false;
+                    do {
+                        System.out.print("Which item will you pick: (G/K/B): ");
+                        artifact = io.nextLine().toUpperCase();
+                        // switch statement for choosing Artifact
+                        switch (artifact) {
+                            case "G": {
+                                System.out.println("You picked the gem");
+                                validArtifact = true;
+                                break;
+                            }
+                            case "K": {
+                                System.out.println("You picked the key");
+                                validArtifact = true;
+                                break;
+                            }
+                            case "B": {
+                                System.out.println("You picked the book");
+                                validArtifact = true;
+                                break;
+                            }
+                            default: {
+                                System.out.println("Invalid input... Pick (G)em/(K)ey/(B)ook");
+                                break;
+                            }
                         }
-                        case "K": {
-                            System.out.println("You picked the key");
-                            break;
-                        }
-                        case "B": {
-                            System.out.println("You picked the book");
-                            break;
-                        }
-                        default: {
-                            System.out.println("Invalid input... Pick (G)em/(K)ey/(B)ook");
-                            break;
-                        }
-                    }
-                    break; // exit from path choice
+                    } while (!validArtifact);
+
+                    break; // exit from path choice and end game
+
                 }
 
             }
