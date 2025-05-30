@@ -93,12 +93,39 @@ public class Main {
 
         // Reverse a String
         // ask for word
-        System.out.print("Enter a word to be reversed: ");
-        String inputWord = io.nextLine();
+//        System.out.print("Enter a word to be reversed: ");
+//        String inputWord = io.nextLine();
+//
+//        for (int i = inputWord.length() - 1; i >= 0; i--) {
+//            System.out.print(inputWord.charAt(i));
+//        }
 
-        for (int i = inputWord.length() - 1; i >= 0; i--) {
-            System.out.print(inputWord.charAt(i));
+        // Prime number checker While loop
+        // ask for number
+        System.out.print("Enter a number: ");
+        int checkPrime = Integer.parseInt(io.nextLine());
+        boolean isPrime = true;
+
+        if (checkPrime <= 1) {
+            isPrime = false; // 0 and 1 are not prime
+        } else {
+            int i = 2;
+            while (i <= Math.sqrt(checkPrime)) {
+                if (checkPrime % i == 0) {
+                    isPrime = false; // Found a divisor
+                    break;
+                }
+                i++;
+            }
         }
+
+        // Output the result
+        if (isPrime) {
+            System.out.println(checkPrime + " is a prime number.");
+        } else {
+            System.out.println(checkPrime + " is not a prime number.");
+        }
+
 
     }
 }
