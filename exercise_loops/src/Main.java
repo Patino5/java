@@ -53,16 +53,30 @@ public class Main {
 //        }
 
         // Find the first vowel (for loop)
-        System.out.print("Enter a word: ");
-        String word = io.nextLine();
-        String vowels = "aeiou";
+//        System.out.print("Enter a word: ");
+//        String word = io.nextLine();
+//        String vowels = "aeiou";
+//
+//        for (int i = 0; i < word.length(); i++){
+//            char c = word.charAt(i);
+//            if (vowels.indexOf(c) != -1){
+//                System.out.println("First vowel '" + c + "' found at position: " + i );
+//                break;
+//            }
+//        }
+        // simple ATM System (Do-While-Loop)
+        double acctBalance = 500;
+        int input;
+        do {
+            System.out.println("1 Withdraw");
+            System.out.println("2 Deposit");
+            System.out.println("3 Check Balance");
+            System.out.println("4 Exit");
+            System.out.print("Enter an option number: ");
+            input = Integer.parseInt(io.nextLine());
 
-        for (int i = 0; i < word.length(); i++){
-            char c = word.charAt(i);
-            if (vowels.indexOf(c) != -1){
-                System.out.println("First vowel '" + c + "' found at position: " + i );
-                break;
-            }
-        }
+        } while (input != 4);
+
+
     }
 }
