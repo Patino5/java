@@ -65,18 +65,31 @@ public class Main {
 //            }
 //        }
         // simple ATM System (Do-While-Loop)
-        double acctBalance = 500;
-        int input;
-        do {
-            System.out.println("1 Withdraw");
-            System.out.println("2 Deposit");
-            System.out.println("3 Check Balance");
-            System.out.println("4 Exit");
-            System.out.print("Enter an option number: ");
-            input = Integer.parseInt(io.nextLine());
+//        double acctBalance = 500;
+//        int input;
+//        do {
+//            System.out.println("1 Withdraw");
+//            System.out.println("2 Deposit");
+//            System.out.println("3 Check Balance");
+//            System.out.println("4 Exit");
+//            System.out.print("Enter an option number: ");
+//            input = Integer.parseInt(io.nextLine());
+//
+//        } while (input != 4);
 
-        } while (input != 4);
-
+        // Advance Loops Exercise
+        // Fizzbuzz challenge (For loop)
+        for (int i = 1; i < 101; i++){
+            if (i % 3 == 0 && i % 5 == 0){
+                System.out.println("Fizzbuzz");
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
 
     }
 }
