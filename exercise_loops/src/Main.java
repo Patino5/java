@@ -191,10 +191,23 @@ public class Main {
 //        }
 //
          // Infinite Loops & Fixing Them
-        int i = 0;
-        while (i < 10) {
-            System.out.println(i);
-            i++;
+//        int i = 0;
+//        while (i <= 10) {
+//            System.out.println(i);
+//            i++;
+//        }
+
+        // Even number checker
+        int number = 1;
+
+        while (true){
+            System.out.println("Enter a even number: ");
+            number = Integer.parseInt(io.nextLine());
+            if (number % 2 == 0){
+                break;
+            }
+            System.out.println(number + " is not an even number.");
+
         }
 
     }
