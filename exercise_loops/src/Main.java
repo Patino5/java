@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static boolean isPrime(int number) {
-        if (number <= 1) return false;
-        if (number == 2) return true;
-        if (number % 2 == 0) return false;
-
-        for (int i = 3; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) return false;
-        }
-
-        return true;
-    }
+//    public static boolean isPrime(int number) {
+//        if (number <= 1) return false;
+//        if (number == 2) return true;
+//        if (number % 2 == 0) return false;
+//
+//        for (int i = 3; i <= Math.sqrt(number); i++) {
+//            if (number % i == 0) return false;
+//        }
+//
+//        return true;
+//    }
 
     public static void main(String[] args) {
         // Basic loops Practice
@@ -169,27 +169,32 @@ public class Main {
         // Find the first Prime Number (Break Statement)
         // ask for a range
         // for loop to find first prime number in range then stop checking
-        int min;
-        int max;
-        boolean found = false;
-
-        System.out.print("Enter a min value: ");
-        min = Integer.parseInt(io.nextLine());
-        System.out.print("Enter max value: ");
-        max = Integer.parseInt(io.nextLine());
-
-        for (int i = min; i <= max; i++) {
-            if (isPrime(i)) {
-                System.out.println("First prime number in range: " + i);
-                found = true;
-                break;
-            }
+//        int min;
+//        int max;
+//        boolean found = false;
+//
+//        System.out.print("Enter a min value: ");
+//        min = Integer.parseInt(io.nextLine());
+//        System.out.print("Enter max value: ");
+//        max = Integer.parseInt(io.nextLine());
+//
+//        for (int i = min; i <= max; i++) {
+//            if (isPrime(i)) {
+//                System.out.println("First prime number in range: " + i);
+//                found = true;
+//                break;
+//            }
+//        }
+//
+//        if (!found){
+//            System.out.println("No prime numbers in range");
+//        }
+//
+         // Infinite Loops & Fixing Them
+        int i = 0;
+        while (i < 10) {
+            System.out.println(i);
         }
-
-        if (!found){
-            System.out.println("No prime numbers in range");
-        }
-
 
     }
 }
