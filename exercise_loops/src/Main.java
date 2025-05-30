@@ -128,13 +128,27 @@ public class Main {
 
         // Word counter (for loop with split)
         // ask user for sentence
-        System.out.print("Enter a sentence: ");
-        String sentence = io.nextLine();
-        String[] splitSentence = sentence.split(" ");
+//        System.out.print("Enter a sentence: ");
+//        String sentence = io.nextLine();
+//        String[] splitSentence = sentence.split(" ");
+//
+//        for (int i = 0; i < splitSentence.length; i++) {
+//            System.out.println((i + 1) + " " + splitSentence[i] + ".");
+//
+//        }
 
-        for (int i = 0; i < splitSentence.length; i++) {
-            System.out.println((i + 1) + " " + splitSentence[i] + ".");
+        // Break & Continue Challenges
+        // Skip negative Numbers
 
+        int numbers=1;
+
+        while (numbers != 0){
+            System.out.print("Enter a number: 0 to quit. ");
+            numbers = Integer.parseInt(io.nextLine());
+            if (numbers % 2 != 0){
+                continue;
+            }
+            System.out.println(numbers);
         }
 
     }
