@@ -7,12 +7,13 @@ public class ShoppingCartApp {
         byte productCategory = 2;
         double productCost = 2.56;
         double productPrice = 4.99;
-        short productQuantity = 78;
+        int orderQuantity= 5;
+        double subTotal = productPrice * orderQuantity;
 
         // Write code to calculate the total cost of the product based on the inventory.
         // Print the value.
-        double totalCost = productCost * productQuantity;
-        System.out.println("Total Cost: " + totalCost);
+
+        System.out.println("Total Cost: " + subTotal);
 
 
         // Write code to calculate the profit in dollars of the product.
@@ -22,7 +23,7 @@ public class ShoppingCartApp {
 
         // Write code to calculate the total potential profit.
         // Print the value.
-        double potentialProfit = (profit * productQuantity);
+        double potentialProfit = (profit * orderQuantity);
         System.out.println("Potential total profit: " + potentialProfit);
 
         // Exercise for Shopping Cart Strings
@@ -36,7 +37,6 @@ public class ShoppingCartApp {
         Scanner io = new Scanner(System.in);
         String taxExempt;
         String shipping;
-        int orderQuantity;
         String promoCode;
 
         // collect data
@@ -46,6 +46,7 @@ public class ShoppingCartApp {
         shipping = io.nextLine();
         System.out.print("Order quantity? ");
         orderQuantity = Integer.parseInt(io.nextLine());
+        subTotal = orderQuantity * productPrice;
 
         // print details from data collection
         System.out.println("\nDetails:");
@@ -56,7 +57,6 @@ public class ShoppingCartApp {
 
         // decision exercise additions
         double grandTotal = 0.00;
-        double subTotal = productPrice * orderQuantity;
         double taxRate = .07;
         double standardShipping = 2.00;
         double twoDayShipping = 5.00;
