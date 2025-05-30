@@ -79,16 +79,25 @@ public class Main {
 
         // Advance Loops Exercise
         // Fizzbuzz challenge (For loop)
-        for (int i = 1; i < 101; i++){
-            if (i % 3 == 0 && i % 5 == 0){
-                System.out.println("Fizzbuzz");
-            } else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            } else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
+//        for (int i = 1; i < 101; i++){
+//            if (i % 3 == 0 && i % 5 == 0){
+//                System.out.println("Fizzbuzz");
+//            } else if (i % 3 == 0) {
+//                System.out.println("Fizz");
+//            } else if (i % 5 == 0) {
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+
+        // Reverse a String
+        // ask for word
+        System.out.print("Enter a word to be reversed: ");
+        String inputWord = io.nextLine();
+
+        for (int i = inputWord.length() - 1; i >= 0; i--) {
+            System.out.print(inputWord.charAt(i));
         }
 
     }
