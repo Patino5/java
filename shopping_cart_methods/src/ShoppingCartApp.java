@@ -9,6 +9,7 @@ public class ShoppingCartApp {
         double productPrice = 4.99;
         short productQuantity = 78;
         boolean isConfirmed = false;
+        Scanner io = new Scanner(System.in);
 
         // Write code to calculate the total cost of the product based on the inventory.
         // Print the value.
@@ -33,21 +34,16 @@ public class ShoppingCartApp {
         System.out.printf("Business name: %s%nContact Information: %s%nProduct Description: %s%n", businessName, contactInformation, productDescription);
 
         // console io additions
-        Scanner io = new Scanner(System.in);
         String taxExempt;
         String shipping;
         int orderQuantity;
         String promoCode;
 
         // collect data
-        System.out.print("Are you tax-exempt? (y/n) ");
-        taxExempt = io.nextLine();
-        System.out.print("Shipping (y/n) ");
-        shipping = io.nextLine();
-        System.out.print("Order quantity? ");
-        orderQuantity = Integer.parseInt(io.nextLine());
-        System.out.print("Promo code for free shipping: ");
-        promoCode = io.nextLine();
+        taxExempt = promptUserForString("Are you tax-exempt? (y/n) ");
+        shipping = promptUserForString("Shipping? (standard/overnight/twoday");
+        orderQuantity = promptUserForInt("Order quantity: ");
+        promoCode = promptUserForString("Promo code for free shipping: ");
 
         // Loops additions - isConfirmed boolean as well
 
@@ -70,20 +66,12 @@ public class ShoppingCartApp {
         int addressIndex = 0;
         int sizeIndex = 0;
         // Shipping address menu
-        for (int i = 0; i < shippingAddresses.length; i++){
-            System.out.println((i+1) + ". " + shippingAddresses[i]);;
-        }
-        System.out.print("Shipping Address? ");
-        String address = io.nextLine();
-        addressIndex = Integer.parseInt(address);
+        displayChoices(shippingAddresses);
+        addressIndex = promptUserForInt("Shipping Address: ");
 
         // productSize menu
-        for (int i = 0; i < productSizes.length; i++){
-            System.out.println((i + 1) + ". " + productSizes[i]);
-        }
-        System.out.print("Select size? ");
-        String size = io.nextLine();
-        sizeIndex = Integer.parseInt(size);
+        displayChoices(productSizes);
+        sizeIndex = promptUserForInt("What size: ");
 
         //Print details
         System.out.println("\nShipping and Size Details");
@@ -91,4 +79,23 @@ public class ShoppingCartApp {
         System.out.println("Product Size: " + productSizes[sizeIndex - 1]);
 
     }
+    // displayChoices - parameter array - displays a list of choices from an array
+    public static void displayChoices(String[] choices){
+        for (int i = 0; i < choices.length; i++){
+            System.out.println((i + 1) + ". " + choices[i]);
+        }
+    }
+    // promptUserForInt - parameter is a prompt = returns an Integer
+    public static int promptUserForInt(String prompt) {
+        java.util.Scanner io = new java.util.Scanner(System.in);
+        System.out.print(prompt);
+        return Integer.parseInt(io.nextLine());
+    }
+    // promptUserForString - parameter prompt for string - return String input
+    public static String promptUserForString(String prompt) {
+        java.util.Scanner io = new java.util.Scanner(System.in);
+        System.out.print(prompt);
+        return io.nextLine();
+    }
+
 }
