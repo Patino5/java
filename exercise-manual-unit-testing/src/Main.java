@@ -5,7 +5,13 @@ public class Main {
         Scanner io = new Scanner(System.in);
         String[] drinks = {"water", "soda", "juice"};
 
-        runTest();
+        //runTest();
+        selectDrink("water");
+        selectDrink("juice");
+        selectDrink("soda");
+        selectDrink("");
+        selectDrink("Tea");
+        selectDrink("WATER");
 
     }
     public static void displayChoices(String[] choices){
@@ -14,11 +20,26 @@ public class Main {
         }
     }
     public static String selectDrink(String input){
-        return switch (input.toLowerCase()) {
-            case "water" -> "You selected Water";
-            case "soda" -> "You selected Soda";
-            case "juice" -> "You selected Juice";
-            default -> "Invalid selection";
+        System.out.println("Received input: " + input);
+        String inputToLowerCase = input.toLowerCase();
+        System.out.println("Lowercase input: " + inputToLowerCase);
+        String message = "";
+        return switch (inputToLowerCase) {
+            case "water" :
+                message += "You selected Water";
+                System.out.println("Selected: " + message);
+                yield message;
+            case "soda" :
+                message += "You selected Soda";
+                System.out.println("Selected: " + message);
+                yield message;
+            case "juice" :
+                message += "You selected Juice";
+                System.out.println("Selected: " + message);
+                yield message;
+            default:
+                message += "Invalid selection";
+                yield message;
         };
     }
     private static void runTest(){
