@@ -51,6 +51,10 @@ public class Main {
         System.out.println(calculator(32, 0, '/'));
         System.out.println(calculator(21, 7, '/'));
 
+        // Bonus: isPalindrome
+        System.out.println(isPalindrome("race car"));
+        System.out.println(isPalindrome("hello"));
+        System.out.println(isPalindrome("taco cat"));
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -126,5 +130,14 @@ public class Main {
                     yield 0;
                 }
         };
+    }
+    // isPalindrome - checks if text is same forward and backwards
+    public static boolean isPalindrome(String text){
+        String reverse = "";
+        for (int i = text.length() - 1; i >= 0; i--){
+            if (text.charAt(i) == ' ') continue;
+            reverse += text.charAt(i);
+        }
+        return reverse.equals(text.replace(" ", ""));
     }
 }
