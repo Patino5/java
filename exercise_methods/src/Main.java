@@ -29,6 +29,10 @@ public class Main {
         System.out.println(findMax(356, 323,41));
         System.out.println(findMax(23,42,13));
 
+        // Task 7: Factorial Using Recursion
+        System.out.println(factorial(5));
+        System.out.println(factorial(7));
+        System.out.println(factorial(10));
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -58,5 +62,10 @@ public class Main {
         if (Math.max(b, c) < a) {
             return a;
         } else return Math.max(b, c);
+    }
+    // factorial - calculates the factorial using recursion
+    public static int   factorial(int n){
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
     }
 }
