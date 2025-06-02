@@ -197,16 +197,34 @@ public class Main {
 //            i++;
 //        }
 
-        // Even number checker
-        int number = 1;
+//        // Even number checker
+//        int number = 1;
+//
+//        while (true){
+//            System.out.println("Enter a even number: ");
+//            number = Integer.parseInt(io.nextLine());
+//            if (number % 2 == 0){
+//                break;
+//            }
+//            System.out.println(number + " is not an even number.");
+//
+//        }
 
-        while (true){
-            System.out.println("Enter a even number: ");
-            number = Integer.parseInt(io.nextLine());
-            if (number % 2 == 0){
-                break;
+        // Bank Withdrawal System
+        double balance = 1000;
+        double withdrawal;
+
+        while (balance >= 0){
+            System.out.print("Enter amount to withdrawal: ");
+            withdrawal = Double.parseDouble(io.nextLine());
+            if (withdrawal > balance){
+                System.out.println("Transaction denied... Insufficient funds");
+                System.out.println("Current Balance: " + balance);
+                continue;
             }
-            System.out.println(number + " is not an even number.");
+            balance -= withdrawal;
+            System.out.println("New balance: " + balance);
+
 
         }
 
