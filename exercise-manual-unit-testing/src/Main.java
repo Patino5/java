@@ -14,7 +14,7 @@ public class Main {
         }
     }
     public static String selectDrink(String input){
-        return switch (input) {
+        return switch (input.toLowerCase()) {
             case "water" -> "You selected Water";
             case "soda" -> "You selected Soda";
             case "juice" -> "You selected Juice";
@@ -22,8 +22,8 @@ public class Main {
         };
     }
     private static void runTest(){
-        String[] inputs = {"water", "soda", "juice"};
-        String[] outputs = {"You selected Water", "You selected Soda", "You selected Juice"};
+        String[] inputs = {"water", "soda", "juice", "WATER", "Tea",""};
+        String[] outputs = {"You selected Water", "You selected Soda", "You selected Juice", "You selected Water","Invalid selection", "Invalid selection"};
 
         for (int i = 0; i < inputs.length; i++){
             String input = inputs[i];
