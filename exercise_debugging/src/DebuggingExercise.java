@@ -17,8 +17,8 @@ public class DebuggingExercise {
     // Method to calculate sum of an array (contains a bug)
     public static int calculateSum(int[] nums) {
         int sum = 0;
-        for (int i = 1; i <= nums.length; i++) { // Bug: Incorrect loop condition
-            sum += nums[i]; // Bug: Incorrect index usage
+        for (int i = 0; i < nums.length; i++) { // Fix: Start i from 0, use '<' instead of '<='
+            sum += nums[i]; // Fix: Correct index usage
         }
         return sum;
     }
