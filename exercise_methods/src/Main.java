@@ -18,6 +18,12 @@ public class Main {
         System.out.println(isEven(434));
         System.out.println(isEven(1249393));
         System.out.println(isEven(232132454));
+
+        // Task 5: Print a String Multiple Times
+        printMultipleTimes("hello", 4);
+        printMultipleTimes("world", 3);
+        printMultipleTimes("Ryan", 1);
+
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -34,5 +40,11 @@ public class Main {
     // isEven return true if even; false otherwise
     public static boolean isEven(int number){
         return number % 2 == 0;
+    }
+    // printMultipleTimes - prints a string n times
+    public static void printMultipleTimes(String text, int times) {
+        for (int i = times; i > 0; i--){
+            System.out.println(text);
+        }
     }
 }
