@@ -8,14 +8,12 @@ public class ShoppingCartApp {
         double productCost = 2.56;
         double productPrice = 4.99;
         short productQuantity = 78;
-boolean isConfirmed = false;
-
+        boolean isConfirmed = false;
 
         // Write code to calculate the total cost of the product based on the inventory.
         // Print the value.
         double totalCost = productCost * productQuantity;
         System.out.println("Total Cost: " + totalCost);
-
 
         // Write code to calculate the profit in dollars of the product.
         // Print the value.
@@ -50,8 +48,6 @@ boolean isConfirmed = false;
         orderQuantity = Integer.parseInt(io.nextLine());
         System.out.print("Promo code for free shipping: ");
         promoCode = io.nextLine();
-
-
 
         // Loops additions - isConfirmed boolean as well
 
@@ -93,8 +89,6 @@ boolean isConfirmed = false;
         System.out.println("\nShipping and Size Details");
         System.out.println("Address: " + shippingAddresses[addressIndex -1]);
         System.out.println("Product Size: " + productSizes[sizeIndex - 1]);
-
-
 
     }
 }
