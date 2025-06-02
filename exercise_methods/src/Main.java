@@ -24,6 +24,11 @@ public class Main {
         printMultipleTimes("world", 3);
         printMultipleTimes("Ryan", 1);
 
+        // Task 6: Find Maximum of 3 nums
+        System.out.println(findMax(1,4,5));
+        System.out.println(findMax(356, 323,41));
+        System.out.println(findMax(23,42,13));
+
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -46,5 +51,12 @@ public class Main {
         for (int i = times; i > 0; i--){
             System.out.println(text);
         }
+    }
+    // findMax - takes 3 integers and returns largest
+    public static int findMax(int a, int b, int c){
+        //return Math.max(a, Math.max(b, c));
+        if (Math.max(b, c) < a) {
+            return a;
+        } else return Math.max(b, c);
     }
 }
