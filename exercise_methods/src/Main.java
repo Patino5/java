@@ -8,6 +8,10 @@ public class Main {
         System.out.println(sum(500, 3));
         System.out.println(sum(-34, -55));
 
+        // Task 3: Convert Celsius to Fahrenheit
+        System.out.println(convertToFahrenheit(0));
+        System.out.println(convertToFahrenheit( 80));
+        System.out.println(convertToFahrenheit(-34));
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -17,5 +21,8 @@ public class Main {
     public static int sum(int a, int b) {
         return a + b;
     }
-
+    // convert Celsius to Fahrenheit
+    public static double convertToFahrenheit(double celsius) {
+        return (celsius * (9/5))+ 32;
+    }
 }
