@@ -1,6 +1,7 @@
 import java.lang.classfile.attribute.SourceFileAttribute;
 import java.sql.SQLOutput;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
@@ -210,22 +211,56 @@ public class Main {
 //
 //        }
 
-        // Bank Withdrawal System
-        double balance = 1000;
-        double withdrawal;
+//        // Bank Withdrawal System
+//        double balance = 1000;
+//        double withdrawal;
+//
+//        while (balance >= 0){
+//            System.out.print("Enter amount to withdrawal: ");
+//            withdrawal = Double.parseDouble(io.nextLine());
+//            if (withdrawal > balance){
+//                System.out.println("Transaction denied... Insufficient funds");
+//                System.out.println("Current Balance: " + balance);
+//                continue;
+//            }
+//            balance -= withdrawal;
+//            System.out.println("New balance: " + balance);
+//        }
 
-        while (balance >= 0){
-            System.out.print("Enter amount to withdrawal: ");
-            withdrawal = Double.parseDouble(io.nextLine());
-            if (withdrawal > balance){
-                System.out.println("Transaction denied... Insufficient funds");
-                System.out.println("Current Balance: " + balance);
-                continue;
+        // Mini Game - Guess the Word Game (While Loop)
+        // Word list
+        String[] words = {"apple", "banana", "cherry"};
+
+        // Select a random word
+        Random random = new Random();
+        String secretWord = words[random.nextInt(words.length)];
+
+        String guess = "";
+        System.out.println("Guess the word! (Options: apple, banana, cherry)");
+
+        // Keep looping until the user guesses correctly
+        while (!guess.equals(secretWord)) {
+            System.out.print("Enter your guess: ");
+            guess = io.nextLine().toLowerCase();
+
+            if (guess.equals(secretWord)) {
+                System.out.println("Correct! The word is: " + secretWord);
+            } else {
+                // Provide a simple hint: show correct letters in correct position
+                String hint = "";
+                for (int i = 0; i < Math.min(guess.length(), secretWord.length()); i++) {
+                    if (guess.charAt(i) == secretWord.charAt(i)) {
+                        hint += guess.charAt(i);
+                    } else {
+                        hint += "_";
+                    }
+                }
+                // Fill in blanks for remaining letters
+                while (hint.length() < secretWord.length()) {
+                    hint += "_";
+                }
+                System.out.println("Incorrect. Hint: " + hint);
             }
-            balance -= withdrawal;
-            System.out.println("New balance: " + balance);
-
-
         }
 
     }
