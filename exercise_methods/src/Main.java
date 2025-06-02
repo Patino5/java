@@ -12,6 +12,12 @@ public class Main {
         System.out.println(convertToFahrenheit(0));
         System.out.println(convertToFahrenheit( 80));
         System.out.println(convertToFahrenheit(-34));
+
+        // Task 4: Check if a number is Even or Odd
+        System.out.println(isEven(3));
+        System.out.println(isEven(434));
+        System.out.println(isEven(1249393));
+        System.out.println(isEven(232132454));
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -24,5 +30,9 @@ public class Main {
     // convert Celsius to Fahrenheit
     public static double convertToFahrenheit(double celsius) {
         return (celsius * (9/5))+ 32;
+    }
+    // isEven return true if even; false otherwise
+    public static boolean isEven(int number){
+        return number % 2 == 0;
     }
 }
