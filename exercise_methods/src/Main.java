@@ -39,6 +39,10 @@ public class Main {
         greet("Ryan");
         greet("Briar");
         greet("Briar", 2);
+
+        // Task 9: Count Vowels in a String
+        System.out.println("'hello world' has " + countVowels("hello world") + " vowels in it.");
+        System.out.println(countVowels("java programming"));
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -80,5 +84,16 @@ public class Main {
     }
     public static void greet(String name, int age){
         System.out.println("Hello, " + name + "!\nYou are " + age + " years old.");
+    }
+    // count vowels in a string - countVowels(String text) returns int numberVowels
+    public static int countVowels(String text) {
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if ("aeiou".indexOf(c) != -1) {
+                count++;
+            }
+        }
+        return count;
     }
 }
