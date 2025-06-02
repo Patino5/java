@@ -45,6 +45,37 @@ public class Main {
             System.out.println("City not found");
         }
 
+        // Part 3: Numeric Arrays & Calculations
+        // 7. Sum of Numbers in an array
+        // create 5 test scores. loop through and calculate the sum for all scores. Print sum.
+        int[] scores = {75, 84, 90, 96, 65};
+        int sum = 0;
+
+        for (int score : scores){
+            sum += score;
+        }
+        System.out.println("Sum of scores: " + sum);
+
+        // 8. Find the min and max of scores array
+        int maxScore = scores[0];
+        int minScore = scores[0];
+
+        for (int score : scores) {
+            if (score > maxScore){
+                maxScore = score;
+            }
+            if (score < minScore){
+                minScore = score;
+            }
+        }
+        System.out.println("Max score: " + maxScore);
+        System.out.println("Min score: " + minScore);
+
+        // 9. Calculate the avg.
+
+        int scoreAvg = sum / scores.length;
+        System.out.println(scoreAvg);
+
 
     }
 }
