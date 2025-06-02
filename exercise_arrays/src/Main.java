@@ -115,12 +115,29 @@ public class Main {
 
         if (uniqueStudents.toArray().length == students.length) {  // if lengths equal no duplicates
             System.out.println("No Duplicates");
-        } else {
+        } else {// Print Duplicates found! if any names appear more than once
             System.out.println("Duplicates found"); // otherwise duplicates are found
         }
 
+        // Mini Address Book - Store and Print Info
+        // three parallel arrays
+        String[] names = {"Ryan", "Shanice", "Brittany"};
+        String[] phoneNum = {"1234", "5678", "9101"};
+        String[] emails = {"rp5", "sp4", "br2"};
 
-        // Print Duplicates found! if any names appear more than once
+        System.out.print("Enter a contact: ");
+        String contact = io.nextLine();
+
+        for (int i = 0; i < names.length; i++){
+            if (contact.equalsIgnoreCase(names[i])){
+                System.out.println("\nName: " + names[i] +
+                        "\nPhone Number: " + phoneNum[i] +
+                        "\nEmail: " + emails[i]
+                        );
+                break;
+            }
+        }
+
 
     }
 }
