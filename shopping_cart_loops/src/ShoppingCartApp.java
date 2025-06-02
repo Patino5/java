@@ -8,6 +8,7 @@ public class ShoppingCartApp {
         double productCost = 2.56;
         double productPrice = 4.99;
         short productQuantity = 78;
+boolean isConfirmed = false;
 
 
         // Write code to calculate the total cost of the product based on the inventory.
@@ -50,12 +51,23 @@ public class ShoppingCartApp {
         System.out.print("Promo code for free shipping: ");
         promoCode = io.nextLine();
 
+
+
+        // Loops additions - isConfirmed boolean as well
+
+        while (!isConfirmed) {
+            System.out.println("Confirm Order y/n: ");
+            isConfirmed = "y".equals(io.nextLine());
+        }
+
         // print details from data collection
         System.out.println("\nDetails:");
         System.out.printf("Tax-Exempt:     %s%n", taxExempt);
         System.out.printf("Shipping:       %s%n", shipping);
         System.out.printf("Order quantity: %d%n", orderQuantity);
         System.out.printf("Promo code:     %s%n", promoCode);
+
+
 
     }
 }
