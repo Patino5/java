@@ -33,6 +33,12 @@ public class Main {
         System.out.println(factorial(5));
         System.out.println(factorial(7));
         System.out.println(factorial(10));
+
+        // Task 8: Method Overloading
+        greet("Ryan", 36);
+        greet("Ryan");
+        greet("Briar");
+        greet("Briar", 2);
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -67,5 +73,12 @@ public class Main {
     public static int   factorial(int n){
         if (n == 0) return 1;
         return n * factorial(n - 1);
+    }
+    // method overloading - greet (String name) and greet(Sting name, int age)
+    public static void greet(String name){
+        System.out.println("Hello, " + name);
+    }
+    public static void greet(String name, int age){
+        System.out.println("Hello, " + name + "!\nYou are " + age + " years old.");
     }
 }
