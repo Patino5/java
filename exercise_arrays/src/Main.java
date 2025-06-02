@@ -1,3 +1,5 @@
+import java.util.HashSet;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -76,6 +78,49 @@ public class Main {
         int scoreAvg = sum / scores.length;
         System.out.println(scoreAvg);
 
+        // Part 4: Advanced Challenges
+        // 10. Count Occurrences of a value
+        Random randomNum = new Random();
+        int[] randomNums = new int[10];
+        int count = 0;
+        for (int i = 0; i < randomNums.length ; i++){
+
+            randomNums[i] = randomNum.nextInt(5) + 1;
+            System.out.print(randomNums[i] + ", ");
+            if (randomNums[i] == 3){
+                count++;
+            }
+        }
+        System.out.println("There is " + count + " 3's in randomNums array.");
+
+        // 11. Shift Elements in an Array
+        int[] givenArr = {1, 2, 3, 4, 5};
+        int temp = givenArr[0];
+        for ( int i = 0; i < givenArr.length - 1; i++) {
+            givenArr[i] = givenArr[i + 1];
+        }
+        givenArr[givenArr.length - 1] = temp;
+
+        for (int num : givenArr){
+            System.out.println(num);
+        }
+
+        // 12. Check for Duplicates in a n Array of Names
+        String[ ] students = {"Ryan", "Briar", "Shanice", "Eleanor", "Magnolia", "Molly"};
+        HashSet<String> uniqueStudents = new HashSet<>(); // only allows for one occurs of each element
+        // check for duplicates
+        for (String student : students) {
+            uniqueStudents.add(student);
+        }
+
+        if (uniqueStudents.toArray().length == students.length) {  // if lengths equal no duplicates
+            System.out.println("No Duplicates");
+        } else {
+            System.out.println("Duplicates found"); // otherwise duplicates are found
+        }
+
+
+        // Print Duplicates found! if any names appear more than once
 
     }
 }
