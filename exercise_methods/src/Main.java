@@ -43,6 +43,14 @@ public class Main {
         // Task 9: Count Vowels in a String
         System.out.println("'hello world' has " + countVowels("hello world") + " vowels in it.");
         System.out.println(countVowels("java programming"));
+
+        // Task 10: Mini Calculator
+        System.out.println(calculator(1,3,'+'));
+        System.out.println(calculator(4, 5, '*'));
+        System.out.println(calculator(50, 20, '-'));
+        System.out.println(calculator(32, 0, '/'));
+        System.out.println(calculator(21, 7, '/'));
+
     }
     // printWelcomeMessage
     public static void printWelcomeMessage() {
@@ -95,5 +103,28 @@ public class Main {
             }
         }
         return count;
+    }
+    // mini calculator - calculator performs addition, subtraction, multiplication, or division based on user input
+    public static int calculator(int num1, int num2, char operator){
+
+        return switch (operator){
+            case '+': 
+                yield num1 + num2;
+            case '-':
+                yield num1 - num2;
+            case '*':
+                yield num1 * num2;
+            case '/': 
+                if (num2 == 0){
+                    System.out.print("Division by zero not allowed. ");
+                    yield 0;
+                } else {
+                    yield num1 / num2;
+                }
+            default : {
+                    System.out.print("Operator not recognized. Try again. ");
+                    yield 0;
+                }
+        };
     }
 }
