@@ -9,13 +9,14 @@ public class UserRegistration {
 
         String email = getEmail("Enter your email: ", io);
 
-        System.out.print("Enter your 4-digit PIN: ");
-        int pin = Integer.parseInt(io.nextLine());
+        int pin = getPin("Enter your 4-digit PIN: ",io);
 
         System.out.println("\nRegistration Successful!");
         System.out.println("Age: " + age);
         System.out.println("Email: " + email);
         System.out.println("PIN: " + pin);
+
+        System.out.println("\nRegistration Attempt Complete!");
     }
 
     public static int getAge(String prompt, Scanner io){
@@ -42,12 +43,29 @@ public class UserRegistration {
                 if (!email.isEmpty() ){
                     return email;
                 } else{
-                    throw new Exception("Email can not be empty or null.");
+                    throw new NullPointerException("Email can not be empty or null.");
                 }
-            } catch (Exception e) {
+            } catch (NullPointerException e) {
                 System.out.println("Email needs a value. " + e.getMessage() + " Try again.");
             }
         }
     }
 
+    public static int getPin(String prompt, Scanner io){
+        while (true) {
+            System.out.print(prompt);
+            try {
+                String pinInput = io.nextLine();
+                if (pinInput.length() != 4){
+                    throw new IllegalArgumentException("Must be 4 digits");
+                }
+                return Integer.parseInt(pinInput);
+
+            } catch (NumberFormatException e) {
+                System.out.println("PIN must be numeric.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid PIN: " + e.getMessage());
+            }
+        }
+    }
 }
