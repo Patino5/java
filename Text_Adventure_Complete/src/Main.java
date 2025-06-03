@@ -16,6 +16,7 @@ public class Main {
                 "\n4. The yellow wooden door" +
                 "\n5. The steel door" +
                 "\nDoor Selection: ";
+
         // Room messages - for initial visit and after visited now stored in an array
         rooms[0] = "You've entered a room lit with candles. You see a desk and find part of a key!";
         rooms[1] = "You've entered a damp and muggy room. Upon further inspection, you see a hole in the far wall. A glint of gold catches your attention. It is part of a key!";
@@ -30,13 +31,12 @@ public class Main {
         unlockedRooms[4] = "You've found a room with a red door... you've used the key you have found and opened the door!";
 
         // get users name
-        System.out.print("Hello, Please enter your name: ");
-        String name = io.nextLine();
-        System.out.println("Your name is " + name);
+        String name = promptString("Hello, Please enter your name: ");
+        print("Your name is " + name);
 
 //        Start in a central hub with options for your three locations. Main Room
         while (keepRunning) {
-            System.out.println(mainMenu);
+            String direction = promptString(mainMenu);
             int door = Integer.parseInt(io.nextLine());
             switch (door){
                 case 1 :
@@ -44,31 +44,39 @@ public class Main {
                 case 3:
                 case 4:
                     if (keys[door - 1]){
-                        System.out.println(unlockedRooms[door - 1]);
+                        print(unlockedRooms[door - 1]);
                     } else {
                         keys[door - 1] = true;
-                        System.out.println(rooms[door - 1]);
+                        print(rooms[door - 1]);
                     }
                     break;
                 case 5 :
                     boolean unlock = true;
                     for (boolean key : keys){
                         if (!key){
-                            System.out.println(rooms[4]);
+                            print(rooms[4]);
                             unlock = false;
                             break;
                         }
                     }
                     if (unlock) {
-                        System.out.println(unlockedRooms[4]);
+                        print(unlockedRooms[4]);
                         keepRunning = false;
                     }
                     break;
                 default:
-                    System.out.println("Unable to find the door you are looking for");
+                    print("Unable to find the door you are looking for");
             }
         }
-        System.out.println("\nBye, " + name + "!");
+        print("\nBye, " + name + "!");
+    }
+    public static void print(String message) {
+        System.out.println(message);
+    }
 
+    public static String promptString(String message) {
+        Scanner io = new Scanner(System.in);
+        print(message);
+        return io.nextLine();
     }
 }
