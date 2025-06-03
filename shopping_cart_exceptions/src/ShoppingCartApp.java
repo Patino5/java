@@ -105,7 +105,7 @@ public class ShoppingCartApp {
                 } else {
                     System.out.println("Please enter a valid option.");
                 }
-            } catch (Exception e){
+            } catch (ArrayIndexOutOfBoundsException e){
                 System.out.println("Exception message: " + e.getMessage());
             }
         }
