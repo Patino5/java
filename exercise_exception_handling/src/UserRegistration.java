@@ -7,8 +7,7 @@ public class UserRegistration {
 
         int age = getAge("Enter your age: ", io);
 
-        System.out.print("Enter your email: ");
-        String email = "k";
+        String email = getEmail("Enter your email: ", io);
 
         System.out.print("Enter your 4-digit PIN: ");
         int pin = Integer.parseInt(io.nextLine());
@@ -34,4 +33,21 @@ public class UserRegistration {
             }
         }
     }
+
+    public static String getEmail(String prompt, Scanner io){
+        while (true){
+            System.out.print(prompt);
+            try {
+                String email = io.nextLine();
+                if (!email.isEmpty() ){
+                    return email;
+                } else{
+                    throw new Exception("Email can not be empty or null.");
+                }
+            } catch (Exception e) {
+                System.out.println("Email needs a value. " + e.getMessage() + " Try again.");
+            }
+        }
+    }
+
 }
