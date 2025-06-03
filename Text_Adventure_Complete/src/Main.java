@@ -34,31 +34,35 @@ public class Main {
 
 //        Start in a central hub with options for your three locations. Main Room
         while (keepRunning) {
-            String direction = promptString(mainMenu);
-            int door = Integer.parseInt(direction);
-            switch (door){
-                case 1 :
-                case 2:
-                case 3:
-                case 4:
-                    findKeyAndDisplayRoomText(rooms, unlockedRooms, keys, door - 1);
-                    break;
-                case 5 :
-                    boolean unlock = true;
-                    for (boolean key : keys){
-                        if (!key){
-                            print(rooms[4]);
-                            unlock = false;
-                            break;
+            try {
+                String direction = promptString(mainMenu);
+                int door = Integer.parseInt(direction);
+                switch (door){
+                    case 1 :
+                    case 2:
+                    case 3:
+                    case 4:
+                        findKeyAndDisplayRoomText(rooms, unlockedRooms, keys, door - 1);
+                        break;
+                    case 5 :
+                        boolean unlock = true;
+                        for (boolean key : keys){
+                            if (!key){
+                                print(rooms[4]);
+                                unlock = false;
+                                break;
+                            }
                         }
-                    }
-                    if (unlock) {
-                        print(unlockedRooms[4]);
-                        keepRunning = false;
-                    }
-                    break;
-                default:
-                    print("Unable to find the door you are looking for");
+                        if (unlock) {
+                            print(unlockedRooms[4]);
+                            keepRunning = false;
+                        }
+                        break;
+                    default:
+                        print("Unable to find the door you are looking for");
+                }
+            } catch (NumberFormatException e) {
+                print("Invalid menu option. Please try again.");
             }
         }
         print("\nBye, " + name + "!");
