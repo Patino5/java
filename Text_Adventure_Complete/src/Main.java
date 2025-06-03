@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the Text Adventure Game!\n");
-        Scanner io = new Scanner(System.in);
-
         boolean keepRunning = true;
         String[] rooms = new String[5];
         String[] unlockedRooms = new String[5];
@@ -37,18 +35,13 @@ public class Main {
 //        Start in a central hub with options for your three locations. Main Room
         while (keepRunning) {
             String direction = promptString(mainMenu);
-            int door = Integer.parseInt(io.nextLine());
+            int door = Integer.parseInt(direction);
             switch (door){
                 case 1 :
                 case 2:
                 case 3:
                 case 4:
-                    if (keys[door - 1]){
-                        print(unlockedRooms[door - 1]);
-                    } else {
-                        keys[door - 1] = true;
-                        print(rooms[door - 1]);
-                    }
+                    findKeyAndDisplayRoomText(rooms, unlockedRooms, keys, door - 1);
                     break;
                 case 5 :
                     boolean unlock = true;
@@ -78,5 +71,13 @@ public class Main {
         Scanner io = new Scanner(System.in);
         print(message);
         return io.nextLine();
+    }
+    public static void  findKeyAndDisplayRoomText(String[] rooms, String[] unlockedRooms, boolean[] keys, int door){
+        if (keys[door] == true){
+            print(unlockedRooms[door]);
+        } else {
+            print(rooms[door]);
+            keys[door] = true;
+        }
     }
 }
