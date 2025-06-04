@@ -27,11 +27,24 @@ public class Main {
                 }
                 case "2" : {
                     //more
-
+                    String lockerInput = promptString("What locker: ");
+                    int lockerNum = Integer.parseInt(lockerInput) - 1;
+                    if (lockers[lockerNum] == 0){
+                        print("That locker is not rented. Try again.");
+                        break;
+                    }
+                    String pinInput = promptString("What is the pin: ");
+                    if (!pinInput.equals(lockerPINs[lockerNum])){
+                        print("Incorrect PIN: try again.");
+                        break;
+                    }
+                    print("Success!");
+                    break;
                 }
                 case "3" : {
                     // more
                     System.out.println("Release Locker");
+                    break;
                 }
                 default : {
                     System.out.println("Exit");
@@ -45,6 +58,12 @@ public class Main {
     }
     public static void print(String message){
         System.out.println(message);
+    }
+
+    public static String promptString(String message) {
+        Scanner io = new Scanner(System.in);
+        print(message);
+        return io.nextLine();
     }
 
     public static String generatePin(){
