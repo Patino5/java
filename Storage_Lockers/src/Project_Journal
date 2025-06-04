@@ -1,0 +1,36 @@
+Flow Chart
+                                                                                                         | No | *The locker not released.* -> [Menu Choices]
+                                    (stop program)                                    | Yes | - {Sure?} <
+(Start Menu) ---> [Menu Choices] <                                                       |               |Yes| *The locker released successfully* make available and pin set to null
+                        |           [release locker] - {pick locker#} - ?Rented? -- ?Correct Pin?
+                        ^                                               /     \          |
+                       /  \   *Locker is not Rented. Return to menu*  | No | Yes | - {Enter Pin} - | No | * Incorrect. Try Again *
+                      /     \                                            \    /          |
+                     /        [Access a Locker] ------- {pick locker} - ?Rented? -- ?Correct Pin?
+               [Rent Locker]                                                             |
+                /                                                                      |Yes| - *Success! Lock up when done. Pin remains the same* -> [Menu Choices]
+  Check out first available - random assign Pin - Thank you and instructions -> [Menu Choices]
+Requirements
+
+● Use GitHub issues for the work. See end of this document.
+● You must include a project journal with your submission. [X]
+● The user is presented with the main menu. [X]
+● The user has three options: rent a locker, open a renter locker, or release
+(un-rent) a locker.
+● When renting, the user is automatically assigned the next available locker
+number and assigned a PIN.
+● When there are no lockers available, the application should remove the option to
+rent a locker.
+● The user can open a locker when they enter the associated locker number and
+PIN.
+● The user can release the locker by entering the associated locker number and
+PIN.
+● Releasing a locker requires an "Are you sure?" confirmation.
+● Apply the DRY principle (as much as possible).
+● Each feature should be isolated into a separate method.
+● PINs should be 4 digits long.
+● PINs should include leading 0's.
+● The PIN should be a 'string' (not an 'int').
+● Use an array for the lockers and their associated PINs (or null value when
+available).
+
