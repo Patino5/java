@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Locker {
     private final int  number;
     private String pinNumber;
@@ -15,12 +17,21 @@ public class Locker {
         return number;
     }
 
-    public void setPinNumber(String newPin) {
-        this.pinNumber = newPin;
+    public void setPinNumber() {
+        this.pinNumber = generatePin();
     }
 
     public void resetPin(){
         this.pinNumber = null;
     }
 
+    public boolean isRented(){
+        return this.pinNumber != null;
+    }
+
+    public String generatePin() {
+        Random random = new Random();
+        int pin = random.nextInt(10000);
+        return String.format("%04d", pin);
+    }
 }
