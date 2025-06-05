@@ -12,25 +12,46 @@ public class Main {
             String menuChoice = io.nextLine();
             switch (menuChoice) {
                 case "1" : {
-                    print(service.rentLocker().getMessage());
+                    Result rentLocker = service.rentLocker();
+                    print(rentLocker.getMessage());
                     break;
                 }
                 case "2" : {
-                    //more
-                    String lockerInput = promptString("What locker: ");
-                    int lockerNum = Integer.parseInt(lockerInput) - 1;
-                    String pin = promptString("What is the pin: ");
-                    print(service.accessLocker(lockerNum, pin).getMessage());
+                    int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
+                    Result lockerCheck = service.validLocker(lockerNum);
 
+                    if (!lockerCheck.getSuccess()){
+                        print(lockerCheck.getMessage());
+                        break;
+                    }
+
+                    String pin = promptString("What is the pin: ");
+                    Result accessResult = service.accessLocker(lockerNum, pin);
+                    print(accessResult.getMessage());
                     break;
                 }
                 case "3" : {
-                    // more
-                    System.out.println("Release Locker");
+                    int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
+                    Result lockerCheck = service.validLocker(lockerNum);
+
+                    if (!lockerCheck.getSuccess()){
+                        print(lockerCheck.getMessage());
+                        break;
+                    }
+                    String pin = promptString("What is the pin: ");
+                    Result pinCheck = service.correctPin(lockerNum, pin);
+
+                    if (!pinCheck.getSuccess()){
+                        print(pinCheck.getMessage());
+                        break;
+                    }
+                    String confirm = promptString("Are you sure. (y)/(n): ");
+                    Result releaseResult = service.releaseLocker(lockerNum, pin, confirm);
+                    print(releaseResult.getMessage());
                     break;
                 }
                 default : {
-                    System.out.println("Exit");
+                    print("Exit");
                     keepRunning = false;
                 }
             }

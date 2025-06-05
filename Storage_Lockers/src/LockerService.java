@@ -10,6 +10,7 @@ public class LockerService {
             lockers[i] = new Locker(i);
         }
     }
+
     // get locker array back
     public Locker[] getLockers() {
         return lockers;
@@ -42,7 +43,18 @@ public class LockerService {
     }
 
     // Release or Return Locker
+    public Result releaseLocker(int lockerNum, String pin, String confirm){
+        Result lockerCheck = validLocker(lockerNum);
+        if (!lockerCheck.getSuccess()) return lockerCheck;
 
+        Result pinCheck = correctPin(lockerNum, pin);
+        if (!pinCheck.getSuccess()) return pinCheck;
+
+        if(!confirm.equals("y")) return new Result(false, "Locker not released");
+
+        lockers[lockerNum].resetPin();
+        return new Result(true, "Locker #" + (lockerNum + 1) + " made available and PIN reset.");
+    }
 
     // Validate active locker
     public Result validLocker(int lockerNum) {
@@ -71,12 +83,14 @@ public class LockerService {
 
     public String getMenu(boolean lockersFull){
         return (!lockersFull) ? """
+                
                 What would you like to do next?
                 1. Rent a Locker
                 2. Access a Locker
                 3. Release a Locker
                 ---
                 Any other key to exit.""" : """
+                
                 What would you like to do next?
                 1. Lockers Full
                 2. Access a Locker
