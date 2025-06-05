@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class LockerService {
     private final Locker[] lockers ;
 
@@ -18,8 +16,8 @@ public class LockerService {
     public Result rentLocker() {
         for (int i = 0; i < lockers.length; i++) {
             if (lockers[i].getPin() == null) { // first empty locker
-                lockers[i].setPinNumber(generatePin());
-                return new Result(true, ("Thank You!\nLocker Rented: Locker #" + lockers[i].getNumber() + "\nPIN for entry: " + lockers[i].getPin()));
+                lockers[i].setPinNumber();
+                return new Result(true, ("\nThank You!\nLocker Rented: #" + lockers[i].getNumber() + "\nPIN for entry: " + lockers[i].getPin()));
             }
         }
         return new Result(false, "All lockers are full. Try again later");
@@ -49,24 +47,19 @@ public class LockerService {
     }
 
     public Result activeLocker(int lockerNum) {
-        if (lockers[lockerNum].getPin() != null){
+        if (lockers[lockerNum].isRented()){
             return new Result(true ,"Current active locker.");
         }
         return new Result(false, "That locker is not rented. Try Again.");
     }
 
     public Result verifyPin(int lockerNum, String pin) {
-        if (pin.equals(lockers[lockerNum].getPin())){
+        if (lockers[lockerNum].getPin().equals(pin)){
             return new Result(true, "Successful PIN Entry");
         }
-        return new Result(false, "Incorrect PIN: Try Again.");
+        return new Result(false, "Incorrect PIN. Access denied Try Again.");
     }
 
-    public String generatePin() {
-        Random random = new Random();
-        int pin = random.nextInt(10000);
-        return String.format("%04d", pin);
-    }
 
     public String getMenu(boolean areLockersFull){
         return (areLockersFull) ?
