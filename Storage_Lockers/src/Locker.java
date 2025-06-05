@@ -12,7 +12,7 @@ public class Locker {
     }
 
     public int getNumber() {
-        return number + 1;
+        return number;
     }
 
     public void setPinNumber(String newPin) {
