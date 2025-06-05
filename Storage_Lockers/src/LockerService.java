@@ -11,14 +11,11 @@ public class LockerService {
         }
     }
 
-    // get locker array back
     public Locker[] getLockers() {
         return lockers;
     }
 
-    // Rent locker method
     public Result rentLocker() {
-        // check for first available locker
         for (int i = 0; i < lockers.length; i++) {
             if (lockers[i].getPin() == null) { // first empty locker
                 String randomPin = generatePin();
@@ -26,11 +23,9 @@ public class LockerService {
                 return new Result(true, ("Locker Rented: Locker #" + lockers[i].getNumber() + "\nPIN for entry: " + lockers[i].getPin()));
             }
         }
-        // Remove option instead later...
         return new Result(false, "All lockers are full. Try again later");
     }
 
-    // Access Locker
     public Result accessLocker(int lockerNum, String pin) {
         Result lockerCheck  = validLocker(lockerNum);
         if (!lockerCheck.getSuccess()) return lockerCheck;
@@ -39,10 +34,8 @@ public class LockerService {
         if (!pinCheck.getSuccess()) return pinCheck;
 
         return new Result(true, "Success! Lock it up when you're done.");
-
     }
 
-    // Release or Return Locker
     public Result releaseLocker(int lockerNum, String pin, String confirm){
         Result lockerCheck = validLocker(lockerNum);
         if (!lockerCheck.getSuccess()) return lockerCheck;
@@ -56,7 +49,6 @@ public class LockerService {
         return new Result(true, "Locker #" + (lockerNum + 1) + " made available and PIN reset.");
     }
 
-    // Validate active locker
     public Result validLocker(int lockerNum) {
         if (lockers[lockerNum].getPin() != null){
             return new Result(true ,"Current active locker.");
@@ -64,7 +56,6 @@ public class LockerService {
         return new Result(false, "That locker is not rented. Try Again.");
     }
 
-    //Validate correct pin
     public Result correctPin(int lockerNum, String pin) {
         if (pin.equals(lockers[lockerNum].getPin())){
             return new Result(true, "Successful PIN Entry");
@@ -72,27 +63,24 @@ public class LockerService {
         return new Result(false, "Incorrect PIN: Try Again.");
     }
 
-    // PIN generator
     public String generatePin() {
         Random random = new Random();
-        // Generate a number between 0 and 9999
         int pin = random.nextInt(10000);
-        // Format it as a 4-digit string with leading zeros if needed
         return String.format("%04d", pin);
     }
 
-    public String getMenu(boolean lockersFull){
-        return (!lockersFull) ? """
+    public String getMenu(boolean areLockersFull){
+        return (areLockersFull) ? """
                 
                 What would you like to do next?
-                1. Rent a Locker
+                1. Lockers Currently Full
                 2. Access a Locker
                 3. Release a Locker
                 ---
                 Any other key to exit.""" : """
                 
                 What would you like to do next?
-                1. Lockers Full
+                1. Rent a Locker
                 2. Access a Locker
                 3. Release a Locker
                 ---
@@ -106,5 +94,4 @@ public class LockerService {
         }
         return true;
     }
-
 }
