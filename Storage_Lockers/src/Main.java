@@ -58,6 +58,8 @@ public class Main {
                 }
             } catch (NumberFormatException e) {
                 print("Lockers are numeric values.");
+            } catch (ArrayIndexOutOfBoundsException e){
+                print("Please choose a locker between 1 and " + service.getLockers().length + ".");
             }
         }
     }
