@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner io = new Scanner(System.in);
-    static LockerService service = new LockerService(5);
+    private static final Scanner io = new Scanner(System.in);
+    private static final LockerService service = new LockerService(5);
 
     public static void main(String[] args) {
         boolean keepRunning = true;
@@ -10,7 +10,7 @@ public class Main {
         while (keepRunning) {
             try {
                 print(service.getMenu(service.areLockersFull())); //
-                String menuChoice = io.nextLine();
+                String menuChoice = promptString("Any other key to exit: ");
                 switch (menuChoice) {
                     case "1" : {
                         Result rentLocker = service.rentLocker();
@@ -19,7 +19,7 @@ public class Main {
                     }
                     case "2" : {
                         int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
-                        Result lockerCheck = service.validLocker(lockerNum);
+                        Result lockerCheck = service.activeLocker(lockerNum);
 
                         if (!lockerCheck.getSuccess()){
                             print(lockerCheck.getMessage());
@@ -33,14 +33,14 @@ public class Main {
                     }
                     case "3" : {
                         int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
-                        Result lockerCheck = service.validLocker(lockerNum);
+                        Result lockerCheck = service.activeLocker(lockerNum);
 
                         if (!lockerCheck.getSuccess()){
                             print(lockerCheck.getMessage());
                             break;
                         }
                         String pin = promptString("What is the pin: ");
-                        Result pinCheck = service.correctPin(lockerNum, pin);
+                        Result pinCheck = service.verifyPin(lockerNum, pin);
 
                         if (!pinCheck.getSuccess()){
                             print(pinCheck.getMessage());
@@ -57,7 +57,7 @@ public class Main {
                     }
                 }
             } catch (NumberFormatException e) {
-                print("Lockers are numeric values.");
+                print("Please enter a number for your locker. Lockers are numeric values.");
             } catch (ArrayIndexOutOfBoundsException e){
                 print("Please choose a locker between 1 and " + service.getLockers().length + ".");
             }
