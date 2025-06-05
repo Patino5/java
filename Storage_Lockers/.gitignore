@@ -2,6 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+!**/src/Project_Journal
 
 ### Eclipse ###
 .apt_generated
