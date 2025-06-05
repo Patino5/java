@@ -72,5 +72,4 @@ public class Main {
         print(message);
         return io.nextLine();
     }
-
 }
