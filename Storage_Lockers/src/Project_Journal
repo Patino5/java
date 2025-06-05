@@ -17,21 +17,21 @@ Requirements
 ● You must include a project journal with your submission. [X]
 ● The user is presented with the main menu. [X]
 ● The user has three options: rent a locker, open a renter locker, or release
-(un-rent) a locker.
+(un-rent) a locker. [X]
 ● When renting, the user is automatically assigned the next available locker
-number and assigned a PIN.
+number and assigned a PIN. [X]
 ● When there are no lockers available, the application should remove the option to
-rent a locker.
+rent a locker. [X]
 ● The user can open a locker when they enter the associated locker number and
-PIN.
+PIN. [X]
 ● The user can release the locker by entering the associated locker number and
-PIN.
-● Releasing a locker requires an "Are you sure?" confirmation.
+PIN. [X]
+● Releasing a locker requires an "Are you sure?" confirmation. [X]
 ● Apply the DRY principle (as much as possible).
 ● Each feature should be isolated into a separate method.
 ● PINs should be 4 digits long. [X]
 ● PINs should include leading 0's. [X]
 ● The PIN should be a 'string' (not an 'int'). [X]
 ● Use an array for the lockers and their associated PINs (or null value when
-available).
+available). [X]
 
