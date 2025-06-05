@@ -8,52 +8,56 @@ public class Main {
         boolean keepRunning = true;
 
         while (keepRunning) {
-            print(service.getMenu(service.areLockersFull())); //
-            String menuChoice = io.nextLine();
-            switch (menuChoice) {
-                case "1" : {
-                    Result rentLocker = service.rentLocker();
-                    print(rentLocker.getMessage());
-                    break;
-                }
-                case "2" : {
-                    int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
-                    Result lockerCheck = service.validLocker(lockerNum);
-
-                    if (!lockerCheck.getSuccess()){
-                        print(lockerCheck.getMessage());
+            try {
+                print(service.getMenu(service.areLockersFull())); //
+                String menuChoice = io.nextLine();
+                switch (menuChoice) {
+                    case "1" : {
+                        Result rentLocker = service.rentLocker();
+                        print(rentLocker.getMessage());
                         break;
                     }
+                    case "2" : {
+                        int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
+                        Result lockerCheck = service.validLocker(lockerNum);
 
-                    String pin = promptString("What is the pin: ");
-                    Result accessResult = service.accessLocker(lockerNum, pin);
-                    print(accessResult.getMessage());
-                    break;
-                }
-                case "3" : {
-                    int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
-                    Result lockerCheck = service.validLocker(lockerNum);
+                        if (!lockerCheck.getSuccess()){
+                            print(lockerCheck.getMessage());
+                            break;
+                        }
 
-                    if (!lockerCheck.getSuccess()){
-                        print(lockerCheck.getMessage());
+                        String pin = promptString("What is the pin: ");
+                        Result accessResult = service.accessLocker(lockerNum, pin);
+                        print(accessResult.getMessage());
                         break;
                     }
-                    String pin = promptString("What is the pin: ");
-                    Result pinCheck = service.correctPin(lockerNum, pin);
+                    case "3" : {
+                        int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
+                        Result lockerCheck = service.validLocker(lockerNum);
 
-                    if (!pinCheck.getSuccess()){
-                        print(pinCheck.getMessage());
+                        if (!lockerCheck.getSuccess()){
+                            print(lockerCheck.getMessage());
+                            break;
+                        }
+                        String pin = promptString("What is the pin: ");
+                        Result pinCheck = service.correctPin(lockerNum, pin);
+
+                        if (!pinCheck.getSuccess()){
+                            print(pinCheck.getMessage());
+                            break;
+                        }
+                        String confirm = promptString("Are you sure. (y)/(n): ");
+                        Result releaseLockerResult = service.releaseLocker(lockerNum,pin, confirm);
+                        print(releaseLockerResult.getMessage());
                         break;
                     }
-                    String confirm = promptString("Are you sure. (y)/(n): ");
-                    Result releaseResult = service.releaseLocker(lockerNum, pin, confirm);
-                    print(releaseResult.getMessage());
-                    break;
+                    default : {
+                        print("Exit");
+                        keepRunning = false;
+                    }
                 }
-                default : {
-                    print("Exit");
-                    keepRunning = false;
-                }
+            } catch (NumberFormatException e) {
+                print("Lockers are numeric values.");
             }
         }
     }
