@@ -10,8 +10,9 @@ Flow Chart
                [Rent Locker]                                                             |
                 /                                                                      |Yes| - *Success! Lock up when done. Pin remains the same* -> [Menu Choices]
   Check out first available - random assign Pin - Thank you and instructions -> [Menu Choices]
-Requirements
 
+
+Requirements
 ● Use GitHub issues for the work. See end of this document.
 ● You must include a project journal with your submission. [X]
 ● The user is presented with the main menu. [X]
@@ -28,9 +29,9 @@ PIN.
 ● Releasing a locker requires an "Are you sure?" confirmation.
 ● Apply the DRY principle (as much as possible).
 ● Each feature should be isolated into a separate method.
-● PINs should be 4 digits long.
-● PINs should include leading 0's.
-● The PIN should be a 'string' (not an 'int').
+● PINs should be 4 digits long. [X]
+● PINs should include leading 0's. [X]
+● The PIN should be a 'string' (not an 'int'). [X]
 ● Use an array for the lockers and their associated PINs (or null value when
 available).
 

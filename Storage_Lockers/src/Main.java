@@ -29,7 +29,10 @@ public class Main {
 //                        print("Incorrect PIN: try again.");
 //                        break;
 //                    }
-                    print("Success!");
+                     // put validLockerAndPin into LockerService and return new Results to get boolean value for print messages
+                     //
+                     //print(service.validLockerAndPin(service.getLockers()).getSuccess ? good message : false message);
+                     //
                     break;
                 }
                 case "3" : {
@@ -52,7 +55,6 @@ public class Main {
     }
 
     public static String promptString(String message) {
-        Scanner io = new Scanner(System.in);
         print(message);
         return io.nextLine();
     }
@@ -65,11 +67,11 @@ public class Main {
 
         }
         String pinInput = promptString("What is the pin: ");
-        if (!pinInput.equals(service.getLockers()[lockerNum].getPin())){
-            return "Incorrect PIN: try again.";
+        if (pinInput.equals(service.getLockers()[lockerNum].getPin())){
+            return "Success";
 
         }
-        return "Not valid";
+        return "Incorrect PIN: try again.";
     }
 
 }
