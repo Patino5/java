@@ -1,43 +1,34 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner io = new Scanner(System.in);
+    static LockerService service = new LockerService(5);
 
     public static void main(String[] args) {
         boolean keepRunning = true;
-        int[] lockers = new int[5];
-        String[] lockerPINs = new String[5];
-        String fullMenu = """
-                
-                What would you like to do next?
-                 1. Rent a Locker
-                 2. Access a Locker
-                 3. Release a Locker
-                 ---
-                 Any other key to exit.""";
 
         while (keepRunning) {
-            print(fullMenu);
+            print(service.getMenu(true));
             String menuChoice = io.nextLine();
             switch (menuChoice) {
                 case "1" : {
-                    rentLocker(lockers,lockerPINs);
+                    print(service.rentLocker(service.getLockers()).getMessage());
                     break;
                 }
                 case "2" : {
                     //more
-                    String lockerInput = promptString("What locker: ");
-                    int lockerNum = Integer.parseInt(lockerInput) - 1;
-                    if (lockers[lockerNum] == 0){
-                        print("That locker is not rented. Try again.");
-                        break;
-                    }
-                    String pinInput = promptString("What is the pin: ");
-                    if (!pinInput.equals(lockerPINs[lockerNum])){
-                        print("Incorrect PIN: try again.");
-                        break;
-                    }
+                    print(validLockerAndPin(service.getLockers()));
+//                    String lockerInput = promptString("What locker: ");
+//                    int lockerNum = Integer.parseInt(lockerInput) - 1;
+//                    if (service.getLockers()[lockerNum].getPin() == null){
+//                        print("That locker is not rented. Try again.");
+//                        break;
+//                    }
+//                    String pinInput = promptString("What is the pin: ");
+//                    if (!pinInput.equals(service.getLockers()[lockerNum].getPin())){
+//                        print("Incorrect PIN: try again.");
+//                        break;
+//                    }
                     print("Success!");
                     break;
                 }
@@ -66,32 +57,19 @@ public class Main {
         return io.nextLine();
     }
 
-    public static String generatePin(){
-        Random random = new Random();
-        int pin = random.nextInt(10000);
-        return String.format("%04d", pin);
-    }
+    public static String validLockerAndPin(Locker[] lockers) {
+        String lockerInput = promptString("What locker: ");
+        int lockerNum = Integer.parseInt(lockerInput) - 1;
+        if (service.getLockers()[lockerNum].getPin() == null){
+            return "That locker is not rented. Try again.";
 
-    // rentLocker method refactored out
-    public static void rentLocker(int[] lockers, String[] lockerPINs){
-        boolean isFull = true;
-        // check for first available locker
-        for (int i = 0; i < lockers.length; i++){
-            if (lockers[i] == 0){ // first empty locker
-                lockers[i] = i + 1;
-                lockerPINs[i] = generatePin();
-                print("Your locker number: " +
-                        lockers[i] +
-                        "\nYour pin to unlock locker is: " +
-                        lockerPINs[i]);
-                isFull = false;
-                break;
-            }
         }
-        if (isFull){
-            // Remove option instead later...
-            print("Lockers full. Try again later.");
+        String pinInput = promptString("What is the pin: ");
+        if (!pinInput.equals(service.getLockers()[lockerNum].getPin())){
+            return "Incorrect PIN: try again.";
+
         }
+        return "Not valid";
     }
 
 }
