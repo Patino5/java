@@ -8,31 +8,20 @@ public class Main {
         boolean keepRunning = true;
 
         while (keepRunning) {
-            print(service.getMenu(true));
+            print(service.getMenu(service.areLockersFull())); //
             String menuChoice = io.nextLine();
             switch (menuChoice) {
                 case "1" : {
-                    print(service.rentLocker(service.getLockers()).getMessage());
+                    print(service.rentLocker().getMessage());
                     break;
                 }
                 case "2" : {
                     //more
-                    print(validLockerAndPin(service.getLockers()));
-//                    String lockerInput = promptString("What locker: ");
-//                    int lockerNum = Integer.parseInt(lockerInput) - 1;
-//                    if (service.getLockers()[lockerNum].getPin() == null){
-//                        print("That locker is not rented. Try again.");
-//                        break;
-//                    }
-//                    String pinInput = promptString("What is the pin: ");
-//                    if (!pinInput.equals(service.getLockers()[lockerNum].getPin())){
-//                        print("Incorrect PIN: try again.");
-//                        break;
-//                    }
-                     // put validLockerAndPin into LockerService and return new Results to get boolean value for print messages
-                     //
-                     //print(service.validLockerAndPin(service.getLockers()).getSuccess ? good message : false message);
-                     //
+                    String lockerInput = promptString("What locker: ");
+                    int lockerNum = Integer.parseInt(lockerInput) - 1;
+                    String pin = promptString("What is the pin: ");
+                    print(service.accessLocker(lockerNum, pin).getMessage());
+
                     break;
                 }
                 case "3" : {
@@ -46,10 +35,8 @@ public class Main {
                 }
             }
         }
-
-
-
     }
+
     public static void print(String message){
         System.out.println(message);
     }
@@ -57,21 +44,6 @@ public class Main {
     public static String promptString(String message) {
         print(message);
         return io.nextLine();
-    }
-
-    public static String validLockerAndPin(Locker[] lockers) {
-        String lockerInput = promptString("What locker: ");
-        int lockerNum = Integer.parseInt(lockerInput) - 1;
-        if (service.getLockers()[lockerNum].getPin() == null){
-            return "That locker is not rented. Try again.";
-
-        }
-        String pinInput = promptString("What is the pin: ");
-        if (pinInput.equals(service.getLockers()[lockerNum].getPin())){
-            return "Success";
-
-        }
-        return "Incorrect PIN: try again.";
     }
 
 }
