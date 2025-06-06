@@ -25,23 +25,23 @@ public class Zoo {
     }
 
     public void printPopulationReport(){
-        System.out.println("Population Report: " + name  + "\n======================\n");
+        System.out.println("\n=============================\nPopulation Report: " + name  + "\n=============================");
 
         for (int i = 0; i < population.length; i++){
             Animal a = population[i];
             System.out.println(a.getName() + " : " +
                     a.getPopulationCount());
         }
-        System.out.println("======================");
+        System.out.println("=============================");
     }
 
     public void printAnimalSounds() {
-        System.out.println("The Sounds of: " + name + "\n======================\n");
+        System.out.println("=============================\nThe Sounds of: " + name + "\n=============================");
 
         for (int i = 0; i < population.length; i++){
             Animal a = population[i];
             System.out.println(a.getSound());
         }
-        System.out.println("======================");
+        System.out.println("=============================");
     }
 }
