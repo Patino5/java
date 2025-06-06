@@ -64,16 +64,14 @@ public class LockerService {
     public String getMenu(boolean areLockersFull){
         return (areLockersFull) ?
                 """
-                
-                What would you like to do next?
+                \nWhat would you like to do next?
                 1. Lockers Currently Full
                 2. Access a Locker
                 3. Release a Locker
                 ---"""
                 :
                 """
-                
-                What would you like to do next?
+                \nWhat would you like to do next?
                 1. Rent a Locker
                 2. Access a Locker
                 3. Release a Locker
