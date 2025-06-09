@@ -9,6 +9,18 @@ public class Locker {
         this.contents = "";
     }
 
+    public String getLockerId() {
+        return lockerId;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
     public void storeItem(String item){
         this.contents = item;
     }
