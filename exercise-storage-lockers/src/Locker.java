@@ -23,6 +23,7 @@ public class Locker {
 
     public void storeItem(String item){
         this.contents = item;
+        this.isOccupied = true;
     }
 
     public void removeItem(){

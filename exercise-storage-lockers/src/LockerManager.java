@@ -1,22 +1,26 @@
 import java.util.ArrayList;
 
 public class LockerManager {
-    private ArrayList<Locker> lockers;
+    private ArrayList<Locker> lockers = new ArrayList<>();
 
-    public LockerManager(ArrayList<Locker> lockers) {
-        this.lockers = lockers;
+    public LockerManager() {
     }
 
-    public void addLocker(String lockerId){
-        lockers.add(new Locker(lockerId));
+    public ArrayList<Locker> getLockers() {
+        return lockers;
     }
 
-    public String getLocker(String lockerId) {
+    public void addLocker(Locker locker){
+        lockers.add(locker);
+    }
+
+    public Locker getLocker(String lockerId) {
         for(Locker locker : lockers){
-            locker.getLockerId().equals(lockerId);
-            return String.format(locker.toString());
+            if (locker.getLockerId().equals(lockerId)) {
+                return locker;
+            }
         }
-        return String.format("%s Locker not found", lockerId);
+        return null;
     }
 
     public void removeLocker(String lockerId) {
