@@ -15,6 +15,7 @@ public class Locker {
 
     public void removeItem(){
         this.contents = "";
+        this.isOccupied = false;
     }
 
     public String toString(){
