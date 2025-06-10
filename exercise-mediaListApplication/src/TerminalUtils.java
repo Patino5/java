@@ -1,6 +1,8 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class TerminalUtils {
+    private final Scanner io = new Scanner(System.in);
 
     // Methods
     public void displayMenu(){
