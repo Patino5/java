@@ -20,7 +20,7 @@ public class Book extends Media {
 
     @Override
     void play() {
-
+        System.out.println("Opening book " + " using e-reader software");
     }
 
     @Override

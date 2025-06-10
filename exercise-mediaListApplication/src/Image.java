@@ -25,6 +25,6 @@ public class Image extends Media {
 
     @Override
     void play() {
-
+        System.out.println("Displaying image " + getName() + " using image viewer software");
     }
 }
