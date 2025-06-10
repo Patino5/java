@@ -20,7 +20,9 @@ public class Audio extends Media{
 
     @Override
     String getDescription() {
-        return "";
+        return "Name: " + getName() +
+                "\nDuration: " + getDuration() +
+                "\nArtist: " + getArtist();
     }
 
     @Override

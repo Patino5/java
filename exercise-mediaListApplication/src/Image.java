@@ -20,7 +20,9 @@ public class Image extends Media {
 
     @Override
     String getDescription() {
-        return "";
+        return "Name: " + getName() +
+                "\nDimensions: " + getDimensions() +
+                "\nFile Format: " + getFileFormat();
     }
 
     @Override
