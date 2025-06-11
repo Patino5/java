@@ -12,12 +12,12 @@ public class Main {
                 print(service.getMenu(service.areLockersFull())); //
                 String menuChoice = promptString("Any other key to exit: ");
                 switch (menuChoice) {
-                    case "1" : {
+                    case "1": {
                         Result rentLocker = service.rentLocker();
                         print(rentLocker.getMessage());
                         break;
                     }
-                    case "2" : {
+                    case "2": {
                         int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
                         Result lockerCheck = service.activeLocker(lockerNum);
 
@@ -31,7 +31,7 @@ public class Main {
                         print(accessResult.getMessage());
                         break;
                     }
-                    case "3" : {
+                    case "3": {
                         int lockerNum = Integer.parseInt(promptString("What locker: ")) -1;
                         Result lockerCheck = service.activeLocker(lockerNum);
 
@@ -51,7 +51,7 @@ public class Main {
                         print(releaseLockerResult.getMessage());
                         break;
                     }
-                    default : {
+                    default: {
                         print("Exit");
                         keepRunning = false;
                     }

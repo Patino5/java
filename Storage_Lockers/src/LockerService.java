@@ -14,10 +14,10 @@ public class LockerService {
     }
 
     public Result rentLocker() {
-        for (int i = 0; i < lockers.length; i++) {
-            if (lockers[i].getPin() == null) { // first empty locker
-                lockers[i].setPinNumber();
-                return new Result(true, ("\nThank You!\nLocker Rented: #" + lockers[i].getNumber() + "\nPIN for entry: " + lockers[i].getPin()));
+        for (Locker locker : lockers) {
+            if (!locker.isRented()) { // first empty locker
+                locker.setPinNumber();
+                return new Result(true, ("\nThank You!\nLocker Rented: #" + locker.getNumber() + "\nPIN for entry: " + locker.getPin()));
             }
         }
         return new Result(false, "All lockers are full. Try again later");
@@ -81,7 +81,7 @@ public class LockerService {
 
     public boolean areLockersFull() {
         for (Locker locker : lockers){
-            if (locker.getPin() == null) return false;
+            if (!locker.isRented()) return false;
         }
         return true;
     }
