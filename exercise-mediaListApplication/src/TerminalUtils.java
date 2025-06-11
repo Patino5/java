@@ -54,7 +54,7 @@ public class TerminalUtils {
             return;
         }
 
-        print("Media:");
+        print("All Media in Library:");
         for (int i = 0; i < list.size(); i++) {
             Media media = list.get(i);
             print((i + 1) + ". " + media.getDescription());
@@ -62,12 +62,13 @@ public class TerminalUtils {
     }
 
     public static void displayMediaList() {
-        print("Select media type:\n" +
-                "1. Video\n" +
-                "2. Audio\n" +
-                "3. Image\n" +
-                "4. Book\n" +
-                "5 Back to main menu");
+        print("""
+                Select media type:
+                1. Video
+                2. Audio
+                3. Image
+                4. Book
+                5 Back to main menu""");
     }
 
     public static Video createVideo(){
@@ -75,5 +76,12 @@ public class TerminalUtils {
         int duration =  TerminalUtils.getInt("Enter duration (minutes): ");
         String resolution =  TerminalUtils.getString("Enter resolution: ");
         return new Video(name, resolution, duration);
+    }
+
+    public static Audio createAudio() {
+        String name = TerminalUtils.getString("Enter Audio name: ");
+        int duration = TerminalUtils.getInt("Enter duration (minutes): ");
+        String artist = TerminalUtils.getString("Enter the artist: ");
+        return new Audio(name, duration, artist);
     }
 }

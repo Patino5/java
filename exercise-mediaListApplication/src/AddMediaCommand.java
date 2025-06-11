@@ -10,8 +10,9 @@ public class AddMediaCommand {
             TerminalUtils.print(String.format("Video: %s, added to the media list.", newVideo.getName()));
         } else if (choice.equals("2")) {
             // get Audio info to create media
-
-            TerminalUtils.print("New Audio added to the list");
+            Audio newAudio = TerminalUtils.createAudio();
+            service.addMedia(newAudio);
+            TerminalUtils.print(String.format("Audio: %s, added to the media list.", newAudio.getName()));
 
         } else if (choice.equals("3")) {
             // get Image info
