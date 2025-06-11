@@ -5,14 +5,24 @@ public class AddMediaCommand {
 
         if (choice.equals("1")){
             //get video info to create media
-
-            TerminalUtils.print("New Media added to the list");
+            Video newVideo = TerminalUtils.createVideo();
+            service.addMedia(newVideo);
+            TerminalUtils.print(String.format("Video: %s, added to the media list.", newVideo.getName()));
         } else if (choice.equals("2")) {
             // get Audio info to create media
+
+            TerminalUtils.print("New Audio added to the list");
+
         } else if (choice.equals("3")) {
             // get Image info
+
+            TerminalUtils.print("New Image added to the list");
+
         } else if (choice.equals("4")){
             // get Book info
+
+            TerminalUtils.print("New Book added to the list");
+
         } else{
             // go back to main menu
         }

@@ -39,7 +39,8 @@ public class TerminalUtils {
     }
 
     public static int getInt(String prompt) {
-        return -1;
+        print(prompt);
+        return Integer.parseInt(io.nextLine());
     }
 
     public static void print(String message){
@@ -53,5 +54,12 @@ public class TerminalUtils {
                 "3. Image\n" +
                 "4. Book\n" +
                 "5 Back to main menu");
+    }
+
+    public static Video createVideo(){
+        String name = TerminalUtils.getString("Enter Video name: ");
+        int duration =  TerminalUtils.getInt("Enter duration (minutes): ");
+        String resolution =  TerminalUtils.getString("Enter resolution: ");
+        return new Video(name, resolution, duration);
     }
 }
