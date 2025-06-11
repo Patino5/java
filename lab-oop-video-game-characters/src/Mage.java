@@ -7,7 +7,7 @@ public class Mage extends Character{
     }
 
     public void attack() {
-        System.out.println("The Mage cast the " +
+        System.out.println("The Mage " + name + " cast the " +
                 spell + " spell to attack for " +
                 attackPower + " damage.");
     }

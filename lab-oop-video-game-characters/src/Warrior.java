@@ -7,7 +7,7 @@ public class Warrior extends Character{
     }
 
     public void attack() {
-        System.out.println("The warrior swung the " +
+        System.out.println("The Warrior " + name + " swung the " +
                 weaponType + " to attack for " +
                 attackPower + " damage.");
     }

@@ -7,7 +7,7 @@ public class Archer extends Character{
     }
 
     public void attack() {
-        System.out.println("The Archer used a " +
+        System.out.println("The Archer " + name + " fires a " +
                 arrowType + " arrow to attack for " +
                 attackPower + " damage.");
     }
