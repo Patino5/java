@@ -2,31 +2,52 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TerminalUtils {
-    private final Scanner io = new Scanner(System.in);
+    private static Scanner io = new Scanner(System.in);
 
     // Methods
-    public void displayMenu(){
+    public static void displayMenu(){
         // show main menu options
-
+        print("==========================" +
+                "\n* Media List Application *\n" +
+                "==========================\n" +
+                "1. Add Media\n" +
+                "2. Remove Media\n" +
+                "3. Play Media\n" +
+                "4. List All Media\n" +
+                "5. Quit");
     }
 
-    public void getMenuChoice() {
+    public static String getMenuChoice() {
         // gets and validates selection
+        String choice;
+        while (true){
+            choice = getString("Choose an option: ");
+
+            if (choice.equals("1") || choice.equals("2") ||
+                    choice.equals("3") || choice.equals("4") ||
+                    choice.equals("5")) {
+                return choice;
+            } else {
+                print("Invalid choice. Please enter 1, 2, 3, 4, 5.");
+            }
+        }
     }
 
-    public String getString(String prompt) {
-        return"";
+    public static String getString(String prompt) {
+        print(prompt);
+        return io.nextLine();
     }
 
-    public int getInt(String prompt) {
+    public static int getInt(String prompt) {
         return -1;
     }
 
-    public void print(String message){
+    public static void print(String message){
         System.out.println(message);
     }
 
-    public void displayMediaList(List<Media> mediaList) {
+    public static void displayMediaList(List<Media> mediaList) {
+
         for (int i = 0; i < mediaList.size(); i++) {
             print(i + ". " + mediaList.get(i).getName());
         }
