@@ -46,10 +46,12 @@ public class TerminalUtils {
         System.out.println(message);
     }
 
-    public static void displayMediaList(List<Media> mediaList) {
-
-        for (int i = 0; i < mediaList.size(); i++) {
-            print(i + ". " + mediaList.get(i).getName());
-        }
+    public static void displayMediaList() {
+        print("Select media type:\n" +
+                "1. Video\n" +
+                "2. Audio\n" +
+                "3. Image\n" +
+                "4. Book\n" +
+                "5 Back to main menu");
     }
 }

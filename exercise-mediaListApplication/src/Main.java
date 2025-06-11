@@ -8,7 +8,7 @@ public class Main {
 
             if (choice.equals("1")) {
                 //add media
-
+                AddMediaCommand.execute(service);
             } else if (choice.equals("2")) {
                 // remove media
 
