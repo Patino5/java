@@ -39,12 +39,31 @@ public class TerminalUtils {
 
     public static String getString(String prompt) {
         print(prompt);
-        return io.nextLine();
+        String input;
+        do {
+            input = io.nextLine().trim();
+            if (input.isEmpty()){
+                print("Input cant be empty. Try again.");
+            }
+        } while (input.isEmpty());
+        return input;
     }
 
     public static int getInt(String prompt) {
         print(prompt);
-        return Integer.parseInt(io.nextLine());
+        int time;
+        while (true){
+            try {
+                time = Integer.parseInt(io.nextLine());
+                if (time <= 0) {
+                    print("Must be at least 1 or greater");
+                } else {
+                    return time;
+                }
+            } catch (NumberFormatException e) {
+                print("Must be a number");
+            }
+        }
     }
 
     public static void print(String message){
@@ -75,30 +94,30 @@ public class TerminalUtils {
     }
 
     public static Video createVideo(){
-        String name = TerminalUtils.getString("Enter Video name: ");
-        int duration =  TerminalUtils.getInt("Enter duration (minutes): ");
-        String resolution =  TerminalUtils.getString("Enter resolution: ");
+        String name = getString("Enter Video name: ");
+        int duration = getInt("Enter duration (minutes): ");
+        String resolution = getString("Enter resolution: ");
         return new Video(name, resolution, duration);
     }
 
     public static Audio createAudio() {
-        String name = TerminalUtils.getString("Enter Audio name: ");
-        int duration = TerminalUtils.getInt("Enter duration (minutes): ");
-        String artist = TerminalUtils.getString("Enter the artist: ");
+        String name = getString("Enter Audio name: ");
+        int duration = getInt("Enter duration (minutes): ");
+        String artist = getString("Enter the artist: ");
         return new Audio(name, duration, artist);
     }
 
     public static Book createBook() {
-        String name = TerminalUtils.getString("Enter Book name: ");
-        int pageCount = TerminalUtils.getInt("Enter page count: ");
-        String author = TerminalUtils.getString("Enter the author: ");
+        String name = getString("Enter Book name: ");
+        int pageCount = getInt("Enter page count: ");
+        String author = getString("Enter the author: ");
         return new Book(name, pageCount, author);
     }
 
     public static Image createImage() {
-        String name = TerminalUtils.getString("Enter Image name: ");
-        String dimensions = TerminalUtils.getString("Enter the dimensions: ");
-        String fileFormat = TerminalUtils.getString("Enter the File Format: ");
+        String name = getString("Enter Image name: ");
+        String dimensions = getString("Enter the dimensions: ");
+        String fileFormat = getString("Enter the File Format: ");
         return new Image(name, dimensions, fileFormat);
     }
 }

@@ -14,12 +14,26 @@ public class MediaService {
 
     public boolean removeMedia(String name) {
         // removes media from list by name and return boolean success
+        Media removeMedia = findMediaByName(name);
+        if (removeMedia != null) {
+            mediaList.remove(removeMedia);
+            return true;
+        }
         return false;
     }
 
-//    public Media findMediaByName(String name){
-//        // finds media by name
-//    }
+    public Media findMediaByName(String name){
+        if (mediaList.isEmpty()){
+            return null;
+        }
+        // finds media by name
+        for (Media media: mediaList){
+            if (media.getName().equalsIgnoreCase(name)){
+                return media;
+            }
+        }
+        return null;
+    }
 
     public ArrayList<Media> getAllMedia() {
         return new ArrayList<>(mediaList);
