@@ -34,7 +34,8 @@ public class TerminalUtils {
     }
 
     public static void pressEnterToContinue() {
-        getString("\nPress Enter to continue...");
+        System.out.print("\nPress enter to continue...");
+        io.nextLine();
     }
 
     public static String getString(String prompt) {
