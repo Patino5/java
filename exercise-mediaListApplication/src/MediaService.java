@@ -1,11 +1,7 @@
 import java.util.ArrayList;
 
 public class MediaService {
-    private ArrayList<Media> mediaList;
-
-    public MediaService() {
-        mediaList = new ArrayList<>();
-    }
+    private static ArrayList<Media> mediaList = new ArrayList<>();
 
     public void addMedia(Media media) {
         // add media to the list
@@ -22,7 +18,7 @@ public class MediaService {
         return false;
     }
 
-    public Media findMediaByName(String name){
+    public static Media findMediaByName(String name){
         if (mediaList.isEmpty()){
             return null;
         }
@@ -39,7 +35,7 @@ public class MediaService {
         return new ArrayList<>(mediaList);
     }
 
-    public int getMediaCount() {
+        public int getMediaCount() {
         return mediaList.size();
     }
 
