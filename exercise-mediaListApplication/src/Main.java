@@ -17,6 +17,7 @@ public class Main {
 
             } else if (choice.equals("4")) {
                // list all media
+                ListAllMediaCommand.execute(service);
 
             } else {
                 // option 5 quit

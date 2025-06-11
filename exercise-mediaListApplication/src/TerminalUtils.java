@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,6 +46,19 @@ public class TerminalUtils {
 
     public static void print(String message){
         System.out.println(message);
+    }
+
+    public static void print(ArrayList<Media> list) {
+        if (list.isEmpty()) {
+            print("No media in the list.");
+            return;
+        }
+
+        print("Media:");
+        for (int i = 0; i < list.size(); i++) {
+            Media media = list.get(i);
+            print((i + 1) + ". " + media.getDescription());
+        }
     }
 
     public static void displayMediaList() {
