@@ -1,6 +1,10 @@
 public abstract class Media {
     protected String name;
 
+    public Media(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

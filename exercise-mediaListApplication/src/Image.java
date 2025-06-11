@@ -2,6 +2,12 @@ public class Image extends Media {
     private String dimensions;
     private String fileFormat; // "JPEG", "PNG"
 
+    public Image(String name, String dimensions, String fileFormat) {
+        super(name);
+        this.dimensions = dimensions;
+        this.fileFormat = fileFormat;
+    }
+
     public String getFileFormat() {
         return fileFormat;
     }

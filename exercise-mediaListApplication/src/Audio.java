@@ -2,6 +2,12 @@ public class Audio extends Media{
     private int duration;
     private String artist; // name of artist or performer
 
+    public Audio(String name, int duration, String artist) {
+        super(name);
+        this.duration = duration;
+        this.artist = artist;
+    }
+
     public int getDuration() {
         return duration;
     }

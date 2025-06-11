@@ -2,6 +2,12 @@ public class Book extends Media {
     private String author;
     private int pageCount;
 
+    public Book(String name, int pageCount, String author) {
+        super(name);
+        this.pageCount = pageCount;
+        this.author = author;
+    }
+
     public String getAuthor() {
         return author;
     }
