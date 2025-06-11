@@ -11,7 +11,7 @@ public class Main {
                 AddMediaCommand.execute(service);
             } else if (choice.equals("2")) {
                 // remove media
-
+                RemoveMediaCommand.execute(service);
             } else if (choice.equals("3")) {
                 // play media
                 PlayMediaCommand.execute(service);
