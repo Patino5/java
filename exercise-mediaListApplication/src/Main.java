@@ -14,7 +14,7 @@ public class Main {
 
             } else if (choice.equals("3")) {
                 // play media
-
+                PlayMediaCommand.execute(service);
             } else if (choice.equals("4")) {
                // list all media
                 ListAllMediaCommand.execute(service);
