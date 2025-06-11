@@ -90,4 +90,11 @@ public class TerminalUtils {
         String author = TerminalUtils.getString("Enter the author: ");
         return new Book(name, pageCount, author);
     }
+
+    public static Image createImage() {
+        String name = TerminalUtils.getString("Enter Image name: ");
+        String dimensions = TerminalUtils.getString("Enter the dimensions: ");
+        String fileFormat = TerminalUtils.getString("Enter the File Format: ");
+        return new Image(name, dimensions, fileFormat);
+    }
 }

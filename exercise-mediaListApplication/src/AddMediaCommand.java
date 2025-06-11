@@ -16,7 +16,8 @@ public class AddMediaCommand {
 
         } else if (choice.equals("3")) {
             // get Image info
-
+            Image newImage = TerminalUtils.createImage();
+            service.addMedia(newImage);
             TerminalUtils.print("New Image added to the list");
 
         } else if (choice.equals("4")){
