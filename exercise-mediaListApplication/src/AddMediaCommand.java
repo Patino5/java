@@ -28,6 +28,8 @@ public class AddMediaCommand {
 
         } else{
             // go back to main menu
+            TerminalUtils.print("Back to Main Menu");
         }
+        TerminalUtils.pressEnterToContinue();
     }
 }

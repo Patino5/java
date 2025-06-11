@@ -33,6 +33,10 @@ public class TerminalUtils {
         }
     }
 
+    public static void pressEnterToContinue() {
+        getString("\nPress Enter to continue...");
+    }
+
     public static String getString(String prompt) {
         print(prompt);
         return io.nextLine();
