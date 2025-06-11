@@ -51,11 +51,10 @@ public class TerminalUtils {
     }
 
     public static int getInt(String prompt) {
-        print(prompt);
-        int time;
         while (true){
             try {
-                time = Integer.parseInt(io.nextLine());
+                print(prompt);
+                int time = Integer.parseInt(io.nextLine());
                 if (time <= 0) {
                     print("Must be at least 1 or greater");
                 } else {
@@ -74,13 +73,12 @@ public class TerminalUtils {
     public static void print(ArrayList<Media> list) {
         if (list.isEmpty()) {
             print("No media in the list.");
-            return;
-        }
-
-        print("All Media in Library:");
-        for (int i = 0; i < list.size(); i++) {
-            Media media = list.get(i);
-            print((i + 1) + ". " + media.getDescription());
+        } else {
+            print("All Media in Library:");
+            for (int i = 0; i < list.size(); i++) {
+                Media media = list.get(i);
+                print((i + 1) + ". " + media.getDescription());
+            }
         }
     }
 
@@ -91,7 +89,19 @@ public class TerminalUtils {
                 2. Audio
                 3. Image
                 4. Book
-                5 Back to main menu""");
+                5. Back to main menu""");
+    }
+
+    public static Media getValidMedia(MediaService service){
+        while(true){
+            String name = getString("Enter the name of Media you wish to select: ");
+            Media media = MediaService.findMediaByName(name);
+            if (media != null){
+                return media;
+            } else {
+                print("No media found with that name. Try again");
+            }
+        }
     }
 
     public static Video createVideo(){
