@@ -5,10 +5,10 @@ public class RemoveMediaCommand {
         }
         else{
             TerminalUtils.print(service.getAllMedia());
-            Media mediaToRemove = service.findMediaByName(TerminalUtils.getString("Enter media name to remove: "));
-            String removeMediaName = mediaToRemove.getName();
-            boolean isRemoved = service.removeMedia(removeMediaName);
-            TerminalUtils.print(String.format("%s media was removed: %b", removeMediaName, isRemoved));
+
+            Media mediaToRemove = TerminalUtils.getValidMedia(service);
+            boolean isSuccessful = service.removeMedia(mediaToRemove.getName());
+            TerminalUtils.print(String.format("%s was successfully removed from list: %b", mediaToRemove.getName(), isSuccessful));
         }
         TerminalUtils.pressEnterToContinue();
     }
