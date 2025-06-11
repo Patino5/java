@@ -21,6 +21,7 @@ public class Main {
 
             } else {
                 // option 5 quit
+                TerminalUtils.print("Thank you for using Media Libray");
                 break;
             }
 
