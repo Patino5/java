@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TerminalUtils {
@@ -83,5 +82,12 @@ public class TerminalUtils {
         int duration = TerminalUtils.getInt("Enter duration (minutes): ");
         String artist = TerminalUtils.getString("Enter the artist: ");
         return new Audio(name, duration, artist);
+    }
+
+    public static Book createBook() {
+        String name = TerminalUtils.getString("Enter Book name: ");
+        int pageCount = TerminalUtils.getInt("Enter page count: ");
+        String author = TerminalUtils.getString("Enter the author: ");
+        return new Book(name, pageCount, author);
     }
 }

@@ -21,8 +21,9 @@ public class AddMediaCommand {
 
         } else if (choice.equals("4")){
             // get Book info
-
-            TerminalUtils.print("New Book added to the list");
+            Book newBook = TerminalUtils.createBook();
+            service.addMedia(newBook);
+            TerminalUtils.print(String.format("Book: %s, added to the media list.", newBook.getName()));
 
         } else{
             // go back to main menu
