@@ -31,8 +31,8 @@ public class Book extends Media {
 
     @Override
     String getDescription() {
-        return "Name: " + getName() +
-                "\nAuthor: " + getAuthor() +
-                "\nPage Count: " + getPageCount();
+        return "Book: " + getName() +
+                "\n\tDescription: Book '" + getName() + "' - " +
+                "Page Count: " + getPageCount() + " pages, Author: " + getAuthor();
     }
 }

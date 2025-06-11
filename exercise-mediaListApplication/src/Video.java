@@ -31,8 +31,8 @@ public class Video extends Media {
 
     @Override
     String getDescription() {
-        return "Name: " + getName() +
-                "\nDuration: " + getDuration() +
-                "\nResolution: " + getResolution();
+        return "Video: " + getName() +
+                "\n\tDescription: Video '" + getName() + "' - " +
+                "Duration: " + getDuration() + " minutes, Resolution: " + getResolution();
     }
 }

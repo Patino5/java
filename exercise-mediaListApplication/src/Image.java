@@ -26,9 +26,9 @@ public class Image extends Media {
 
     @Override
     String getDescription() {
-        return "Name: " + getName() +
-                "\nDimensions: " + getDimensions() +
-                "\nFile Format: " + getFileFormat();
+        return "Image: " + getName() +
+                "\n\tDescription: Image '" + getName() + "' - " +
+                "Dimensions: " + getDimensions() + ", File Format: " + getFileFormat();
     }
 
     @Override
