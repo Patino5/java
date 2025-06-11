@@ -18,7 +18,7 @@ public class AddMediaCommand {
             // get Image info
             Image newImage = TerminalUtils.createImage();
             service.addMedia(newImage);
-            TerminalUtils.print("New Image added to the list");
+            TerminalUtils.print(String.format("Image: %s, added to the media list", newImage.getName()));
 
         } else if (choice.equals("4")){
             // get Book info
