@@ -25,14 +25,14 @@ public class Image extends Media {
     }
 
     @Override
-    String getDescription() {
+    public String getDescription() {
         return "Image: " + getName() +
                 "\n\tDescription: Image '" + getName() + "' - " +
                 "Dimensions: " + getDimensions() + ", File Format: " + getFileFormat();
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println("Displaying image '" + getName() + "' using image viewer software");
     }
 }

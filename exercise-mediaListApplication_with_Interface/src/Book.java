@@ -25,12 +25,12 @@ public class Book extends Media {
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println("Opening book '" + getName() + "' using e-reader software");
     }
 
     @Override
-    String getDescription() {
+    public String getDescription() {
         return "Book: " + getName() +
                 "\n\tDescription: Book '" + getName() + "' - " +
                 "Page Count: " + getPageCount() + " pages, Author: " + getAuthor();

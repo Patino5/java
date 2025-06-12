@@ -25,12 +25,12 @@ public class Video extends Media {
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println("Playing video '" + getName() + "' using video player software");
     }
 
     @Override
-    String getDescription() {
+    public String getDescription() {
         return "Video: " + getName() +
                 "\n\tDescription: Video '" + getName() + "' - " +
                 "Duration: " + getDuration() + " minutes, Resolution: " + getResolution();

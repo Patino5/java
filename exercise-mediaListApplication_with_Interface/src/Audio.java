@@ -25,14 +25,14 @@ public class Audio extends Media{
     }
 
     @Override
-    String getDescription() {
+    public String getDescription() {
         return "Audio: " + getName() +
                 "\n\tDescription: Audio '" + getName() + "' - " +
                 "Duration: " + getDuration() + " minutes, Artist: " + getArtist();
     }
 
     @Override
-    void play() {
+    public void play() {
         System.out.println("Playing audio '" + getName() + "' using audio player software");
     }
 }
