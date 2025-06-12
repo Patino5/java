@@ -35,10 +35,6 @@ public class MediaService {
         return new ArrayList<>(mediaList);
     }
 
-        public int getMediaCount() {
-        return mediaList.size();
-    }
-
     public boolean isEmpty() {
         return mediaList.isEmpty();
     }
