@@ -1,4 +1,4 @@
-public abstract class Media {
+public abstract class Media implements Describable, Playable {
     protected String name;
 
     public Media(String name) {
@@ -13,7 +13,4 @@ public abstract class Media {
         this.name = name;
     }
 
-    abstract void play();
-
-    abstract String getDescription();
 }
