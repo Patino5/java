@@ -16,5 +16,8 @@ public class Main {
         // part 4. Remove Element - second from list
         students.remove(1);
         System.out.println(students);
+
+        // part 5. check the size
+        System.out.println(students.size());
     }
 }
