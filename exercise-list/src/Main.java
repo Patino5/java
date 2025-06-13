@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,5 +24,9 @@ public class Main {
 
         // part 6. check if list is empty
         System.out.println(students.isEmpty());
+
+        // part 7. sort the list alphabetically
+        Collections.sort(students); // or can use students.sort(String::compareTo);
+        System.out.println("Sorted list: " + students);
     }
 }
