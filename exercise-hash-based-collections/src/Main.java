@@ -31,5 +31,12 @@ public class Main {
         deck.put("Clubs", new ArrayList<>(cardValues));
         deck.put("Spades", new ArrayList<>(cardValues));
 
+        for (String suit : deck.keySet()){
+            List<String> values = deck.get(suit);
+            for (String value : values){
+                System.out.println(suit + " of " + value);
+            }
+        }
+
     }
 }
