@@ -16,8 +16,11 @@ public class Main {
         monthMap.put(10, "October");
         monthMap.put(11, "November");
         monthMap.put(12, "December");
+
+        // part 2. use a keySet method in a for loop to print all keys with their value
+        for (Integer key : monthMap.keySet()){
+            System.out.println("Month #" + key + " is " + monthMap.get(key));
+        }
+
     }
-
-
-
 }
