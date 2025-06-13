@@ -7,6 +7,8 @@ public class Main {
 
         num.set(42);
         str.set("Java");
+        System.out.println("Box of Interger Value: " + num.get() +
+                "\nBox of String Value: " + str.get());
 
         ArrayList<Box<Integer>> listOfBoxIntegers = new ArrayList<>();
 
@@ -16,6 +18,14 @@ public class Main {
         num2.set(5);
         Box<Integer> num3 = new Box<>();
         num3.set(23);
+
+        listOfBoxIntegers.add(age);
+        listOfBoxIntegers.add(num2);
+        listOfBoxIntegers.add(num3);
+
+        for (Box<Integer> boxInteger : listOfBoxIntegers) {
+            System.out.println(boxInteger.get());
+        }
 
 
 
