@@ -19,5 +19,8 @@ public class Main {
 
         // part 5. check the size
         System.out.println(students.size());
+
+        // part 6. check if list is empty
+        System.out.println(students.isEmpty());
     }
 }
