@@ -10,5 +10,8 @@ public class Main {
         students.add("Jay");
         students.add("Ray");
 
+        // part 3. print third student in list.
+        System.out.println(students.get(2));
+
     }
 }
