@@ -28,5 +28,24 @@ public class Main {
         // part 7. sort the list alphabetically
         Collections.sort(students); // or can use students.sort(String::compareTo);
         System.out.println("Sorted list: " + students);
+
+        // Bonus Challenge - add another list of students and merge with first. sort the combined
+        // list and print it out.
+
+        ArrayList<String> students2 = new ArrayList<>();
+
+        students2.add("Zach");
+        students2.add("Noah");
+        students2.add("Nick");
+        students2.add("Alex");
+        students2.add("Scott");
+
+        students.addAll(students2);
+        students.sort(String::compareTo);
+
+        for (String student : students) {
+            System.out.println(student);
+        }
+
     }
 }
