@@ -35,10 +35,13 @@ public class Main {
 
         Box<String> order1 = new Box<>();
         order1.set("Placed first order");
+        order1.setName("Burger");
         Box<String> order2 = new Box<>();
         order2.set("Placed second order");
+        order2.setName("Fries");
         Box<String> order3 = new Box<>();
         order3.set("Placed third order");
+        order3.setName("Milkshake");
 
         line.add(order1);
         line.add(order2);
@@ -47,7 +50,8 @@ public class Main {
 
         while (!line.isEmpty()){
             System.out.println("Queue Box " + count +
-                    " contains: " + line.poll().get());
+                    " contains: " + line.peek().getName() +
+                    ", " + line.poll().get());
             count++;
         }
 
