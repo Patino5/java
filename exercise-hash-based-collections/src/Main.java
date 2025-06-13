@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +20,16 @@ public class Main {
         for (Integer key : monthMap.keySet()){
             System.out.println("Month #" + key + " is " + monthMap.get(key));
         }
+
+        // part 3. Create a HashMap<String, List<String>>
+        Map<String, List<String>> deck = new HashMap<>();
+        List<String> cardValues = Arrays.asList("Ace", "2", "3", "4", "5", "6",
+                "7", "8", "9", "10", "Jack", "Queen", "King");
+
+        deck.put("Hearts", new ArrayList<>(cardValues));
+        deck.put("Diamonds",new ArrayList<>(cardValues));
+        deck.put("Clubs", new ArrayList<>(cardValues));
+        deck.put("Spades", new ArrayList<>(cardValues));
 
     }
 }
