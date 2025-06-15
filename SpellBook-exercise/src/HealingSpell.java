@@ -6,4 +6,7 @@ public class HealingSpell implements Spell {
     public String getIncantation() {
         return "Salus Vitae";
     }
+    public String getHelp() {
+        return String.format(getIncantation() + "\t Restores health and vitality to the injured");
+    }
 }
