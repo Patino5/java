@@ -1,4 +1,4 @@
-public class Shield implements Spell {
+public class ShieldSpell implements Spell {
     public void cast() {
         System.out.println("A translucent barrier forms around you, absorbing the incoming strike.");
     }

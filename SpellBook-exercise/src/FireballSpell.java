@@ -1,4 +1,4 @@
-public class Fireball implements Spell {
+public class FireballSpell implements Spell {
     public void cast() {
         System.out.println("A fireball explodes outward, incinerating everything in its path.");
     }
