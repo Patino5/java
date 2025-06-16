@@ -1,3 +1,5 @@
+import mediatypes.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,14 +9,15 @@ public class TerminalUtils {
     // Methods
     public static void displayMenu(){
         // show main menu options
-        print("==========================" +
-                "\n* Media List Application *\n" +
-                "==========================\n" +
-                "1. Add Media\n" +
-                "2. Remove Media\n" +
-                "3. Play Media\n" +
-                "4. List All Media\n" +
-                "5. Quit");
+        print("""
+                ==========================
+                * Media List Application *
+                ==========================
+                1. Add Media
+                2. Remove Media
+                3. Play Media
+                4. List All Media
+                5. Quit""");
     }
 
     public static String getMenuChoice() {

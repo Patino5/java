@@ -1,3 +1,5 @@
+import mediatypes.Media;
+
 import java.util.ArrayList;
 
 public class MediaService {

@@ -1,3 +1,5 @@
+import mediatypes.Media;
+
 public class RemoveMediaCommand {
     public static void execute(MediaService service){
         if (service.isEmpty()){

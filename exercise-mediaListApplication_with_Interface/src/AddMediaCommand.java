@@ -1,3 +1,8 @@
+import mediatypes.Audio;
+import mediatypes.Book;
+import mediatypes.Image;
+import mediatypes.Video;
+
 public class AddMediaCommand {
     public static void execute(MediaService service) {
         TerminalUtils.displayMediaList();
@@ -5,13 +10,13 @@ public class AddMediaCommand {
 
         switch (choice) {
             case "1" -> {
-                //get video info to create media
+                //get video info
                 Video newVideo = TerminalUtils.createVideo();
                 service.addMedia(newVideo);
                 TerminalUtils.print(String.format("Video: %s, added to the media list.", newVideo.getName()));
             }
             case "2" -> {
-                // get Audio info to create media
+                // get Audio info
                 Audio newAudio = TerminalUtils.createAudio();
                 service.addMedia(newAudio);
                 TerminalUtils.print(String.format("Audio: %s, added to the media list.", newAudio.getName()));
@@ -30,7 +35,7 @@ public class AddMediaCommand {
             }
             default ->
                 // go back to main menu
-                    TerminalUtils.print("Back to Main Menu");
+                TerminalUtils.print("Back to Main Menu");
         }
         TerminalUtils.pressEnterToContinue();
     }

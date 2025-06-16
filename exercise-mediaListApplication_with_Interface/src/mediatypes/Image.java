@@ -1,3 +1,5 @@
+package mediatypes;
+
 public class Image extends Media {
     private String dimensions;
     private String fileFormat; // "JPEG", "PNG"
@@ -24,14 +26,12 @@ public class Image extends Media {
         this.dimensions = dimensions;
     }
 
-    @Override
     public String getDescription() {
         return "Image: " + getName() +
                 "\n\tDescription: Image '" + getName() + "' - " +
                 "Dimensions: " + getDimensions() + ", File Format: " + getFileFormat();
     }
 
-    @Override
     public void play() {
         System.out.println("Displaying image '" + getName() + "' using image viewer software");
     }

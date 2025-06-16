@@ -27,7 +27,7 @@ public class Main {
                     break;
                 default:
                     // option 5 quit
-                    TerminalUtils.print("Thank you for using Media Libray");
+                    TerminalUtils.print("Thank you for using mediatypes.Media Libray");
                     break label;
             }
 

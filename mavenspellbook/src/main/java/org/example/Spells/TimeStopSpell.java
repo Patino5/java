@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Spells;
 
 public class TimeStopSpell implements Spell {
     public void cast() {

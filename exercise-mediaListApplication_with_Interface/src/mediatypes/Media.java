@@ -1,3 +1,5 @@
+package mediatypes;
+
 public abstract class Media implements Describable, Playable {
     protected String name;
 

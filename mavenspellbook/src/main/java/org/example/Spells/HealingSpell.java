@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Spells;
 
 public class HealingSpell implements Spell {
     public void cast() {

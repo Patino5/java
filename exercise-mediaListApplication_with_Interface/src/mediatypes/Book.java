@@ -1,3 +1,5 @@
+package mediatypes;
+
 public class Book extends Media {
     private String author;
     private int pageCount;
@@ -24,12 +26,10 @@ public class Book extends Media {
         this.pageCount = pageCount;
     }
 
-    @Override
     public void play() {
         System.out.println("Opening book '" + getName() + "' using e-reader software");
     }
 
-    @Override
     public String getDescription() {
         return "Book: " + getName() +
                 "\n\tDescription: Book '" + getName() + "' - " +

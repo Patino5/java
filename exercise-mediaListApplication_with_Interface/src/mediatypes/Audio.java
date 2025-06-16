@@ -1,3 +1,5 @@
+package mediatypes;
+
 public class Audio extends Media{
     private int duration;
     private String artist; // name of artist or performer
@@ -24,14 +26,12 @@ public class Audio extends Media{
         this.artist = artist;
     }
 
-    @Override
     public String getDescription() {
         return "Audio: " + getName() +
                 "\n\tDescription: Audio '" + getName() + "' - " +
                 "Duration: " + getDuration() + " minutes, Artist: " + getArtist();
     }
 
-    @Override
     public void play() {
         System.out.println("Playing audio '" + getName() + "' using audio player software");
     }
