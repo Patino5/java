@@ -6,7 +6,6 @@ public class FireballSpell implements Spell{
         return "Fireball";
     }
 
-    @Override
     public void cast() {
         System.out.println("A fireball is hurled through the air at your target");
     }
