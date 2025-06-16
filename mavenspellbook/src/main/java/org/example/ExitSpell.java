@@ -7,10 +7,10 @@ public class ExitSpell implements Spell {
     }
 
     public String getIncantation() {
-        return "quit";
+        return "Quit";
     }
 
     public String getHelp() {
-        return String.format(getIncantation() + "\t Opens a portal to another dimension");
+        return String.format(getIncantation() + "\t\t Opens a portal to another dimension/ quits program");
     }
 }

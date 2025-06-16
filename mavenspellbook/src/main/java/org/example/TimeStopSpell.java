@@ -6,10 +6,10 @@ public class TimeStopSpell implements Spell {
     }
 
     public String getIncantation() {
-        return "halt";
+        return "Halt";
     }
 
     public String getHelp() {
-        return String.format(getIncantation() + "\t Freeze time around you for a short duration");
+        return String.format(getIncantation() + "\t\t Freeze time around you for a short duration");
     }
 }

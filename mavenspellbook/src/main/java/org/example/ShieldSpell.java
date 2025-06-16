@@ -10,6 +10,6 @@ public class ShieldSpell implements Spell {
     }
 
     public String getHelp() {
-        return String.format(getIncantation() + "\t Creates a magical wall to block physical or magical attacks.");
+        return String.format(getIncantation() + "\t\t Creates a magical wall to block physical or magical attacks.");
     }
 }

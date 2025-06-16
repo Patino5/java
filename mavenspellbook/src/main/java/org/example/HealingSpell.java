@@ -10,6 +10,6 @@ public class HealingSpell implements Spell {
     }
 
     public String getHelp() {
-        return String.format(getIncantation() + "\t Restores health and vitality to the injured");
+        return String.format(getIncantation() + "\t\t Restores health and vitality to the injured");
     }
 }
