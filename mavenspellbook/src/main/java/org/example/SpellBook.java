@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Spells.*;
+
 import java.util.ArrayList;
 
 public class SpellBook {
