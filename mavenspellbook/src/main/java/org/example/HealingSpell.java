@@ -8,4 +8,8 @@ public class HealingSpell implements Spell {
     public String getIncantation() {
         return "Revive";
     }
+
+    public String getHelp() {
+        return String.format(getIncantation() + "\t Restores health and vitality to the injured");
+    }
 }

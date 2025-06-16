@@ -8,4 +8,8 @@ public class TimeStopSpell implements Spell {
     public String getIncantation() {
         return "halt";
     }
+
+    public String getHelp() {
+        return String.format(getIncantation() + "\t Freeze time around you for a short duration");
+    }
 }

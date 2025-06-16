@@ -8,4 +8,7 @@ public class LightningBoltSpell implements Spell {
     public String getIncantation() {
         return "Lightning Bolt";
     }
+    public String getHelp() {
+        return String.format(getIncantation() + "\t Fires a crackling bolt of electricity.");
+    }
 }

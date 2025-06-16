@@ -9,4 +9,8 @@ public class ExitSpell implements Spell {
     public String getIncantation() {
         return "quit";
     }
+
+    public String getHelp() {
+        return String.format(getIncantation() + "\t Opens a portal to another dimension");
+    }
 }
