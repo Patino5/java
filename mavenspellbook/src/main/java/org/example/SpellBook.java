@@ -39,4 +39,6 @@ public class SpellBook {
             System.out.println(spell.getHelp());
         }
     }
+
+    // add spell method instead of using the constructor
 }

@@ -11,6 +11,6 @@ public class FireballSpell implements Spell{
     }
 
     public String getHelp() {
-        return String.format(getIncantation() + "\t Cast a fireball.");
+        return String.format(getIncantation() + "\t Cast a fireball.");// fixed width 15 characters
     }
 }
