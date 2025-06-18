@@ -18,10 +18,10 @@ public class TemperatureConverter {
     }
 
     public double fahrenheitToKelvin(double fahrenheit) {
-        return fahrenheitToCelsius(fahrenheit) + 273.15;
+        return (fahrenheit - 32) * (5 / 9) + 273.15;
     }
 
     public double kelvinToFahrenheit(double kelvin) {
-        return celsiusToFahrenheit(kelvinToCelsius(kelvin)) + 32;
+        return (kelvinToCelsius(kelvin)) * (9/5) + 32;
     }
 }

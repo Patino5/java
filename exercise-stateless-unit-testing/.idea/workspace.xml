@@ -1,4 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="abf75fff-1300-4c68-92ff-ebdeb9e06044" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TemperatureConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TemperatureConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TemperatureConverterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TemperatureConverterTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit3 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Patino5"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Patino5/java.git",
+    "accountId": "6a4fc2ae-09c5-461a-b9c0-488ea0732151"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2ybce8nQ3jAi5he0bmIWMJacujk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in exercise-stateless-unit-testing (1).executor": "Run",
+    "JUnit.All in exercise-stateless-unit-testing (2).executor": "Debug",
+    "JUnit.All in exercise-stateless-unit-testing (3).executor": "Run",
+    "JUnit.All in exercise-stateless-unit-testing (4).executor": "Run",
+    "JUnit.All in exercise-stateless-unit-testing (5).executor": "Run",
+    "JUnit.All in exercise-stateless-unit-testing.executor": "Run",
+    "JUnit.AppTest.executor": "Run",
+    "JUnit.TemperatureConverterTest.testCelsiusToFahrenheit.executor": "Run",
+    "JUnit.TemperatureConverterTest.testKelvinToFahrenheit.executor": "Debug",
+    "JUnit.org.example in exercise-stateless-unit-testing.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in exercise-stateless-unit-testing (3)">
+    <configuration name="All in exercise-stateless-unit-testing (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise-stateless-unit-testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in exercise-stateless-unit-testing (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise-stateless-unit-testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in exercise-stateless-unit-testing (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise-stateless-unit-testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in exercise-stateless-unit-testing (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise-stateless-unit-testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in exercise-stateless-unit-testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="exercise-stateless-unit-testing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in exercise-stateless-unit-testing (3)" />
+        <item itemvalue="JUnit.All in exercise-stateless-unit-testing (2)" />
+        <item itemvalue="JUnit.All in exercise-stateless-unit-testing (5)" />
+        <item itemvalue="JUnit.All in exercise-stateless-unit-testing (1)" />
+        <item itemvalue="JUnit.All in exercise-stateless-unit-testing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="abf75fff-1300-4c68-92ff-ebdeb9e06044" name="Changes" comment="" />
+      <created>1750106805256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750106805256</updated>
+    </task>
+    <servers />
+  </component>
 </project>
