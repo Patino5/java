@@ -1,10 +1,13 @@
 package inc.shopping;
 
+import inc.shopping.model.Product;
+import inc.shopping.service.ProductService;
 import inc.shopping.view.TerminalUtils;
 
 public class App {
     public static void main(String[] args) {
         TerminalUtils io = new TerminalUtils();
+        ProductService cart = new ProductService();
 
         // application loop
         while (true) {
@@ -21,6 +24,7 @@ public class App {
                 case 1 -> {
                     // Display cart
                     io.displayMessage("Cart contents:");
+                    cart.displayCart();
                 }
                 case 2 -> {
                     // Remove Item from cart
@@ -28,7 +32,14 @@ public class App {
                 }
                 case 3 -> {
                     // Add Item to cart
-                    io.displayMessage("Item to add:");
+                    Product newProduct =
+                            new Product(
+                                    io.getString("Enter name of product"),
+                                    io.getIntRequired("Enter Price of product"),
+                                    io.getIntRequired("Enter quantity to add")
+                            );
+                    cart.addProduct(newProduct);
+                    io.displayMessage(newProduct.getName() + " added to cart.");
                 }
                 case 4 -> {
                     // Checkout
