@@ -47,4 +47,13 @@ public class TerminalUtils {
         return number;
     }
 
+    public void displayMainMenu() {
+        displayMessage("Main Menu");
+        displayMessage("1. Display Cart");
+        displayMessage("2. Remove an Item");
+        displayMessage("3. Add an Item");
+        displayMessage("4. Checkout");
+        displayMessage("5. Exit");
+
+    }
 }
