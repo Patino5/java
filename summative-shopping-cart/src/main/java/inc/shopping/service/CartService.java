@@ -3,7 +3,6 @@ package inc.shopping.service;
 import inc.shopping.model.Product;
 import inc.shopping.view.TerminalUtils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CartService {
@@ -17,7 +16,7 @@ public class CartService {
             io.displayMessage("Cart is currently empty.");
             return;
         }
-        io.displayMessage("PRODUCT |  PRICE  |  QTY  | SUBTOTAL");
+        io.displayMessage(" PRODUCT |  PRICE  |  QTY  | SUBTOTAL");
         for (Product product : cart.values()) {
             io.displayMessage(product.getDetails());
         }
@@ -27,11 +26,20 @@ public class CartService {
     // add item to cart
     public void addProduct(String productName, double price, int quantity) {
         cart.put(productName, new Product(productName, price, quantity));
+        io.displayMessage(quantity + " " + productName + (quantity > 1 ? "s added to cart." : " added to cart."));
     }
 
     // remove item from cart
 
 
     // check out
+    public void checkout() {
+        double total = 0;
+        for (Product product : cart.values()) {
+            total += product.getSubtotal();
+        }
+        cart.clear();
+        io.displayMessage("Total Due: $" + total);
+    }
 
 }
