@@ -35,13 +35,13 @@ public class Product {
         this.quantity = quantity;
     }
 
-    private double getSubtotal() {
+    public double getSubtotal() {
         return this.quantity * this.price;
     }
 
     public String getDetails() {
         return String.format(
-                "%-7.7s | $%6.2f | %5d | $%8.2f",
+                "%-8.8s | $%6.2f | %5d | $%8.2f",
                 getName(), getPrice(), getQuantity(), getSubtotal());
     }
 }
