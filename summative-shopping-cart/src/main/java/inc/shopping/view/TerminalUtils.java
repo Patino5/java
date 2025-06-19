@@ -40,7 +40,11 @@ public class TerminalUtils {
         while (!validNumber) {
             try {
                 number = Integer.parseInt(getStringRequired(prompt));
-                validNumber = true;
+                if (number > 0){
+                    validNumber = true;
+                } else {
+                    displayMessage("must be positive. Try again");
+                }
             } catch (NumberFormatException e) {
                 displayMessage("Not a valid number. Try again.");
             }
