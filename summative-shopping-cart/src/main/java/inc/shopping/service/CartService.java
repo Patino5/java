@@ -5,7 +5,7 @@ import inc.shopping.view.TerminalUtils;
 
 import java.util.ArrayList;
 
-public class ProductService {
+public class CartService {
     TerminalUtils io = new TerminalUtils();
     private static ArrayList<Product> cart = new ArrayList<>();
 
