@@ -1,6 +1,5 @@
 package inc.shopping;
 
-import inc.shopping.model.Product;
 import inc.shopping.service.CartService;
 import inc.shopping.view.TerminalUtils;
 
@@ -18,23 +17,13 @@ public class App {
             switch (choice) {
                 case 1 -> cart.displayCart();
                 case 2 -> io.displayMessage("Item/s available to remove:"); // Remove Item from cart
-                case 3 -> {
-                    // Add Item to cart
-                    Product newProduct =
-                            new Product(
-                                    io.getString("Enter name of product"),
-                                    io.getIntRequired("Enter Price of product"),
-                                    io.getIntRequired("Enter quantity to add")
+                case 3 -> cart.addProduct(
+                            io.getStringRequired("Enter name of product"),
+                            io.getDouble("Enter Price of product"),
+                            io.getIntRequired("Enter quantity to add")
                             );
-                    cart.addProduct(newProduct);
-                    io.displayMessage(newProduct.getName() + " added to cart.");
-                }
-                case 4 -> {
-                    // Checkout
-                    io.displayMessage("Checking out cart...");
-                }
+                case 4 -> cart.checkout();
                 case 5 -> {
-                    // exit
                     io.displayMessage("Thank you for using the Shopping Cart App!");
                     System.exit(0);
                 }
