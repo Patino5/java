@@ -1,10 +1,9 @@
 package inc.shopping.view;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TerminalUtils {
-    private static Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public void displayMessage(String message) {
         System.out.println(message);
@@ -24,9 +23,11 @@ public class TerminalUtils {
         String result = null;
 
         while (!validInput) {
-            result = getString(prompt);
-            if (result != null && !result.isEmpty()) {
+            result = getString(prompt).trim();
+            if (!result.isEmpty()) {
                 validInput = true;
+            } else {
+                displayMessage("Input can not be blank. Try again.");
             }
         }
         return result;
@@ -41,7 +42,7 @@ public class TerminalUtils {
                 number = Integer.parseInt(getStringRequired(prompt));
                 validNumber = true;
             } catch (NumberFormatException e) {
-                displayMessage("Not a number. Try again.");
+                displayMessage("Not a valid number. Try again.");
             }
         }
         return number;
@@ -54,7 +55,11 @@ public class TerminalUtils {
         while(!validPrice) {
             try {
                 price = Double.parseDouble(getStringRequired(prompt));
-                validPrice = true;
+                if (price >= 0.00){
+                    validPrice = true;
+                } else{
+                    displayMessage("Price cannot be negative. Try again");
+                }
             } catch (NumberFormatException e) {
                 displayMessage("Not a number. Try again");
             }
