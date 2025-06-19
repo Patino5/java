@@ -47,6 +47,21 @@ public class TerminalUtils {
         return number;
     }
 
+    public double getDouble(String prompt) {
+        double price = 0;
+        boolean validPrice = false;
+
+        while(!validPrice) {
+            try {
+                price = Double.parseDouble(getStringRequired(prompt));
+                validPrice = true;
+            } catch (NumberFormatException e) {
+                displayMessage("Not a number. Try again");
+            }
+        }
+        return price;
+    }
+
     public void displayMainMenu() {
         displayMessage("Main Menu");
         displayMessage("1. Display Cart");
