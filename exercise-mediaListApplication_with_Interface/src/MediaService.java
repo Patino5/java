@@ -6,7 +6,6 @@ public class MediaService {
     private static ArrayList<Media> mediaList = new ArrayList<>();
 
     public void addMedia(Media media) {
-        // add media to the list
         mediaList.add(media);
     }
 
