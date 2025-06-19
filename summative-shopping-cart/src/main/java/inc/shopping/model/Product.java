@@ -35,6 +35,10 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public void addQuantity(int quantity) {
+        this.quantity += quantity;
+    }
+
     public double getSubtotal() {
         return this.quantity * this.price;
     }
