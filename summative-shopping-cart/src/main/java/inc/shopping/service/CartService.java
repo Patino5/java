@@ -21,7 +21,7 @@ public class CartService {
     public void initialProducts() {
         productList.add(new Product("Baseball", 5.99, 0));
         productList.add(new Product("Basketball", 34.99, 0));
-        productList.add(new Product("Soccerball", 29.00, 0));
+        productList.add(new Product("Soccer ball", 29.00, 0));
         productList.add(new Product("Football", 24.99, 0));
         productList.add(new Product("Desk", 350, 0));
         productList.add(new Product("Chair", 265, 0));
@@ -65,11 +65,24 @@ public class CartService {
     // Cart check out
     public void checkout() {
         double total = 0;
-        for (Product product : cart.values()) {
-            total += product.getSubtotal();
+        int itemTotal = 0;
+        Product productDetails;
+
+        io.displayMessage("Scanning items in cart...");
+
+        for (String key : cart.keySet()){
+            productDetails = cart.get(key);
+            io.displayMessage("Scanning..." + productDetails.getQuantity() +
+                    " " + productDetails.getName() +
+                    (productDetails.getQuantity() > 1 ? "s. " : ". "));
+
+            total += cart.get(key).getSubtotal();
+            itemTotal += cart.get(key).getQuantity();
         }
+
         cart.clear();
-        io.displayMessage("Total Due: $" + total);
+        io.displayMessage("Total Items: "+ itemTotal + "\nTotal Due: $" + total);
+        io.getString("\nPress enter to continue...");
     }
 
     private void displayProducts(){
@@ -87,5 +100,4 @@ public class CartService {
             cart.put(productName, new Product(productName, price, quantity));
         }
     }
-
 }
