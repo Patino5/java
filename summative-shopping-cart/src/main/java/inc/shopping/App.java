@@ -16,7 +16,7 @@ public class App {
 
             switch (choice) {
                 case 1 -> cart.displayCart();
-                case 2 -> io.displayMessage("Item/s available to remove:"); // Remove Item from cart
+                case 2 -> cart.removeProduct(); // Remove Item from cart
                 case 3 -> cart.addProduct();
                 case 4 -> cart.checkout();
                 case 5 -> exitMessage(io);
