@@ -38,7 +38,6 @@ public class CartService {
         for (Product product : cart.values()) {
             io.displayMessage(product.getDetails());
         }
-        io.getString("Press enter to continue.");
     }
 
     // add item to cart
@@ -60,7 +59,38 @@ public class CartService {
     }
 
     // remove item from cart
+    public void removeProduct(){
+        if (cart.isEmpty()){
+            io.displayMessage("Cart is empty.");
+            return;
+        }
 
+        displayCart();
+        String productName = io.getStringRequired("Enter the name of Product you want to remove");
+
+        if (!cart.containsKey(productName)){
+            io.displayMessage("Item: " + productName + " not found in cart.");
+            return;
+        }
+
+        Product productToRemove = cart.get(productName);
+
+        int productCurrentQuantity = productToRemove.getQuantity();
+        io.displayMessage("Current quantity: " + productCurrentQuantity);
+        int qtyToRemove = io.getIntRequired("Enter quantity to remove");
+
+        if (qtyToRemove > productCurrentQuantity || qtyToRemove <= 0) {
+            io.displayMessage((productCurrentQuantity >  1 ? "Must be between 1 and " + productCurrentQuantity + "." : "Enter 1 for last item."));
+            return;
+        }
+        if (qtyToRemove == productCurrentQuantity){
+            io.displayMessage("All " + productName + " removed from cart.");
+            cart.remove(productName);
+        } else {
+            io.displayMessage(String.format("%d %s removed from cart.", qtyToRemove, productName));
+            productToRemove.addQuantity(-qtyToRemove);
+        }
+    }
 
     // Cart check out
     public void checkout() {
@@ -82,7 +112,7 @@ public class CartService {
 
         cart.clear();
         io.displayMessage("Total Items: "+ itemTotal + "\nTotal Due: $" + total);
-        io.getString("\nPress enter to continue...");
+        io.getString("\nPress enter to continue");
     }
 
     private void displayProducts(){
