@@ -46,7 +46,7 @@ public class CartService {
         int choice = io.getIntRequired("Select a product by number") - 1;
 
         if (choice < 0 || choice >= productList.size()) {
-            io.displayMessage("not a valid product. choose between 1 and " + productList.size());
+            io.displayMessage("Invalid input. Pick a number between 1 and " + productList.size());
             return;
         }
 
@@ -98,13 +98,13 @@ public class CartService {
         int itemTotal = 0;
         Product productDetails;
 
-        io.displayMessage("Scanning items in cart...");
+        io.displayMessage("\nScanning items in cart...");
 
         for (String key : cart.keySet()){
             productDetails = cart.get(key);
-            io.displayMessage("Scanning..." + productDetails.getQuantity() +
+            io.displayMessage( productDetails.getQuantity() +
                     " " + productDetails.getName() +
-                    (productDetails.getQuantity() > 1 ? "s. " : ". "));
+                    (productDetails.getQuantity() > 1 ? "s " : " ") + "scanned. ");
 
             total += cart.get(key).getSubtotal();
             itemTotal += cart.get(key).getQuantity();
@@ -116,14 +116,14 @@ public class CartService {
     }
 
     private void displayProducts(){
-        io.displayMessage("Available Products");
+        io.displayMessage("\nAvailable Products");
         for (int i = 0; i < productList.size(); i++) {
             io.displayMessage(String.format((i + 1) + ". " +
-                    "%-10s | $%6.2f", productList.get(i).getName(), productList.get(i).getPrice()));
+                    "%-12.11s | $%6.2f", productList.get(i).getName(), productList.get(i).getPrice()));
         }
     }
 
-    private void addProductToCart(String productName, double price, int quantity) {
+    public void addProductToCart(String productName, double price, int quantity) {
         if (cart.containsKey(productName)) {
             cart.get(productName).addQuantity(quantity);
         } else {
