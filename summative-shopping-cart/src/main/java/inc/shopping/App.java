@@ -2,6 +2,7 @@ package inc.shopping;
 
 import inc.shopping.command.AddItemCommand;
 import inc.shopping.command.DisplayCartCommand;
+import inc.shopping.command.RemoveItemCommand;
 import inc.shopping.model.Product;
 import inc.shopping.service.ShoppingCartService;
 import inc.shopping.view.TerminalUtils;
@@ -22,9 +23,7 @@ public class App {
 
             switch (choice) {
                 case 1 -> new DisplayCartCommand(basket, io).execute();
-                case 2 -> basket.removeFromCart(
-                        io.getStringRequired("Enter Product to Remove: "),
-                        io.getIntRequired("Enter Quantity to remove: "));
+                case 2 -> new RemoveItemCommand(basket, io).execute();
                 case 3 -> new AddItemCommand(basket, io).execute();
                 case 4 -> {
                     double total = basket.checkout();
