@@ -25,6 +25,19 @@ class ShoppingCartServiceTest {
     }
 
     @Test
+    public void addExistingProductToCart() {
+        ShoppingCartService cart = new ShoppingCartService();
+        Product p1 = new Product("Ball", 4.99, 1);
+        cart.addToCart(p1);
+
+        Product p2 = new Product("Ball", 4.99, 2);
+        cart.addToCart(p2);
+
+        assertEquals(3, cart.getCart().get("Ball").getQuantity());
+        assertTrue(cart.getCart().containsKey("Ball"));
+    }
+
+    @Test
     public void returnsNullWhenProductNotInCart() {
         ShoppingCartService cart = new ShoppingCartService();
         Product p1 = new Product("Ball", 4.99, 2);
