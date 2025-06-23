@@ -33,7 +33,7 @@ public class CheckoutCommand implements Command {
             io.displayMessage("Total Items: "+ itemTotal);
             io.displayMessage(String.format("Total: $%.2f", total));
 
-        } else io.displayMessage("Cart is empty. Thank you");
+        } else io.displayMessage("Cart is empty.");
         io.getString("\nPress enter to continue");
 
     }

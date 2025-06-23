@@ -45,7 +45,7 @@ public class Product {
 
     public String getDetails() {
         return String.format(
-                "%-8.8s | $%6.2f | %5d | $%8.2f",
+                "%-10.10s | $%6.2f | %5d | $%8.2f",
                 getName(), getPrice(), getQuantity(), getSubtotal());
     }
 }
