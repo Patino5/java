@@ -1,12 +1,17 @@
 package inc.shopping;
 
-import inc.shopping.service.CartService;
+import inc.shopping.command.DisplayCartCommand;
+import inc.shopping.model.Product;
+import inc.shopping.service.ShoppingCartService;
 import inc.shopping.view.TerminalUtils;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        TerminalUtils io = new TerminalUtils();
-        CartService cart = new CartService(io);
+        Scanner scanner = new Scanner(System.in);
+        TerminalUtils io = new TerminalUtils(scanner);
+        ShoppingCartService basket = new ShoppingCartService();
 
         io.displayMessage("Shopping Inc. Shopping Cart System");
         // application loop
@@ -15,10 +20,18 @@ public class App {
             int choice = io.getIntRequired("Enter a menu choice by number");
 
             switch (choice) {
-                case 1 -> cart.displayCart();
-                case 2 -> cart.removeProduct(); // Remove Item from cart
-                case 3 -> cart.addProduct();
-                case 4 -> cart.checkout();
+                case 1 -> new DisplayCartCommand(basket, io).execute();
+                case 2 -> basket.removeFromCart(
+                        io.getStringRequired("Enter Product to Remove: "),
+                        io.getIntRequired("Enter Quantity to remove: "));
+                case 3 -> basket.addToCart(new Product(
+                        io.getStringRequired( "Enter Product Name: "),
+                        io.getDoubleRequired("Enter Product Price: "),
+                        io.getIntRequired("Enter Quantity: ")));
+                case 4 -> {
+                    double total = basket.checkout();
+                    io.displayMessage("Total: $" + total);
+                }
                 case 5 -> exitMessage(io);
                 default -> io.displayMessage("Invalid choice. Please select again");
             }
