@@ -3,7 +3,6 @@ package inc.shopping.command;
 import inc.shopping.model.Product;
 import inc.shopping.service.ShoppingCartService;
 import inc.shopping.view.TerminalUtils;
-
 import java.util.HashMap;
 
 public class RemoveItemCommand implements Command {
@@ -15,7 +14,6 @@ public class RemoveItemCommand implements Command {
         this.io = io;
     }
 
-    @Override
     public void execute() {
         HashMap<String, Product> cart = basket.getCart();
         if (cart.isEmpty()) {
@@ -23,12 +21,28 @@ public class RemoveItemCommand implements Command {
             return;
         }
 
-        String name = io.getStringRequired("Enter Product to Remove");
-        int qty = io.getIntRequired("Enter Quantity to remove");
+        new DisplayCartCommand(basket, io).execute();
 
-        Product removed = basket.removeFromCart(name, qty);
+        String name = io.getStringRequired("Enter Product to Remove");
+        if (!cart.containsKey(name)){
+            io.displayMessage("Item: " + name + " not found in cart.");
+            return;
+        }
+        Product productToRemove = cart.get(name);
+
+        int productCurrentQuantity = productToRemove.getQuantity();
+        io.displayMessage("Current quantity: " + productCurrentQuantity);
+        int qtyToRemove = io.getIntRequired("Enter quantity to remove");
+
+        if (qtyToRemove > productCurrentQuantity || qtyToRemove <= 0) {
+            io.displayMessage((productCurrentQuantity >  1 ? "Must be between 1 and " + productCurrentQuantity + "." : "Enter 1 for last item."));
+            return;
+        }
+
+        Product removed = basket.removeFromCart(name, qtyToRemove);
         if (removed != null) {
-            io.displayMessage("Removed " + qty + " of " + name);
+            io.displayMessage(qtyToRemove + " " + name + (qtyToRemove > 1 ? "s removed." : " removed."));
+
         } else {
             io.displayMessage("Unable to remove item.");
         }
