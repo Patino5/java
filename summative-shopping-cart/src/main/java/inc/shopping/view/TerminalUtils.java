@@ -71,6 +71,25 @@ public class TerminalUtils {
         return number;
     }
 
+    public int getIntRangeRequired(String prompt, int min, int max) {
+        int number = 0;
+        boolean validNumber = false;
+
+        while (!validNumber) {
+            try {
+                number = Integer.parseInt(getStringRequired(prompt));
+                if (number >= min && number <= max) {
+                    validNumber = true;
+                } else {
+                    displayMessage(String.format("Must be between %d and %d. Try again.", min, max));
+                }
+            } catch (NumberFormatException e) {
+                displayMessage("Not a valid number. Try again.");
+            }
+        }
+        return number;
+    }
+
     public void displayMainMenu() {
         displayMessage("\n===============");
         displayMessage("   Main Menu   ");
@@ -78,8 +97,9 @@ public class TerminalUtils {
         displayMessage("1. Display Cart");
         displayMessage("2. Remove an Item");
         displayMessage("3. Add an Item");
-        displayMessage("4. Checkout");
-        displayMessage("5. Exit");
+        displayMessage("4. Add from List");
+        displayMessage("5. Checkout");
+        displayMessage("6. Exit");
 
     }
 }
