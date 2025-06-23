@@ -3,7 +3,7 @@ package inc.shopping.view;
 import java.util.Scanner;
 
 public class TerminalUtils {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public TerminalUtils(Scanner scanner){
         this.scanner = scanner;
@@ -72,7 +72,9 @@ public class TerminalUtils {
     }
 
     public void displayMainMenu() {
-        displayMessage("Main Menu");
+        displayMessage("\n===============");
+        displayMessage("   Main Menu   ");
+        displayMessage("===============");
         displayMessage("1. Display Cart");
         displayMessage("2. Remove an Item");
         displayMessage("3. Add an Item");

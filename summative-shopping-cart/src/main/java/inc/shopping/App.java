@@ -10,7 +10,7 @@ public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TerminalUtils io = new TerminalUtils(scanner);
-        ShoppingCartService basket = new ShoppingCartService();
+        ShoppingCartService cart = new ShoppingCartService();
 
         io.displayMessage("Shopping Inc. Shopping Cart System");
         // application loop
@@ -19,10 +19,10 @@ public class App {
             int choice = io.getIntRequired("Enter a menu choice by number");
 
             switch (choice) {
-                case 1 -> new DisplayCartCommand(basket, io).execute();
-                case 2 -> new RemoveItemCommand(basket, io).execute();
-                case 3 -> new AddItemCommand(basket, io).execute();
-                case 4 -> new CheckoutCommand(basket, io).execute();
+                case 1 -> new DisplayCartCommand(cart, io).execute();
+                case 2 -> new RemoveItemCommand(cart, io).execute();
+                case 3 -> new AddItemCommand(cart, io).execute();
+                case 4 -> new CheckoutCommand(cart, io).execute();
                 case 5 -> new ExitCommand(io).execute();
                 default -> io.displayMessage("Invalid choice. Please select again");
             }

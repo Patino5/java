@@ -6,22 +6,22 @@ import inc.shopping.view.TerminalUtils;
 import java.util.HashMap;
 
 public class RemoveItemCommand implements Command {
-    private final ShoppingCartService basket;
+    private final ShoppingCartService cart;
     private final TerminalUtils io;
 
-    public RemoveItemCommand(ShoppingCartService cartService, TerminalUtils io) {
-        this.basket = cartService;
+    public RemoveItemCommand(ShoppingCartService cart, TerminalUtils io) {
+        this.cart = cart;
         this.io = io;
     }
 
     public void execute() {
-        HashMap<String, Product> cart = basket.getCart();
+        HashMap<String, Product> cart = this.cart.getCart();
         if (cart.isEmpty()) {
             io.displayMessage("Cart is empty. Nothing to remove.");
             return;
         }
 
-        new DisplayCartCommand(basket, io).execute();
+        new DisplayCartCommand(this.cart, io).execute();
 
         String name = io.getStringRequired("Enter Product to Remove");
         if (!cart.containsKey(name)){
@@ -39,7 +39,7 @@ public class RemoveItemCommand implements Command {
             return;
         }
 
-        Product removed = basket.removeFromCart(name, qtyToRemove);
+        Product removed = this.cart.removeFromCart(name, qtyToRemove);
         if (removed != null) {
             io.displayMessage(qtyToRemove + " " + name + (qtyToRemove > 1 ? "s removed." : " removed."));
 

@@ -5,11 +5,11 @@ import inc.shopping.service.ShoppingCartService;
 import inc.shopping.view.TerminalUtils;
 
 public class CheckoutCommand implements Command {
-    private final ShoppingCartService basket;
+    private final ShoppingCartService cart;
     private final TerminalUtils io;
 
-    public CheckoutCommand(ShoppingCartService basket, TerminalUtils io){
-        this.basket = basket;
+    public CheckoutCommand(ShoppingCartService cart, TerminalUtils io){
+        this.cart = cart;
         this.io = io;
     }
 
@@ -17,19 +17,19 @@ public class CheckoutCommand implements Command {
         int itemTotal = 0;
         Product productDetails;
 
-        if(!basket.getCart().isEmpty()){
+        if(!cart.getCart().isEmpty()){
             io.displayMessage("\nScanning items in cart...");
 
-            for (String key : basket.getCart().keySet()){
-                productDetails = basket.getCart().get(key);
+            for (String key : cart.getCart().keySet()){
+                productDetails = cart.getCart().get(key);
                 io.displayMessage( productDetails.getQuantity() +
                         " " + productDetails.getName() +
                         (productDetails.getQuantity() > 1 ? "s " : " ") + "scanned. ");
 
-                itemTotal += basket.getCart().get(key).getQuantity();
+                itemTotal += cart.getCart().get(key).getQuantity();
             }
 
-            double total = basket.checkout();
+            double total = cart.checkout();
             io.displayMessage("Total Items: "+ itemTotal);
             io.displayMessage(String.format("Total: $%.2f", total));
 

@@ -1,12 +1,11 @@
 package inc.shopping.service;
 
 import inc.shopping.model.Product;
-import inc.shopping.view.TerminalUtils;
 
 import java.util.HashMap;
 
 public class ShoppingCartService {
-    private HashMap<String, Product> cart;
+    private final HashMap<String, Product> cart;
 
     public ShoppingCartService() {
         cart = new HashMap<>();
@@ -26,7 +25,6 @@ public class ShoppingCartService {
 
     public Product removeFromCart(String productName, int qtyToRemove) {
         if(cart.isEmpty()) {
-            System.out.println("Cart Empty. No Items to remove");
             return null;
         }
 
@@ -34,7 +32,6 @@ public class ShoppingCartService {
         else {
             Product productToRemove = cart.get(productName);
             if (productToRemove.getQuantity() < qtyToRemove) {
-                System.out.println("Number to remove must be less than or equal to " + productToRemove.getQuantity());
                 return null;
             }
 
@@ -51,7 +48,6 @@ public class ShoppingCartService {
 
         for (Product p : getCart().values()){
             total += p.getSubtotal();
-            System.out.println(p.getDetails());
         }
         cart.clear();
         return total;
