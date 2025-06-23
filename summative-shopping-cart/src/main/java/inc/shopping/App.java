@@ -1,10 +1,6 @@
 package inc.shopping;
 
-import inc.shopping.command.AddItemCommand;
-import inc.shopping.command.CheckoutCommand;
-import inc.shopping.command.DisplayCartCommand;
-import inc.shopping.command.RemoveItemCommand;
-import inc.shopping.model.Product;
+import inc.shopping.command.*;
 import inc.shopping.service.ShoppingCartService;
 import inc.shopping.view.TerminalUtils;
 
@@ -27,13 +23,9 @@ public class App {
                 case 2 -> new RemoveItemCommand(basket, io).execute();
                 case 3 -> new AddItemCommand(basket, io).execute();
                 case 4 -> new CheckoutCommand(basket, io).execute();
-                case 5 -> exitMessage(io);
+                case 5 -> new ExitCommand(io).execute();
                 default -> io.displayMessage("Invalid choice. Please select again");
             }
         }
-    }
-    private static void exitMessage(TerminalUtils io){
-        io.displayMessage("Thank you for using the Shopping Cart App!");
-        System.exit(0);
     }
 }
