@@ -31,7 +31,7 @@ public class CheckoutCommand implements Command {
 
             double total = cart.checkout();
             io.displayMessage("Total Items: "+ itemTotal);
-            io.displayMessage(String.format("Total: $%.2f", total));
+            io.displayMessage(String.format("Grand Total: $%.2f", total));
 
         } else io.displayMessage("Cart is empty.");
         io.getString("\nPress enter to continue");
