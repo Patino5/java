@@ -1,20 +1,23 @@
 package inc.shopping.view;
 
+import inc.shopping.model.Product;
+
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TerminalUtils {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
+
+    public TerminalUtils(Scanner scanner){
+        this.scanner = scanner;
+    }
 
     public void displayMessage(String message) {
         System.out.println(message);
     }
 
-    public void prompt(String message) {
-        System.out.print(message + ": ");
-    }
-
     public String getString(String prompt) {
-        prompt(prompt);
+        System.out.print(prompt + ": ");
         return scanner.nextLine();
     }
 
@@ -43,7 +46,7 @@ public class TerminalUtils {
                 if (number > 0){
                     validNumber = true;
                 } else {
-                    displayMessage("must be positive. Try again");
+                    displayMessage("Must be positive. Try again");
                 }
             } catch (NumberFormatException e) {
                 displayMessage("Not a valid number. Try again.");
@@ -52,23 +55,23 @@ public class TerminalUtils {
         return number;
     }
 
-    public double getDouble(String prompt) {
-        double price = 0;
-        boolean validPrice = false;
+    public double getDoubleRequired(String prompt) {
+        double number = 0;
+        boolean validNumber = false;
 
-        while(!validPrice) {
+        while (!validNumber) {
             try {
-                price = Double.parseDouble(getStringRequired(prompt));
-                if (price >= 0.00){
-                    validPrice = true;
-                } else{
-                    displayMessage("Price cannot be negative. Try again");
+                number = Double.parseDouble(getStringRequired(prompt));
+                if (number > 0) {
+                    validNumber = true;
+                } else {
+                    displayMessage("Must be positive. Try again.");
                 }
             } catch (NumberFormatException e) {
-                displayMessage("Not a number. Try again");
+                displayMessage("Not a valid number. Try again.");
             }
         }
-        return price;
+        return number;
     }
 
     public void displayMainMenu() {
