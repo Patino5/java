@@ -1,8 +1,5 @@
 package inc.shopping.view;
 
-import inc.shopping.model.Product;
-
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class TerminalUtils {
