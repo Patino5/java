@@ -97,9 +97,8 @@ public class TerminalUtils {
         displayMessage("1. Display Cart");
         displayMessage("2. Remove an Item");
         displayMessage("3. Add an Item");
-        displayMessage("4. Add from List");
-        displayMessage("5. Checkout");
-        displayMessage("6. Exit");
+        displayMessage("4. Checkout");
+        displayMessage("5. Exit");
 
     }
 }
