@@ -20,7 +20,7 @@ public class ProductList {
         availableProducts.add(new Product("Cheese", 4.50, 0));
         availableProducts.add(new Product("Ham", 7.99, 0));
         availableProducts.add(new Product("Butter", 5.99, 0));
-        availableProducts.add(new Product("Eggs", 9.99, 0));
+        availableProducts.add(new Product("Egg", 9.99, 0));
     }
 
     public ArrayList<Product> getAvailableProducts() {
