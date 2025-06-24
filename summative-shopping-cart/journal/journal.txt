@@ -1,0 +1,66 @@
+user is the cashier.
+cashier accepts customers items and rings them up.
+once a cart is started, it can not be emptied unless all items are removed.
+
+menu display:
+--------------------
+Main Menu
+  1. Display Cart
+  2. Remove an Item
+  3. Add an Item
+  4. Checkout
+  5. Exit
+--------------------
+
+1. display cart option:
+
+cart.isEmpty() = true{
+ displayMessage("No items in cart");
+} else {
+// loop and show product.name , product.price, product.qty for each item in cart
+}
+
+2. Remove an item option:
+
+displayCart();
+ask for product.name to remove.
+search cart for product.name
+if found:
+    ask for qty to remove?
+    product.qty -= remove.qty
+    if (product.qty <= 0){
+        remove product from cart
+
+
+3. Add Item to cart option:
+
+ask user for item to add;
+*if item in cart skip price.
+price?
+quantity?
+add item to cart
+display message of item added with qty
+
+4. Checkout option:
+display total price: sum of item subtotals (item subtotal = item price * qty)
+clear cart
+
+5. Exit option:
+display thank you message and end program
+
+Requirements:
+- user presented main menu [x]
+- when removing an item from the cart, display the cart and allow the user to
+    select which item they would like to remove and how many they wish to remove. [X]
+- remove item from cart when qty is zero [X]
+- can add and remove as many items to the cart as they wish [x]
+- when they check out, empty cart - display the total amount due. [x]
+
+Meta Requirements:
+- journal
+- no code smells - explain design choice
+- use both Map and List elements
+- use at least one interface and implement it [x]
+- cover business logic with unit tests [x]
+- DRY principle
+- Each feature isolated into a separate method
