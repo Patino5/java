@@ -23,7 +23,7 @@ public class RemoveItemCommand implements Command {
 
         new DisplayCartCommand(this.cart, io).execute();
 
-        String name = io.getStringRequired("Enter Product to Remove");
+        String name = io.getStringRequired("Enter Product to Remove").toLowerCase();
         if (!cart.containsKey(name)){
             io.displayMessage("Item: " + name + " not found in cart.");
             return;
