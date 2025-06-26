@@ -43,4 +43,14 @@ class BookFileRepositoryTest {
         assertEquals(3, actual.size());
     }
 
+    @Test
+    void findByIsbn() throws DataAccessException {
+        Book book = repository.findByIsbn("9780547928197");
+        assertNotNull(book);
+        assertEquals("The Return of the King", book.getTitle());
+        assertEquals("J.R.R. Tolkien", book.getAuthor());
+
+        book = repository.findByIsbn("23534");
+        assertNull(book); // isbn does not exist
+    }
 }
