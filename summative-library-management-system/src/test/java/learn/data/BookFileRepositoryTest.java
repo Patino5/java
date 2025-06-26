@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,9 +31,16 @@ class BookFileRepositoryTest {
     @Test
     void findAll() throws DataAccessException {
         List<Book> actual = repository.findAll();
-        assertEquals(5, actual.size());
+        assertEquals(15, actual.size());
     }
 
+    @Test
+    void findByCategory() throws DataAccessException {
+        List<Book> actual = repository.findByCategory("Fantasy");
+        assertEquals(1, actual.size());
 
+        actual = repository.findByCategory("Fiction");
+        assertEquals(3, actual.size());
+    }
 
 }
