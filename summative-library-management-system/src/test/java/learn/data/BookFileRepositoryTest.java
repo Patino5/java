@@ -80,4 +80,24 @@ class BookFileRepositoryTest {
         assertEquals("A New Book", actual.getTitle());
         assertEquals("Me", actual.getAuthor());
     }
+
+    @Test
+    void update() throws DataAccessException {
+        Book book = repository.findByIsbn("9780547928197");
+        book.setTitle("LOTR:The Return of the King");
+        book.setPositionNumber(34);
+        book.setShelfNumber(5);
+        assertTrue(repository.update(book));
+
+        book = repository.findByIsbn("9780547928197");
+        assertNotNull(book);
+        assertEquals("LOTR:The Return of the King", book.getTitle());
+        assertEquals(34, book.getPositionNumber());
+        assertEquals(5, book.getShelfNumber());
+
+        Book doesNotExist = new Book();
+        doesNotExist.setIsbn("1024");
+        assertFalse(repository.update(doesNotExist));
+    }
+
 }
