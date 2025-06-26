@@ -45,21 +45,27 @@ public class BookRepositoryDouble implements BookRepository {
 
     @Override
     public Book findByLocation(String category, int shelfNumber, int positionNumber) throws DataAccessException {
+        List<Book> all = findAll();
+        for (Book book : all) {
+            if (book.getCategory().equalsIgnoreCase(category) && book.getShelfNumber() == shelfNumber && book.getPositionNumber() == positionNumber) {
+                return book;
+            }
+        }
         return null;
     }
 
     @Override
     public Book add(Book book) throws DataAccessException {
-        return null;
+        return book;
     }
 
     @Override
     public boolean update(Book book) throws DataAccessException {
-        return false;
+        return findByIsbn(book.getIsbn()) != null;
     }
 
     @Override
     public boolean deleteByIsbn(String isbn) throws DataAccessException {
-        return false;
+        return findByIsbn(isbn) != null;
     }
 }
