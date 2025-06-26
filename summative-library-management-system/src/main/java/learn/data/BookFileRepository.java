@@ -68,12 +68,9 @@ public class BookFileRepository implements BookRepository {
     @Override
     public Book add(Book book) throws DataAccessException {
         List<Book> all = findAll();
-        if (findByIsbn(book.getIsbn()) == null){
-            all.add(book);
-            writeToFile(all);
-            return book;
-        }
-        throw new DataAccessException("Book isbn not unique: " + book.getIsbn());
+        all.add(book);
+        writeToFile(all);
+        return book;
     }
 
     @Override

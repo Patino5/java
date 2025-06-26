@@ -1,15 +1,15 @@
-Science Fiction~1~1~1951~Foundation~Isaac Asimov~978-0451524935~
-Fantasy~2~3~1997~Harry Potter and the Philosopher's Stone~J.K. Rowling~978-0747532743~
-Mystery~3~5~1934~Murder on the Orient Express~Agatha Christie~978-0062073501~
-Non-Fiction~1~2~2011~Sapiens: A Brief History of Humankind~Yuval Noah Harari~978-0062316097~
-Reference~5~10~2005~Oxford English Dictionary~Oxford University Press~978-0198611868~
-Fiction~1~1~1954~The Fellowship of the Ring~J.R.R. Tolkien~9780547928210~
-Fiction~1~2~1955~The Two Towers~J.R.R. Tolkien~9780547928203~
-Fiction~5~34~1956~LOTR:The Return of the King~J.R.R. Tolkien~9780547928197~
-Science~2~1~1988~A Brief History of Time~Stephen Hawking~9780553380163~
-Science~2~2~2017~Astrophysics for People in a Hurry~Neil deGrasse Tyson~9780393609394~
-Biography~3~1~2001~Steve Jobs~Walter Isaacson~9781451648539~
-History~4~1~2005~1776~David McCullough~9780743226721~
-Philosophy~5~1~2006~The God Delusion~Richard Dawkins~9780618680009~
-Technology~6~1~2011~The Innovators~Walter Isaacson~9781476708690~
-Self-Help~7~1~2018~Atomic Habits~James Clear~9780735211292~
+Science Fiction~1~1~1951~Foundation~Isaac Asimov~978-0451524935
+Fantasy~2~3~1997~Harry Potter and the Philosopher's Stone~J.K. Rowling~978-0747532743
+Mystery~3~5~1934~Murder on the Orient Express~Agatha Christie~978-0062073501
+Non-Fiction~1~2~2011~Sapiens: A Brief History of Humankind~Yuval Noah Harari~978-0062316097
+Reference~5~10~2005~Oxford English Dictionary~Oxford University Press~978-0198611868
+Fiction~1~1~1954~The Fellowship of the Ring~J.R.R. Tolkien~9780547928210
+Fiction~1~2~1955~The Two Towers~J.R.R. Tolkien~9780547928203
+Fiction~1~3~1956~The Return of the King~J.R.R. Tolkien~9780547928197
+Science~2~1~1988~A Brief History of Time~Stephen Hawking~9780553380163
+Science~2~2~2017~Astrophysics for People in a Hurry~Neil deGrasse Tyson~9780393609394
+Biography~3~1~2001~Steve Jobs~Walter Isaacson~9781451648539
+History~4~1~2005~1776~David McCullough~9780743226721
+Philosophy~5~1~2006~The God Delusion~Richard Dawkins~9780618680009
+Technology~6~1~2011~The Innovators~Walter Isaacson~9781476708690
+Self-Help~7~1~2018~Atomic Habits~James Clear~9780735211292
