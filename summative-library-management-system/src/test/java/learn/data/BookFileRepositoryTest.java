@@ -100,4 +100,11 @@ class BookFileRepositoryTest {
         assertFalse(repository.update(doesNotExist));
     }
 
+    @Test
+    void deleteByIsbn() throws DataAccessException {
+        int count = repository.findAll().size();
+        assertTrue(repository.deleteByIsbn("9780547928197"));
+        assertFalse(repository.deleteByIsbn("12345"));
+        assertEquals(count - 1, repository.findAll().size());
+    }
 }
