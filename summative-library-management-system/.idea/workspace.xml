@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9075e231-6953-4c90-95a1-b7f1bb10c842" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/book-test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/book-test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/BookFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/BookFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/data/BookFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/data/BookFileRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" afterDir="false" />
     </list>
@@ -22,8 +19,8 @@
       <list>
         <option value="Interface" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,6 +59,7 @@
     "JUnit.BookFileRepositoryTest.findByIsbn.executor": "Run",
     "JUnit.BookFileRepositoryTest.findByLocation.executor": "Run",
     "JUnit.BookFileRepositoryTest.update.executor": "Run",
+    "JUnit.BookServiceTest.shouldFindTwoNonFictionBooks.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -76,26 +74,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="learn.domain" />
       <recent name="learn.data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookFileRepositoryTest.findByLocation">
-    <configuration name="BookFileRepositoryTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="summative-library-management-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.data.BookFileRepositoryTest" />
-      <option name="METHOD_NAME" value="add" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookServiceTest.shouldFindThreeFantasyBooks">
     <configuration name="BookFileRepositoryTest.deleteByIsbn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="summative-library-management-system" />
       <extension name="coverage">
@@ -107,22 +90,6 @@
       <option name="PACKAGE_NAME" value="learn.data" />
       <option name="MAIN_CLASS_NAME" value="learn.data.BookFileRepositoryTest" />
       <option name="METHOD_NAME" value="deleteByIsbn" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookFileRepositoryTest.findByIsbn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="summative-library-management-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.data.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.data" />
-      <option name="MAIN_CLASS_NAME" value="learn.data.BookFileRepositoryTest" />
-      <option name="METHOD_NAME" value="findByIsbn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,13 +127,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookServiceTest.shouldFindThreeFantasyBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="summative-library-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.domain.BookServiceTest" />
+      <option name="METHOD_NAME" value="shouldFindThreeFantasyBooks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookServiceTest.shouldFindTwoNonFictionBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="summative-library-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.domain" />
+      <option name="MAIN_CLASS_NAME" value="learn.domain.BookServiceTest" />
+      <option name="METHOD_NAME" value="shouldFindTwoNonFictionBooks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookServiceTest.shouldFindThreeFantasyBooks" />
+        <item itemvalue="JUnit.BookServiceTest.shouldFindTwoNonFictionBooks" />
         <item itemvalue="JUnit.BookFileRepositoryTest.findByLocation" />
         <item itemvalue="JUnit.BookFileRepositoryTest.deleteByIsbn" />
         <item itemvalue="JUnit.BookFileRepositoryTest.update" />
-        <item itemvalue="JUnit.BookFileRepositoryTest.add" />
-        <item itemvalue="JUnit.BookFileRepositoryTest.findByIsbn" />
       </list>
     </recent_temporary>
   </component>
