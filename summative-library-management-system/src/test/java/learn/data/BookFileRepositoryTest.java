@@ -53,4 +53,31 @@ class BookFileRepositoryTest {
         book = repository.findByIsbn("23534");
         assertNull(book); // isbn does not exist
     }
+
+    @Test
+    void add() throws DataAccessException {
+        Book book = new Book();
+        book.setCategory("Fantasy");
+        book.setShelfNumber(1);
+        book.setPositionNumber(3);
+        book.setYearPublished(2002);
+        book.setTitle("A New Book");
+        book.setAuthor("Me");
+        book.setIsbn("123456789");
+
+        Book actual = repository.add(book); // add a new book
+        assertEquals("123456789", actual.getIsbn());
+
+        List<Book> all = repository.findAll();
+        assertEquals(16, all.size()); // should now be 16 books instead of 15 in the file
+
+        actual = all.get(15); // the newly-added book
+        assertEquals("123456789", actual.getIsbn()); // check isbn match
+        assertEquals("Fantasy", actual.getCategory()); // confirm all fields
+        assertEquals(1, actual.getShelfNumber());
+        assertEquals(3, actual.getPositionNumber());
+        assertEquals(2002, actual.getYearPublished());
+        assertEquals("A New Book", actual.getTitle());
+        assertEquals("Me", actual.getAuthor());
+    }
 }
