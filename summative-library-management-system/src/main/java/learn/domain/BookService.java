@@ -1,11 +1,9 @@
 package learn.domain;
 
-import learn.data.BookFileRepository;
 import learn.data.BookRepository;
 import learn.data.DataAccessException;
 import learn.models.Book;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BookService {
@@ -28,7 +26,7 @@ public class BookService {
         List<Book> all = repository.findAll();
         for (Book b : all) {
             if (b.getIsbn().equalsIgnoreCase(book.getIsbn())) {
-                result.addErrorMessage("ISBN is not unique.");
+                result.addErrorMessage("Book `ISBN` is not unique.");
             }
         }
 
@@ -82,8 +80,8 @@ public class BookService {
             result.addErrorMessage("Book `position` must be between 1 and " + MAXPOSITIONS + ".");
         }
 
-        if (book.getYearPublished() >= CURRENTYEAR) {
-            result.addErrorMessage("Book `published year` must be from " + (CURRENTYEAR - 1) + " or older.");
+        if (book.getYearPublished() >= CURRENTYEAR || book.getYearPublished() <= 0) {
+            result.addErrorMessage("Book `published year` must be from " + (CURRENTYEAR - 1) + " and 1.");
         }
 
         if (book.getTitle() == null || book.getTitle().isBlank()) {
@@ -96,13 +94,6 @@ public class BookService {
 
         if (book.getIsbn() == null || book.getIsbn().isBlank()) {
             result.addErrorMessage("Book `ISBN` is required.");
-        }
-
-        List<Book> all = repository.findAll();
-        for (Book b : all) {
-            if (b.getIsbn().equalsIgnoreCase(book.getIsbn())) {
-                result.addErrorMessage("ISBN is not unique.");
-            }
         }
 
         return result;
