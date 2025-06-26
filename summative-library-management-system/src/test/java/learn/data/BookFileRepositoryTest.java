@@ -55,6 +55,18 @@ class BookFileRepositoryTest {
     }
 
     @Test
+    void findByLocation() throws DataAccessException {
+        Book book = repository.findByLocation("Fiction", 1, 3); //Fiction~1~3
+
+        assertNotNull(book);
+        assertEquals("The Return of the King", book.getTitle());
+        assertEquals("J.R.R. Tolkien", book.getAuthor());
+
+        book = repository.findByLocation("Fantasy", 234, 3);
+        assertNull(book);
+    }
+
+    @Test
     void add() throws DataAccessException {
         Book book = new Book();
         book.setCategory("Fantasy");
