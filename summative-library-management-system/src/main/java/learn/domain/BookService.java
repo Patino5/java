@@ -16,6 +16,10 @@ public class BookService {
         this.repository = repository;
     }
 
+    public List<Book> findAll() throws DataAccessException {
+        return repository.findAll();
+    }
+
     public List<Book> findByCategory(String category) throws DataAccessException {
         return repository.findByCategory(category);
     }
