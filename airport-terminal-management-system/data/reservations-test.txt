@@ -1,0 +1,3 @@
+AA101,2024-05-10,299.99,Alice Smith,P12345,Boeing 737,Commercial
+BB202,2024-06-15,450.50,John Doe,P67890,Airbus A320,Commercial
+PJ001,2024-07-20,5000.00,None,P434644,Gulfstream G650,PrivateJet
