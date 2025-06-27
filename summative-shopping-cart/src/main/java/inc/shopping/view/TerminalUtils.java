@@ -52,25 +52,6 @@ public class TerminalUtils {
         return number;
     }
 
-    public double getDoubleRequired(String prompt) {
-        double number = 0;
-        boolean validNumber = false;
-
-        while (!validNumber) {
-            try {
-                number = Double.parseDouble(getStringRequired(prompt));
-                if (number > 0) {
-                    validNumber = true;
-                } else {
-                    displayMessage("Must be positive. Try again.");
-                }
-            } catch (NumberFormatException e) {
-                displayMessage("Not a valid number. Try again.");
-            }
-        }
-        return number;
-    }
-
     public int getIntRangeRequired(String prompt, int min, int max) {
         int number = 0;
         boolean validNumber = false;

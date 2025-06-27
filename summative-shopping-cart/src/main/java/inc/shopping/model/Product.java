@@ -5,7 +5,7 @@ public class Product {
     private double price;
     private int quantity;
 
-    public Product(String name, double price, int quantity){
+    public Product(String name, double price, int quantity){ // change to this.name = name;
         setName(name);
         setPrice(price);
         setQuantity(quantity);
@@ -43,7 +43,7 @@ public class Product {
         return this.quantity * this.price;
     }
 
-    public String getDetails() {
+    public String getDetails() {    // print details from the command terminal
         return String.format(
                 "%-10.10s | $%6.2f | %5d | $%8.2f",
                 getName(), getPrice(), getQuantity(), getSubtotal());
