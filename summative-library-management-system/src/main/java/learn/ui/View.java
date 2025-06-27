@@ -55,8 +55,9 @@ public class View {
         } else {
             displayHeader("Books:");
             for (Book book : books) {
-                io.printf("Category: %s, Shelf: %d, Position: %d%nYear Published: %d, Title: %s%nAuthor: %s, ISBN: %s%n"
-                        , book.getCategory(), book.getShelfNumber(), book.getPositionNumber(), book.getYearPublished(), book.getTitle(),
+                displayHeader(book.getTitle());
+                io.printf("Category: %-8s | Shelf: %d | Position: %d%nYear Published: %d%nAuthor: %s%nISBN: %s%n"
+                        , book.getCategory(), book.getShelfNumber(), book.getPositionNumber(), book.getYearPublished(),
                         book.getAuthor(), book.getIsbn());
             }
         }
@@ -69,15 +70,15 @@ public class View {
 
     public Book createBook() {
         displayHeader("Add a Book");
-        Book result = new Book();
-        result.setCategory(io.readString("Category: "));
-        result.setShelfNumber(io.readInt("Shelf Number: "));
-        result.setShelfNumber(io.readInt("Position Number: "));
-        result.setShelfNumber(io.readInt("Year Published: "));
-        result.setCategory(io.readString("Title: "));
-        result.setCategory(io.readString("Author: "));
-        result.setCategory(io.readString("ISBN: "));
-        return result;
+        return new Book(
+                io.readString("Category: "),
+                io.readInt("Shelf Number: "),
+                io.readInt("Position Number: "),
+                io.readInt("Year Published: "),
+                io.readString("Title: "),
+                io.readString("Author: "),
+                io.readString("ISBN: ")
+        );
     }
 
     public Book editBook(Book b) {
@@ -99,7 +100,7 @@ public class View {
             b.setPositionNumber(positionNumber);
         }
 
-        int publishYear = io.readInt("Year Published (" + b.getPositionNumber() + "): ");
+        int publishYear = io.readInt("Year Published (" + b.getYearPublished() + "): ");
         if (publishYear > 0 && publishYear < 2025) {
             b.setPositionNumber(positionNumber);
         }
@@ -115,7 +116,7 @@ public class View {
             b.setAuthor(author);
         }
 
-        String isbn = io.readString("ISBN (" + b.getCategory() + "): ");
+        String isbn = io.readString("ISBN (" + b.getIsbn() + "): ");
         // only update if it changed
         if (!isbn.trim().isEmpty()) {
             b.setIsbn(isbn);
