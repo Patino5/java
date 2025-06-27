@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9075e231-6953-4c90-95a1-b7f1bb10c842" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/learn/domain/BookServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/learn/domain/BookServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" afterDir="false" />
     </list>
@@ -19,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,6 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "JUnit.BookFileRepositoryTest.add.executor": "Run",
     "JUnit.BookFileRepositoryTest.deleteByIsbn.executor": "Run",
     "JUnit.BookFileRepositoryTest.findAll.executor": "Run",
@@ -91,7 +94,20 @@
       <recent name="learn.data" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest.shouldUpdate">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="learn.App" />
+      <module name="summative-library-management-system" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookServiceTest.shouldAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="summative-library-management-system" />
       <extension name="coverage">
@@ -140,22 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookServiceTest.shouldNotUpdateEmptyContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="summative-library-management-system" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="learn.domain.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="learn.domain" />
-      <option name="MAIN_CLASS_NAME" value="learn.domain.BookServiceTest" />
-      <option name="METHOD_NAME" value="shouldNotUpdateEmptyContent" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookServiceTest.shouldUpdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="summative-library-management-system" />
       <extension name="coverage">
@@ -174,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.BookServiceTest.shouldUpdate" />
         <item itemvalue="JUnit.BookServiceTest.shouldAdd" />
         <item itemvalue="JUnit.BookServiceTest.shouldNotAddBookWithNonUniqueIsbn" />
         <item itemvalue="JUnit.BookServiceTest.shouldNotAddBookWithAnyEmptyContent" />
-        <item itemvalue="JUnit.BookServiceTest.shouldNotUpdateEmptyContent" />
       </list>
     </recent_temporary>
   </component>
