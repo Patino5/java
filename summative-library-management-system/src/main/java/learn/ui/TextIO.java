@@ -1,7 +1,7 @@
 package learn.ui;
 
 public interface TextIO {
-    void prinln(Object value);
+    void println(Object value);
 
     void print(Object value);
 

@@ -6,7 +6,7 @@ public class ConsoleIO implements  TextIO {
     private final Scanner console = new Scanner(System.in);
 
     @Override
-    public void prinln(Object value) {
+    public void println(Object value) {
         System.out.println(value);
     }
 
