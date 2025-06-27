@@ -9,7 +9,11 @@ public class ReservationSystem {
     // key - flight number , value - list of passengers
     private HashMap<String, ArrayList<Passenger>> reservations;
 
-    // Add passenger to a flight
+    // addReservation(flightNumber, passenger)
+    // if fight exist in reservations, get List<passenger> and add passenger to list
+    // otherwise: create a new list of passengers and add passenger to list, add flightNumber as a key in reservations HashMap
 
-    // Retrieve all passengers booked on a specific flight
+
+    // return List<Passenger> || empty list if flight not found
+    // getPassengersForFlight(flightNumber)
 }
