@@ -1,4 +1,4 @@
 package airport.domain.model;
 
-public class CommercialAircraft {
+public class CommercialAircraft extends Aircraft {
 }
