@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9075e231-6953-4c90-95a1-b7f1bb10c842" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-shopping-cart/src/main/java/inc/shopping/view/TerminalUtils.java" afterDir="false" />
     </list>
