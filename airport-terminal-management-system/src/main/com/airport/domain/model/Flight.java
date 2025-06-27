@@ -7,7 +7,7 @@ public class Flight {
     private String flightNumber;
     private Date departureDate;
     private BigDecimal ticketPrice;
-    private Aircraft aircraftType;
+    private Aircraft aircraftType; // commercial or private
 
     public Flight(String flightNumber, Date departureDate, BigDecimal ticketPrice, Aircraft aircraftType) {
         this.flightNumber = flightNumber;
