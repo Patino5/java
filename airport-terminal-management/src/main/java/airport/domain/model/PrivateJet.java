@@ -1,8 +1,8 @@
 package airport.domain.model;
 
 public class PrivateJet extends  Aircraft {
-    private boolean hasLuxuryService;
-    private int maxSpeed;
+    private final boolean hasLuxuryService;
+    private final int maxSpeed;
 
     public PrivateJet(String model, int capacity, int fuelCapacity, boolean hasLuxuryService, int maxSpeed) {
         super(model, capacity, fuelCapacity);
@@ -16,5 +16,9 @@ public class PrivateJet extends  Aircraft {
 
     public int getMaxSpeed() {
         return maxSpeed;
+    }
+
+    public String getAircraftType() {
+        return "Private";
     }
 }
