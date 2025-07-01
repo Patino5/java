@@ -1,4 +1,4 @@
-cience Fiction~1~1~1951~Foundation~Isaac Asimov~978-0451524935
+Science Fiction~1~1~1951~Foundation~Isaac Asimov~978-0451524935
 Fantasy~2~3~1997~Harry Potter and the Philosopher's Stone~J.K. Rowling~978-0747532743
 Mystery~3~5~1934~Murder on the Orient Express~Agatha Christie~978-0062073501
 Non-Fiction~1~2~2011~Sapiens: A Brief History of Humankind~Yuval Noah Harari~978-0062316097
