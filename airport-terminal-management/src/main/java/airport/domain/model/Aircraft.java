@@ -15,23 +15,11 @@ public abstract class Aircraft {
         return model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
-
     public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public int getFuelCapacity() {
         return fuelCapacity;
-    }
-
-    public void setFuelCapacity(int fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
     }
 }
