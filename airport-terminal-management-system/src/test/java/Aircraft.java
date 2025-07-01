@@ -1,6 +1,6 @@
 package airport.domain.model;
 
-public class Aircraft {
+public abstract class Aircraft {
     protected String model;
     protected int capacity; // number of passengers
     protected double fuelCapacity; // in liters

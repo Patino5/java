@@ -1,19 +1,19 @@
 package airport.domain.model;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Flight {
     private String flightNumber;
-    private Date departureDate;
+    private LocalDate departureDate;
     private BigDecimal ticketPrice;
-    private Aircraft aircraftType; // commercial or private
+    private Aircraft aircraft; // commercial or private
 
-    public Flight(String flightNumber, Date departureDate, BigDecimal ticketPrice, Aircraft aircraftType) {
+    public Flight(String flightNumber, LocalDate departureDate, BigDecimal ticketPrice, Aircraft aircraft) {
         this.flightNumber = flightNumber;
         this.departureDate = departureDate;
         this.ticketPrice = ticketPrice;
-        this.aircraftType = aircraftType;
+        this.aircraft = aircraft;
     }
 
     public Flight(){}
@@ -26,11 +26,11 @@ public class Flight {
         this.flightNumber = flightNumber;
     }
 
-    public Date getDepartureDate() {
+    public LocalDate getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Date departureDate) {
+    public void setDepartureDate(LocalDate departureDate) {
         this.departureDate = departureDate;
     }
 
@@ -42,11 +42,11 @@ public class Flight {
         this.ticketPrice = ticketPrice;
     }
 
-    public Aircraft getAircraftType() {
-        return aircraftType;
+    public Aircraft getAircraft() {
+        return aircraft;
     }
 
-    public void setAircraftType(Aircraft aircraftType) {
-        this.aircraftType = aircraftType;
+    public void setAircraftType(Aircraft aircraft) {
+        this.aircraft = aircraft;
     }
 }

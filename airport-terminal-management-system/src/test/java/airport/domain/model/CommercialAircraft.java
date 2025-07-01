@@ -12,6 +12,10 @@ public class CommercialAircraft extends Aircraft {
         return airlineName;
     }
 
+    public String getAircraftType() {
+        return "Commercial";
+    }
+
     public void setAirlineName(String airlineName) {
         this.airlineName = airlineName;
     }
