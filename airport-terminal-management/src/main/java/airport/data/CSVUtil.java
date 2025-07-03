@@ -56,25 +56,25 @@ public class CSVUtil implements ReservationRepository {
     }
 
     public void saveReservationsToCSV(ReservationSystem reservations) throws FileNotFoundException {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath, true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
             // for each reservation key(flightNumber), get flight with key, list of passenger from flight
             for (String flightNumber : reservations.getReservations().keySet()) {
                 Flight flight = reservations.getFlight(flightNumber);
                 List<Passenger> passengers = reservations.getPassengersForFlight(flightNumber);
 
                 // flight has no passengers, put "None, None" for passenger data fields
-//                if (passengers.isEmpty()) {
-//                    writer.println(String.format("%n%s,%s,%s,None,None,%s,%s",
-//                            flightNumber,
-//                            flight.getDepartureDate(),
-//                            flight.getTicketPrice(),
-//                            flight.getAircraft().getModel(),
-//                            flight.getAircraft().getAircraftType()));
-//                } else {
+                if (passengers.isEmpty()) {
+                    writer.println(String.format("%s,%s,%s,None,None,%s,%s",
+                            flightNumber,
+                            flight.getDepartureDate(),
+                            flight.getTicketPrice(),
+                            flight.getAircraft().getModel(),
+                            flight.getAircraft().getAircraftType()));
+                } else {
 
                     // with passengers, get passenger name and passportNumber
                     for (Passenger passenger : passengers) {
-                        writer.println(String.format("%n%s,%s,%s,%s,%s,%s,%s",
+                        writer.println(String.format("%s,%s,%s,%s,%s,%s,%s",
                                 flightNumber,
                                 flight.getDepartureDate(),
                                 flight.getTicketPrice(),
@@ -82,7 +82,7 @@ public class CSVUtil implements ReservationRepository {
                                 passenger.getPassportNumber(),
                                 flight.getAircraft().getModel(),
                                 flight.getAircraft().getAircraftType()));
-//                    }
+                    }
                 }
             }
         } catch (IOException e) {

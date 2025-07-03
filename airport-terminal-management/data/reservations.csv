@@ -1,20 +1,15 @@
-FL003,2025-07-05,18999.99,None,None,Cessna Citation X+,PrivateJet
-FL002,2025-07-07,13500.00,None,None,Bombardier Global 7500,PrivateJet
-FL005,2025-07-03,450.00,None,None,Boeing 737-800,Commercial
-FL004,2025-07-09,22500.00,None,None,Dassault Falcon 8X,PrivateJet
-FL001,2025-07-04,14999.99,None,None,Gulfstream G650,PrivateJet
-FL007,2025-07-08,1200.00,None,None,Boeing 777-300ER,Commercial
-FL006,2025-07-06,380.00,None,None,Airbus A320,Commercial
-FL008,2025-07-10,950.00,None,None,Airbus A350-900,Commercial
-FL003,2025-07-05,18999.99,Ryan,12345,Cessna Citation X+,PrivateJet
-FL003,2025-07-05,18999.99,Shanice,234556,Cessna Citation X+,PrivateJet
-FL003,2025-07-05,18999.99,Eleanor,3456,Cessna Citation X+,PrivateJet
-FL003,2025-07-05,18999.99,Magnolia,23456543,Cessna Citation X+,PrivateJet
-FL003,2025-07-05,18999.99,Briar,8454392,Cessna Citation X+,PrivateJet
-FL002,2025-07-07,13500.00,None,None,Bombardier Global 7500,PrivateJet
-FL005,2025-07-03,450.00,None,None,Boeing 737-800,Commercial
-FL004,2025-07-09,22500.00,None,None,Dassault Falcon 8X,PrivateJet
-FL001,2025-07-04,14999.99,None,None,Gulfstream G650,PrivateJet
-FL007,2025-07-08,1200.00,None,None,Boeing 777-300ER,Commercial
-FL006,2025-07-06,380.00,None,None,Airbus A320,Commercial
-FL008,2025-07-10,950.00,None,None,Airbus A350-900,Commercial
+FL003,2025-07-06,18999.99,Ryan,12345,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Shanice,234556,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Eleanor,3456,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Magnolia,23456543,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Briar,8454392,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Molly,2;r23r,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,Cole,23r2,Cessna Citation X+,PrivateJet
+FL003,2025-07-06,18999.99,brit,wr23,Cessna Citation X+,PrivateJet
+FL002,2025-07-08,13500.00,None,None,Bombardier Global 7500,PrivateJet
+FL005,2025-07-04,450.00,Molly,2344534,Boeing 737-800,Commercial
+FL004,2025-07-10,22500.00,af,234,Dassault Falcon 8X,PrivateJet
+FL001,2025-07-05,14999.99,None,None,Gulfstream G650,PrivateJet
+FL007,2025-07-09,1200.00,None,None,Boeing 777-300ER,Commercial
+FL006,2025-07-07,380.00,None,None,Airbus A320,Commercial
+FL008,2025-07-11,950.00,None,None,Airbus A350-900,Commercial

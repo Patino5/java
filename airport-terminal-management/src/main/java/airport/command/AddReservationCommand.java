@@ -1,11 +1,13 @@
 package airport.command;
 
 import airport.data.FlightRepository;
+import airport.domain.loyalty.VIPPassenger;
 import airport.domain.model.Flight;
 import airport.domain.model.Passenger;
 import airport.domain.reservation.ReservationSystem;
 import airport.view.View;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class AddReservationCommand implements Command {
@@ -46,9 +48,17 @@ public class AddReservationCommand implements Command {
 
         String name = view.getPassengerName();
         String passportNumber = view.getPassengerPassport();
-        Passenger passenger = new Passenger(name, passportNumber);
+        boolean VIPMember = view.isVIPPassenger();
 
+        BigDecimal ticketPrice;
+        if (VIPMember) {
+            ticketPrice = new VIPPassenger().applyDiscount(selectedFlight.getTicketPrice());
+        } else {
+            ticketPrice = selectedFlight.getTicketPrice();
+        }
+
+        Passenger passenger = new Passenger(name, passportNumber);
         reservationSystem.addReservation(selectedFlight.getFlightNumber(), passenger);
-        view.displayConfirmation(passenger.getName(), selectedFlight.getFlightNumber());
+        view.displayConfirmation(passenger.getName(), selectedFlight.getFlightNumber(), ticketPrice);
     }
 }

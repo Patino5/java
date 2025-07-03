@@ -1,4 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1574aa0d-57b4-4668-9c4f-ef7f5519de41" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reservations-test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations-test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reservations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/command/AddReservationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/command/AddReservationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/data/CSVUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/data/CSVUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/domain/loyalty/VIPPassenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/domain/loyalty/VIPPassenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/domain/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/domain/model/Flight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/domain/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/domain/model/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/view/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/view/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airport/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../memories/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Patino5"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Patino5/java.git",
+    "accountId": "6a4fc2ae-09c5-461a-b9c0-488ea0732151"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2zHLx96SOsQT12rOTN8mTb3tKVA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "JUnit.AppTest.shouldAnswerWithTrue.executor": "Run",
+    "JUnit.CSVUtilTest.executor": "Run",
+    "JUnit.CSVUtilTest.loadReservations.executor": "Run",
+    "JUnit.CSVUtilTest.shouldSaveAndLoadReservationsWithPassenger.executor": "Run",
+    "JUnit.ReservationSystemTest.addReservation.executor": "Run",
+    "JUnit.ReservationSystemTest.emptyPassengerListForFlight.executor": "Run",
+    "JUnit.ReservationSystemTest.executor": "Run",
+    "JUnit.ReservationSystemTest.shouldAddAndRetrieveFlight.executor": "Run",
+    "JUnit.ReservationSystemTest.shouldAddReservationWithPassenger.executor": "Run",
+    "JUnit.ReservationSystemTest.shouldInitializeFlights.executor": "Run",
+    "JUnit.ReservationSystemTest.testAddReservation.executor": "Run",
+    "JUnit.ReservationSystemTest.testNewReservationSystem.executor": "Run",
+    "JUnit.ReservationSystemTest.testReservationSystem.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="airport.data" />
+      <recent name="airport.domain.reservation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ReservationSystemTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="airport.App" />
+      <module name="airport-terminal-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="airport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.shouldAnswerWithTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="airport-terminal-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="airport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="airport" />
+      <option name="MAIN_CLASS_NAME" value="airport.AppTest" />
+      <option name="METHOD_NAME" value="shouldAnswerWithTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSVUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="airport-terminal-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="airport.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="airport.data" />
+      <option name="MAIN_CLASS_NAME" value="airport.data.CSVUtilTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSVUtilTest.loadReservations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="airport-terminal-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="airport.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="airport.data" />
+      <option name="MAIN_CLASS_NAME" value="airport.data.CSVUtilTest" />
+      <option name="METHOD_NAME" value="loadReservations" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReservationSystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="airport-terminal-management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="airport.domain.reservation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="airport.domain.reservation" />
+      <option name="MAIN_CLASS_NAME" value="airport.domain.reservation.ReservationSystemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ReservationSystemTest" />
+        <item itemvalue="JUnit.CSVUtilTest" />
+        <item itemvalue="JUnit.CSVUtilTest.loadReservations" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.AppTest.shouldAnswerWithTrue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1574aa0d-57b4-4668-9c4f-ef7f5519de41" name="Changes" comment="" />
+      <created>1751383299167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751383299167</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.IllegalFormatPrecisionException" package="java.util" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

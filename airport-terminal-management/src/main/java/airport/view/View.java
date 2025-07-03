@@ -2,6 +2,8 @@ package airport.view;
 
 import airport.domain.model.Flight;
 
+import java.math.BigDecimal;
+
 public class View {
     private final TextIO io;
 
@@ -10,9 +12,10 @@ public class View {
     }
 
     public int displayMenu() {
-        io.println("_".repeat(32));
-        io.println("\\\\\\ Airport Terminal Manager ///");
-        io.println("-".repeat(32));
+        String header = "\\\\\\ Airport Terminal Manager ///";
+        io.println("_".repeat(header.length()));
+        io.println(header);
+        io.println("-".repeat(header.length()));
         io.println("1. Display Flights");
         io.println("2. Add Reservation");
         io.println("3. Exit");
@@ -47,8 +50,12 @@ public class View {
         return io.readString("Passport Number: ");
     }
 
-    public void displayConfirmation(String passengerName, String flightNumber) {
-        io.printf("Passenger: %s added to flight %s%n", passengerName, flightNumber);
+    public boolean isVIPPassenger() {
+        return io.readBoolean("VIP Member: (y/n)");
+    }
+
+    public void displayConfirmation(String passengerName, String flightNumber, BigDecimal ticketPrice) {
+        io.printf("Passenger: %s added to flight %s%nTicket Total: $%.2f%n", passengerName, flightNumber, ticketPrice.doubleValue());
     }
 
     public void displayFlightDetails(String flightNumber, int seatsAvailable, int totalSeats, String passengers) {
@@ -60,5 +67,9 @@ public class View {
         io.println("Passengers: ");
         io.println(passengers);
         io.println("-".repeat(header.length()));
+    }
+
+    public void displayMessage(String message) {
+        io.println(message);
     }
 }
