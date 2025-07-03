@@ -19,6 +19,6 @@ public class PrivateJet extends  Aircraft {
     }
 
     public String getAircraftType() {
-        return "Private";
+        return "PrivateJet";
     }
 }

@@ -22,4 +22,6 @@ public abstract class Aircraft {
     public int getFuelCapacity() {
         return fuelCapacity;
     }
+
+    public abstract String getAircraftType();
 }
