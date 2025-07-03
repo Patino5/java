@@ -23,7 +23,6 @@ public class Controller {
         } catch (DataAccessException e) {
             view.displayErrors(List.of(e.getMessage()));
         }
-        view.displayMessage("Goodbye");
     }
 
     private void runApp() throws DataAccessException {
