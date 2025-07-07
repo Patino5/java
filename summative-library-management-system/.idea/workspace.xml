@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9075e231-6953-4c90-95a1-b7f1bb10c842" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../airport-terminal-management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/data/reservations-test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/data/reservations-test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/Aircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/Flight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/PrivateJet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/model/PrivateJet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/reservation/ReservationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/src/main/java/airport/domain/reservation/ReservationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../memories/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../memories/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
