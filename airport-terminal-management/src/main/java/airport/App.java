@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) throws FileNotFoundException {
         String filePath = "data/reservations.csv";
         CSVUtil csvUtil = new CSVUtil(filePath);
-        ReservationSystem reservationSystem = new ReservationSystem();
+        ReservationSystem reservationSystem;
         SampleFlightRepository flightRepo = new SampleFlightRepository();
         TextIO io = new ConsoleIO();
         View view = new View(io);
