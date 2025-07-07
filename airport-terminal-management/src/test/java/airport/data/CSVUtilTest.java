@@ -52,7 +52,7 @@ class CSVUtilTest {
     @Test
     void shouldSaveAndLoadReservationsWithPassenger() throws IOException  {
         ReservationSystem originalSystem = new ReservationSystem();
-        Flight flight = createSampleFlight("FL101");
+        Flight flight = createSampleFlight();
         originalSystem.addFlight(flight);
         originalSystem.addReservation("FL101", new Passenger("Ryan", "123456"));
 
@@ -69,9 +69,9 @@ class CSVUtilTest {
         assertEquals("Ryan", passengers.getFirst().getName());
         assertEquals("123456", passengers.getFirst().getPassportNumber());
     }
-    private Flight createSampleFlight(String flightNumber) {
+    private Flight createSampleFlight() {
         return new Flight(
-                flightNumber,
+                "FL101",
                 LocalDate.of(2025, 12, 25),
                 new BigDecimal("1000.00"),
                 new CommercialAircraft("G650", 10, 5000, "Trailblazer")
