@@ -1,5 +1,0 @@
-1~Ryan~Dependency Injection is just passing dependencies from one class to the next in my personal opionion~true
-2~Ryan~DI is a difficult subject to grasp~false
-4~Ryan~This one is public~true
-5~Ryan~What is going to be the id of this one if 3 was deleted, will this be the new 3 or continue to the next and be #3?~true
-6~Ryan~This #3 or #6~false
