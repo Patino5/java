@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1574aa0d-57b4-4668-9c4f-ef7f5519de41" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/src/main/com/airport/data/ReservationRepositoryDouble.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/src/test/java/airport/data/ReservationRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airport-terminal-management-system/src/test/java/airport/data/ReservationRepositoryDoubleTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reservations.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airport/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airport/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/airport/data/CSVUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/airport/data/CSVUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../summative-library-management-system/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../summative-library-management-system/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/.mvn/jvm.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/.mvn/maven.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/data/memories-seed.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/data/memories-test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/data/memories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/data/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/data/MemoryFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/data/MemoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/data/MemoryRepositoryDouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/domain/MemoryResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/domain/MemoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/models/Memory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/main/java/learn/memories/ui/TextIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../memories-continued/src/test/java/learn/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

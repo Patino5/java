@@ -25,15 +25,7 @@ public class AddReservationCommand implements Command {
     public void execute() {
         view.displayFlightTable();
 
-        ArrayList<Flight> flights = flightRepo.getFlights();
-
-        for (int i = 0; i < flights.size(); i++) {
-            Flight flight = flights.get(i);
-            int seatsAvailable = flight.getAircraft().getCapacity() -
-                    reservationSystem.getPassengersForFlight(flight.getFlightNumber()).size();
-
-            view.displayFlightRow(i + 1, flight, seatsAvailable);
-        }
+        ArrayList<Flight> flights = getFlights();
 
         int choice = view.getFlightChoice(flights.size()) - 1;
         Flight selectedFlight = flights.get(choice);
@@ -50,15 +42,34 @@ public class AddReservationCommand implements Command {
         String passportNumber = view.getPassengerPassport();
         boolean VIPMember = view.isVIPPassenger();
 
+        BigDecimal ticketPrice = getBigDecimal(VIPMember, selectedFlight);
+
+        Passenger passenger = new Passenger(name, passportNumber);
+        reservationSystem.addReservation(selectedFlight.getFlightNumber(), passenger);
+        view.displayConfirmation(passenger.getName(), selectedFlight.getFlightNumber(), ticketPrice);
+    }
+
+    private static BigDecimal getBigDecimal(boolean VIPMember, Flight selectedFlight) {
         BigDecimal ticketPrice;
         if (VIPMember) {
             ticketPrice = new VIPPassenger().applyDiscount(selectedFlight.getTicketPrice());
         } else {
             ticketPrice = selectedFlight.getTicketPrice();
         }
+        return ticketPrice;
+    }
 
-        Passenger passenger = new Passenger(name, passportNumber);
-        reservationSystem.addReservation(selectedFlight.getFlightNumber(), passenger);
-        view.displayConfirmation(passenger.getName(), selectedFlight.getFlightNumber(), ticketPrice);
+    private ArrayList<Flight> getFlights() {
+        ArrayList<Flight> flights = flightRepo.getFlights();
+
+        for (int i = 0; i < flights.size(); i++) {
+            Flight flight = flights.get(i);
+            int seatsAvailable = flight.getAircraft().getCapacity() -
+                    reservationSystem.getPassengersForFlight(flight.getFlightNumber()).size();
+
+            view.displayFlightRow(i + 1, flight, seatsAvailable);
+        }
+        return flights;
     }
 }
+// Refactor using private methods for display

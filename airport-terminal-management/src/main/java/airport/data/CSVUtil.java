@@ -22,7 +22,7 @@ public class CSVUtil implements ReservationRepository {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             for (String line = reader.readLine(); line != null; line = reader.readLine()){
                 String[] parts = line.split(",");
-                if (parts.length >= 7) {
+                if (parts.length == 7) {
                     String flightNumber = parts[0];
                     LocalDate departureDate = LocalDate.parse(parts[1]);
                     BigDecimal ticketPrice = new BigDecimal(parts[2]);
