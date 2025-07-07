@@ -1,4 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b19db5ab-01d8-4bca-98f1-968cb40ed651" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/learn/memories/ui/ConsoleIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/learn/memories/ui/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/learn/memories/ui/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../airport-terminal-management/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airport-terminal-management/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/memories/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/memories/domain/MemoryResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/memories/domain/MemoryResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/data/memories-seed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/data/memories-test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/data/memories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/data/DataAccessException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/data/MemoryFileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/data/MemoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/data/MemoryRepositoryDouble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/domain/MemoryResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/domain/MemoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/models/Memory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/ui/ConsoleIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/ui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/ui/TextIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/main/java/learn/memories/ui/View.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/test/java/learn/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/test/java/learn/memories/data/MemoryFileRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memories/src/test/java/learn/memories/domain/MemoryServiceTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Patino5"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Patino5/java.git",
+    "accountId": "6a4fc2ae-09c5-461a-b9c0-488ea0732151"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2zYHvZBvnU5NCb106WhNVSu0UBx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b19db5ab-01d8-4bca-98f1-968cb40ed651" name="Changes" comment="" />
+      <created>1751901319958</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751901319958</updated>
+    </task>
+    <servers />
+  </component>
 </project>

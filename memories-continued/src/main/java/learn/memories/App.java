@@ -7,11 +7,10 @@ import learn.memories.ui.ConsoleIO;
 import learn.memories.ui.Controller;
 import learn.memories.ui.View;
 
-@ComponentScan
 public class App {
+
     public static void main(String[] args) {
 
-        /*
         // "./data/memories.txt" is the path to our "production" data file.
         MemoryFileRepository repository = new MemoryFileRepository("./data/memories.txt");
         // repository satisfies the MemoryRepository dependency.
@@ -24,12 +23,6 @@ public class App {
         // view satisfies the View dependency
         // service satisfies the MemoryService dependency
         Controller controller = new Controller(view, service);
-
-         */
-
-        ApplicationContext context = new ClassPathXmlApplicationContext("dependency-configuration.xml");
-        // fetch a instance of a Controller
-        Controller controller = context.getBean(Controller.class);
 
         // Run the app.
         controller.run();
