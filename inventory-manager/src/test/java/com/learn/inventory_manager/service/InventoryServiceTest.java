@@ -46,4 +46,40 @@ class InventoryServiceTest {
 
         assertTrue(result.isSuccess());
     }
+
+    @Test
+    void shouldDeleteExistingProduct() {
+        String existingProductId = "103";
+
+        InventoryResult result = service.deleteById(existingProductId);
+
+        assertTrue(result.isSuccess());
+        assertNull(service.getProductById(existingProductId));
+    }
+
+    @Test
+    void shouldNotDeleteNonAvailableProduct() {
+        String notAvailableProductId = "324";
+
+        InventoryResult result = service.deleteById(notAvailableProductId);
+
+        assertFalse(result.isSuccess());
+        assertTrue(result.getErrorMessages().contains("Product id 324 was not found"));
+    }
+
+    @Test
+    void shouldHandleNullProductId() {
+        InventoryResult result = service.deleteById(null);
+
+        assertFalse(result.isSuccess());
+        assertTrue(result.getErrorMessages().contains("Product id null was not found"));
+    }
+
+    @Test
+    void shouldHandleEmptyProductId() {
+        InventoryResult result = service.deleteById("");
+
+        assertFalse(result.isSuccess());
+        assertTrue(result.getErrorMessages().contains("Product id  was not found"));
+    }
 }
