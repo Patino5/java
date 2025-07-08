@@ -4,17 +4,15 @@ import com.learn.inventory_manager.model.Product;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class CSVInventoryRepository implements InventoryRepository {
-    private final String filePath = "data/products.csv";
+    private final String filePath = "data/products-test.csv";
+    private static final String CSV_HEADER = "ProductId,ProductName,Quantity,Price";
 
     @Override
     public List<Product> loadInventory() {
@@ -80,8 +78,11 @@ public class CSVInventoryRepository implements InventoryRepository {
     }
 
     @Override
-    public Product add(Product product) {
-        return null;
+    public Product add(Product product) throws DataAccessException {
+        List<Product> products = loadInventory();
+        products.add(product);
+        writeToFile(products);
+        return product;
     }
 
     @Override
@@ -90,7 +91,35 @@ public class CSVInventoryRepository implements InventoryRepository {
     }
 
     @Override
-    public boolean delete(Product product) {
+    public boolean deleteById(String productId) throws DataAccessException {
+        List<Product> products = loadInventory();
+        for (Product product : products) {
+            if (product.getProductID().equalsIgnoreCase(productId)) {
+                products.remove(product);
+                writeToFile(products);
+                return true;
+            }
+        }
         return false;
+    }
+
+    private void writeToFile(List<Product> products) throws DataAccessException {
+        try (PrintWriter writer = new PrintWriter(filePath)) {
+            writer.println(CSV_HEADER);
+            for (Product product : products) {
+                writer.println(productToLine(product));
+            }
+
+        } catch (IOException e) {
+            throw new DataAccessException("Could not write to file path: " + filePath);
+        }
+    }
+
+    private String productToLine(Product product) {
+        return String.format("%s,%s,%d,%s",
+                product.getProductID(),
+                product.getProductName(),
+                product.getQuantity(),
+                product.getPrice());
     }
 }
