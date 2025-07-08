@@ -48,6 +48,20 @@ public class InventoryService {
         return result;
     }
 
+    public InventoryResult update(Product product) throws DataAccessException {
+        InventoryResult result = validate(product);
+
+        if (result.isSuccess()) {
+            if (repository.update(product)) {
+                result.setProduct(product);
+            } else {
+                String message = String.format("Product id %s was not found.", product.getProductID());
+                result.addErrorMessages(message);
+            }
+        }
+        return result;
+    }
+
     public InventoryResult deleteById(String productId) throws DataAccessException {
         InventoryResult result = new InventoryResult();
         if (!repository.deleteById(productId)) {
@@ -82,5 +96,9 @@ public class InventoryService {
         }
 
         return result;
+    }
+
+    private void verifyProductIdUniqueness(Product product, InventoryResult result) {
+
     }
 }

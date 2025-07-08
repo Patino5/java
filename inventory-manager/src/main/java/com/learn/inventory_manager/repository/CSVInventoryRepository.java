@@ -8,6 +8,7 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class CSVInventoryRepository implements InventoryRepository {
@@ -86,7 +87,15 @@ public class CSVInventoryRepository implements InventoryRepository {
     }
 
     @Override
-    public boolean update(Product product) {
+    public boolean update(Product product) throws DataAccessException {
+        List<Product> products = loadInventory();
+        for (int i = 0; i < products.size(); i++) {
+            if (Objects.equals(products.get(i).getProductID(), product.getProductID())) {
+                products.set(i, product);
+                writeToFile(products);
+                return true;
+            }
+        }
         return false;
     }
 

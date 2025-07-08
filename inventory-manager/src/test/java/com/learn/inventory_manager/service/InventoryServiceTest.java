@@ -83,4 +83,66 @@ class InventoryServiceTest {
         assertFalse(result.isSuccess());
         assertTrue(result.getErrorMessages().contains("Product id  was not found"));
     }
+
+    @Test
+    void shouldNotUpdateEmptyID() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setProductID("");
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`ID`"));
+    }
+
+    @Test
+    void shouldNotUpdateEmptyName() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setProductName("");
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`name`"));
+    }
+
+    @Test
+    void shouldNotUpdateNegativePrice() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setPrice(new BigDecimal("-2.00"));
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`price`"));
+    }
+
+    @Test
+    void shouldNotUpdateNegativeQuantity() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setQuantity(-3);
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+    }
+
+    @Test
+    void shouldUpdate() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setProductName("Pencil");
+        product.setProductID("106");
+        product.setQuantity(14);
+        product.setPrice(new BigDecimal(".89"));
+
+        InventoryResult result = service.update(product);
+
+        assertTrue(result.isSuccess());
+        assertEquals(0, result.getErrorMessages().size());
+    }
 }
