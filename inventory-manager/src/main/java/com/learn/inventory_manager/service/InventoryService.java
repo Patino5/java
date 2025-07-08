@@ -47,6 +47,15 @@ public class InventoryService {
         return result;
     }
 
+    public InventoryResult deleteById(String productId) {
+        InventoryResult result = new InventoryResult();
+        if (!repository.deleteById(productId)) {
+            String message = String.format("Product id %s was not found", productId);
+            result.addErrorMessages(message);
+        }
+        return result;
+    }
+
     private InventoryResult validate(Product product) {
         InventoryResult result = new InventoryResult();
 
