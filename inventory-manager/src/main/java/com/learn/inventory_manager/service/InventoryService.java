@@ -4,17 +4,73 @@ import com.learn.inventory_manager.model.Product;
 import com.learn.inventory_manager.repository.InventoryRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
 public class InventoryService {
-    private final InventoryRepository inventoryRepository;
+    private final InventoryRepository repository;
 
     public InventoryService(InventoryRepository inventoryRepository) {
-        this.inventoryRepository = inventoryRepository;
+        this.repository = inventoryRepository;
     }
 
     public List<Product> getAvailableInventory() {
-        return inventoryRepository.loadInventory();
+        return repository.loadInventory();
+    }
+
+    public Product getProductById(String productId) {
+        return repository.findById(productId);
+    }
+
+    public Product getProductByName(String productName) {
+        return repository.findByName(productName);
+    }
+
+    //Add a new product to inventory
+    // validation reqs: unique ProductId, Quantity and Price are valid numeric inputs;
+    public InventoryResult add(Product product) {
+        InventoryResult result = validate(product);
+
+        if (product.getProductID() != null) {
+            Product existingProduct = getProductById(product.getProductID());
+            if (existingProduct != null) {
+                result.addErrorMessages("Product `ID` must be unique.");
+            }
+        }
+
+        if (result.isSuccess()) {
+            product = repository.add(product);
+            result.setProduct(product);
+        }
+
+        return result;
+    }
+
+    private InventoryResult validate(Product product) {
+        InventoryResult result = new InventoryResult();
+
+        if (product == null) {
+            result.addErrorMessages("Product cannot be null");
+            return result;
+        }
+
+        if (product.getProductID() == null || product.getProductID().isBlank()) {
+            result.addErrorMessages("Product `ID` is required." );
+        }
+
+        if (product.getProductName() == null || product.getProductName().isBlank()) {
+            result.addErrorMessages("Product `name` is required." );
+        }
+
+        if (product.getPrice() == null || product.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
+            result.addErrorMessages("Product `price` must be greater than 0.");
+        }
+
+        if (product.getQuantity() <= 0) {
+            result.addErrorMessages("Product `quantity` must be greater that 0" );
+        }
+
+        return result;
     }
 }
