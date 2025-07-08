@@ -56,4 +56,41 @@ public class CSVInventoryRepository implements InventoryRepository {
 
         return products;
     }
+
+    @Override
+    public Product findById(String productId) {
+        List<Product> products = loadInventory();
+        for (Product product : products) {
+            if (product.getProductID().equalsIgnoreCase(productId)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Product findByName(String productName) {
+        List<Product> products = loadInventory();
+        for (Product product : products) {
+            if (product.getProductName().equalsIgnoreCase(productName)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Product add(Product product) {
+        return null;
+    }
+
+    @Override
+    public boolean update(Product product) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(Product product) {
+        return false;
+    }
 }

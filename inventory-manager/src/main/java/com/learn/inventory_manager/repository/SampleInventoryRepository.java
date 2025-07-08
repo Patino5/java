@@ -15,4 +15,29 @@ public class SampleInventoryRepository implements InventoryRepository {
                 new Product("103", "Keyboard", 30, new BigDecimal("49.99"))
         );
     }
+
+    @Override
+    public Product findById(String productName) {
+        return null;
+    }
+
+    @Override
+    public Product findByName(String productName) {
+        return null;
+    }
+
+    @Override
+    public Product add(Product product) {
+        return null;
+    }
+
+    @Override
+    public boolean update(Product product) {
+        return false;
+    }
+
+    @Override
+    public boolean delete(Product product) {
+        return false;
+    }
 }
