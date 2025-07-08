@@ -1,6 +1,7 @@
 package com.learn.inventory_manager.service;
 
 import com.learn.inventory_manager.model.Product;
+import com.learn.inventory_manager.repository.DataAccessException;
 import com.learn.inventory_manager.repository.InventoryRepository;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class InventoryService {
 
     //Add a new product to inventory
     // validation reqs: unique ProductId, Quantity and Price are valid numeric inputs;
-    public InventoryResult add(Product product) {
+    public InventoryResult add(Product product) throws DataAccessException {
         InventoryResult result = validate(product);
 
         if (product.getProductID() != null) {
@@ -47,7 +48,7 @@ public class InventoryService {
         return result;
     }
 
-    public InventoryResult deleteById(String productId) {
+    public InventoryResult deleteById(String productId) throws DataAccessException {
         InventoryResult result = new InventoryResult();
         if (!repository.deleteById(productId)) {
             String message = String.format("Product id %s was not found", productId);

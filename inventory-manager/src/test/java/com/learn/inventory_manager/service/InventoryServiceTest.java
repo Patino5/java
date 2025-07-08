@@ -1,6 +1,7 @@
 package com.learn.inventory_manager.service;
 
 import com.learn.inventory_manager.model.Product;
+import com.learn.inventory_manager.repository.DataAccessException;
 import com.learn.inventory_manager.repository.SampleInventoryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldNotAddNullProduct() {
+    void shouldNotAddNullProduct() throws DataAccessException {
         Product product = new Product();
 
         InventoryResult result = service.add(product);
@@ -39,7 +40,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldAdd() {
+    void shouldAdd() throws DataAccessException {
         Product product = new Product("299", "Headphones", 30, new BigDecimal("249.99"));
 
         InventoryResult result = service.add(product);
@@ -48,7 +49,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldDeleteExistingProduct() {
+    void shouldDeleteExistingProduct() throws DataAccessException {
         String existingProductId = "103";
 
         InventoryResult result = service.deleteById(existingProductId);
@@ -58,7 +59,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldNotDeleteNonAvailableProduct() {
+    void shouldNotDeleteNonAvailableProduct() throws DataAccessException {
         String notAvailableProductId = "324";
 
         InventoryResult result = service.deleteById(notAvailableProductId);
@@ -68,7 +69,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldHandleNullProductId() {
+    void shouldHandleNullProductId() throws DataAccessException {
         InventoryResult result = service.deleteById(null);
 
         assertFalse(result.isSuccess());
@@ -76,7 +77,7 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldHandleEmptyProductId() {
+    void shouldHandleEmptyProductId() throws DataAccessException {
         InventoryResult result = service.deleteById("");
 
         assertFalse(result.isSuccess());
