@@ -11,9 +11,9 @@ public interface InventoryRepository {
 
     Product findByName(String productName);
 
-    Product add(Product product);
+    Product add(Product product) throws DataAccessException;
 
-    boolean update(Product product);
+    boolean update(Product product) throws DataAccessException;
 
-    boolean delete(Product product);
+    boolean deleteById(String productId) throws DataAccessException;
 }
