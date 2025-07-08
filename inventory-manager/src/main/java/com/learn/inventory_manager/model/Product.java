@@ -3,8 +3,8 @@ package com.learn.inventory_manager.model;
 import java.math.BigDecimal;
 
 public class Product {
-    private final String productID;
-    private final String productName;
+    private String productID;
+    private String productName;
     private int quantity;
     private BigDecimal price;
 
@@ -15,12 +15,23 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
+    }
+
     public String getProductID() {
         return productID;
     }
 
+    public void setProductID(String productID) {
+        this.productID = productID;
+    }
+
     public String getProductName() {
         return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getQuantity() {
