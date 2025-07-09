@@ -46,11 +46,20 @@ public class View {
             io.println(tableHeader);
             io.println("─".repeat(tableHeader.length()));
             for (Product product : products) {
+                String id = product.getProductID();
+                String name = product.getProductName();
+                int qty = product.getQuantity();
+                BigDecimal price = product.getPrice();
+
+                if (name.length() > 15) {
+                    name = name.substring(0, 12) + "...";
+                }
+
                 io.printf("%-4s  %-15s  %-3d  $%8.2f%n",
-                        product.getProductID(),
-                        product.getProductName(),
-                        product.getQuantity(),
-                        product.getPrice());
+                        id,
+                        name,
+                        qty,
+                        price);
             }
         }
         io.println("═".repeat(tableHeader.length()));
@@ -59,18 +68,18 @@ public class View {
 
     public Product createProduct() {
         displayHeader("Add Product");
-        Product result = new Product();
+
         String productId = io.readString("Enter Product ID: ");
         String productName = io.readString("Enter Product Name: ");
         int quantity = io.readInt("Enter Quantity: ");
         BigDecimal price = io.getBigDecimal("Enter Price: ");
 
-
+        Product result = new Product(productId, productName, quantity, price);
         return result;
     }
 
     public Product updateProduct(Product p) {
-        displayHeader("Update Product");
+        displayMessage("Current Details:");
 
         io.println(p.toString());
 
@@ -84,16 +93,26 @@ public class View {
             p.setPrice(price);
         }
 
-        return p;
+        if (io.getConfirmation("Are you sure you want to update changes? (y/n): ")) {
+            return p;
+        }
+        return null;
+    }
+
+    public Product deleteProduct(Product p) {
+
+        if (io.getConfirmation("Are you sure you want to delete this product? (y/n): ")) {
+            return p;
+        }
+        return null;
     }
 
     public Product chooseProduct(List<Product> products) {
-        displayProducts(products);
         Product result = null;
         if (!products.isEmpty()) {
-            String productId = io.readString("Choose a Product ID:");
+            String productNameOrId = io.readString("Enter Product ID or Name: ");
             for (Product p : products) {
-                if (Objects.equals(p.getProductID(), productId)) {
+                if (p.getProductID().equalsIgnoreCase(productNameOrId) || p.getProductName().equalsIgnoreCase(productNameOrId)) {
                     result = p;
                     return result;
                 }
@@ -102,7 +121,7 @@ public class View {
         return result;
     }
 
-    private void pressEnterToContinue() {
+    public void pressEnterToContinue() {
         io.readString("Press Enter to return to the main menu...");
     }
 
