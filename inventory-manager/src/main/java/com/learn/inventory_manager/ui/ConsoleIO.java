@@ -92,6 +92,7 @@ public class ConsoleIO implements TextIO {
         println("ℹ " + message);
     }
 
+    @Override
     public boolean getConfirmation(String prompt) {
         System.out.print(prompt);
         String input = scanner.nextLine().trim().toLowerCase();
