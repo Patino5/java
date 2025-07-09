@@ -11,4 +11,5 @@ public interface TextIO {
     int readInt(String prompt);
     int readInt(String prompt, int min, int max);
     BigDecimal getBigDecimal(String prompt);
+    boolean getConfirmation(String prompt);
 }
