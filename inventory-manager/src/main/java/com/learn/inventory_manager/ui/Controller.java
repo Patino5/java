@@ -33,14 +33,17 @@ public class Controller {
             switch (option) {
                 case 1 -> addProduct();
                 case 2 -> viewProducts();
+                case 3 -> searchProducts();
                 case 4 -> updateProduct();
+                case 5 -> deleteProduct();
             }
         }
     }
 
-    private void viewProducts() throws DataAccessException {
+    private void viewProducts() {
         List<Product> products = service.getAvailableInventory();
         view.displayProducts(products);
+        view.pressEnterToContinue();
     }
 
     private void addProduct() throws DataAccessException {
@@ -51,23 +54,77 @@ public class Controller {
         } else {
             view.displayErrors(result.getErrorMessages());
         }
+        view.pressEnterToContinue();
     }
 
-    private void updateProduct() throws DataAccessException {
-        Product p = view.chooseProduct(service.getAvailableInventory());
+    private void searchProducts() {
+        view.displayHeader("Search Product");
+        Product p = getProduct();
 
-        if (p == null) {
-            view.displayMessage("Product not found.");
-            return;
-        }
+        if (p == null) return;
+
+        view.displayMessage("Product Found:");
+        view.displayMessage(p.toString());
+        view.pressEnterToContinue();
+    }
+
+
+    private void updateProduct() throws DataAccessException {
+        view.displayHeader("Update Product");
+        Product p = getProduct();
+
+        if (p == null) return;
 
         p = view.updateProduct(p);
+
+        if (p == null) {
+            view.displayMessage("Product unchanged");
+            view.pressEnterToContinue();
+            return;
+        }
         InventoryResult result = service.update(p);
 
         if (result.isSuccess()) {
             view.displayMessage("Product " + result.getProduct().getProductName() + " updated successfully!");
 
         } else view.displayErrors(result.getErrorMessages());
+        view.pressEnterToContinue();
+    }
+
+    public void deleteProduct() throws DataAccessException {
+        view.displayHeader("Delete Product");
+        Product p = getProduct();
+        if (p == null) return;
+
+        view.displayMessage("Product to delete:");
+        view.displayMessage(p.toString());
+
+        p = view.deleteProduct(p);
+        if (p == null) {
+            view.displayMessage("Product not deleted");
+            return;
+        }
+
+        InventoryResult result = service.deleteById(p.getProductID());
+
+        if (result.isSuccess()) {
+            view.displayMessage("Product `" + p.getProductName() + "` deleted successfully!");
+
+        } else {
+            view.displayErrors(result.getErrorMessages());
+        }
+        view.pressEnterToContinue();
+    }
+
+    private Product getProduct() {
+        Product p = view.chooseProduct(service.getAvailableInventory());
+
+        if (p == null) {
+            view.displayMessage("Product not found.");
+            view.pressEnterToContinue();
+            return null;
+        }
+        return p;
     }
 
 }
