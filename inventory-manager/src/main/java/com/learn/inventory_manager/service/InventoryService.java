@@ -87,18 +87,14 @@ public class InventoryService {
             result.addErrorMessages("Product `name` is required." );
         }
 
-        if (product.getPrice() == null || product.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
+        if (product.getPrice() == null || product.getPrice().compareTo(BigDecimal.ZERO) < 0) {
             result.addErrorMessages("Product `price` must be greater than 0.");
         }
 
-        if (product.getQuantity() <= 0) {
+        if (product.getQuantity() < 0) {
             result.addErrorMessages("Product `quantity` must be greater that 0" );
         }
 
         return result;
-    }
-
-    private void verifyProductIdUniqueness(Product product, InventoryResult result) {
-
     }
 }
