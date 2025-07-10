@@ -51,7 +51,7 @@ public class Product {
 
     public void setPrice(BigDecimal price) {
         if (price.compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Price cannot be negative");
+            throw new IllegalArgumentException("Price has to be greater than zero.");
         }
         this.price = price;
     }
@@ -61,6 +61,6 @@ public class Product {
         return "ID: " + productID +
                 "\nName: " + productName +
                 "\nQuantity: " + quantity +
-                "\nPrice: " + price;
+                "\nPrice: $" + price;
     }
 }
