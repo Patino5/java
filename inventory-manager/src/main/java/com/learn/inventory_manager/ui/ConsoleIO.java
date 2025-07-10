@@ -71,7 +71,7 @@ public class ConsoleIO implements TextIO {
             if (value >= min && value <= max) {
                 return value;
             }
-            displayError("Value must be between " + min + " and " + max + ".%n");
+            displayError("Value must be between " + min + " and " + max + ".");
         }
     }
 
