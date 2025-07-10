@@ -39,9 +39,6 @@ public class Product {
     }
 
     public void setQuantity(int quantity) {
-        if (quantity < 0) {
-            throw new IllegalArgumentException("Quantity cannot be negative");
-        }
         this.quantity = quantity;
     }
 
@@ -50,17 +47,15 @@ public class Product {
     }
 
     public void setPrice(BigDecimal price) {
-        if (price.compareTo(BigDecimal.ZERO) < 0) {
-            throw new IllegalArgumentException("Price has to be greater than zero.");
-        }
         this.price = price;
     }
 
     @Override
     public String toString() {
-        return "ID: " + productID +
-                "\nName: " + productName +
-                "\nQuantity: " + quantity +
-                "\nPrice: $" + price;
+        return String.format(
+                "ID: %s " +
+                "%nName: %s" +
+                "%nQuantity: %d" +
+                "%nPrice: $%.2f", productID, productName, quantity, price);
     }
 }
