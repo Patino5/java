@@ -84,15 +84,15 @@ public class InventoryService {
         }
 
         if (product.getProductName() == null || product.getProductName().isBlank()) {
-            result.addErrorMessages("Product `name` is required." );
+            result.addErrorMessages("Product `Name` is required." );
         }
 
         if (product.getPrice() == null || product.getPrice().compareTo(BigDecimal.ZERO) < 0) {
-            result.addErrorMessages("Product `price` must be greater than 0.");
+            result.addErrorMessages("Product `Price` must be greater than 0.");
         }
 
         if (product.getQuantity() < 0) {
-            result.addErrorMessages("Product `quantity` must be greater that 0" );
+            result.addErrorMessages("Product `Quantity` must not be negative");
         }
 
         return result;
