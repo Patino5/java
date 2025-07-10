@@ -37,13 +37,30 @@ public class ConsoleIO implements TextIO {
 
     @Override
     public int readInt(String prompt) {
-        while (true) {
-            String value = readString(prompt);
-            try {
-                return Integer.parseInt(value);
-            } catch (NumberFormatException e) {
-                printf("`%s` is not a valid number.%n", value);
+        return readInt(prompt, false);
+    }
+
+    @Override
+    public Integer readInt(String prompt, boolean allowSkip) {
+
+        String input = readString(prompt);
+        if (input.isEmpty() && allowSkip) return null;
+
+        if (input.isEmpty()) {
+            displayError("Input cannot be empty. Please try again.");
+            return readInt(prompt, false);
+        }
+
+        try {
+            int value = Integer.parseInt(input);
+            if (value < 0) {
+                displayError("Please enter a non-negative number.");
             }
+            return value;
+
+        } catch (NumberFormatException e) {
+            displayError("`" + input + "` is not a valid number.");
+            return readInt(prompt, allowSkip);
         }
     }
 
@@ -54,13 +71,22 @@ public class ConsoleIO implements TextIO {
             if (value >= min && value <= max) {
                 return value;
             }
-            printf("Value must be between %s and %s.%n", min, max);
+            displayError("Value must be between " + min + " and " + max + ".%n");
         }
     }
 
     @Override
     public BigDecimal getBigDecimal(String prompt) {
+        return getBigDecimal(prompt, false);
+    }
+
+    @Override
+    public BigDecimal getBigDecimal(String prompt, boolean allowSkip) {
         String input = readString(prompt);
+
+        if (input.isEmpty() && allowSkip) {
+            return null;
+        }
 
         if (input.isEmpty()) {
             displayError("Input cannot be empty. Please try again.");
@@ -80,18 +106,6 @@ public class ConsoleIO implements TextIO {
         }
     }
 
-    public void displaySuccess(String message) {
-        println("✓ " + message);
-    }
-
-    public void displayError(String message) {
-        println("✗ ERROR: " + message);
-    }
-
-    public void displayInfo(String message) {
-        println("ℹ " + message);
-    }
-
     @Override
     public boolean getConfirmation(String prompt) {
         System.out.print(prompt);
@@ -105,5 +119,9 @@ public class ConsoleIO implements TextIO {
         }
 
         return input.equals("y") || input.equals("yes");
+    }
+
+    private void displayError(String message) {
+        println("✗ ERROR: " + message);
     }
 }
