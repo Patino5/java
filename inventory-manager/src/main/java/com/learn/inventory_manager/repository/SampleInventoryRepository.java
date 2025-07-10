@@ -42,6 +42,7 @@ public class SampleInventoryRepository implements InventoryRepository {
 
     @Override
     public Product add(Product product) throws DataAccessException {
+        products.add(product);
         return product;
     }
 
