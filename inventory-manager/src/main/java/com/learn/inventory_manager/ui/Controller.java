@@ -6,7 +6,9 @@ import com.learn.inventory_manager.service.InventoryResult;
 import com.learn.inventory_manager.service.InventoryService;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class Controller {
@@ -74,10 +76,12 @@ public class Controller {
         Product p = getProduct();
 
         if (p == null) return;
+        int existingQty = p.getQuantity();
+        BigDecimal existingPrice = p.getPrice();
 
         p = view.updateProduct(p);
 
-        if (p == null) {
+        if (Objects.equals(existingPrice, p.getPrice()) && existingQty == p.getQuantity()) {
             view.displayMessage("Product unchanged");
             view.pressEnterToContinue();
             return;
@@ -87,7 +91,9 @@ public class Controller {
         if (result.isSuccess()) {
             view.displayMessage("Product " + result.getProduct().getProductName() + " updated successfully!");
 
-        } else view.displayErrors(result.getErrorMessages());
+        } else {
+            view.displayErrors(result.getErrorMessages());
+        }
         view.pressEnterToContinue();
     }
 
@@ -126,5 +132,4 @@ public class Controller {
         }
         return p;
     }
-
 }
