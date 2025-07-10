@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Objects;
 
 @Component
 public class View {
@@ -38,6 +37,8 @@ public class View {
     public void displayProducts(List<Product> products) {
         displayHeader("Inventory List");
         String tableHeader = String.format(" %-3s  %-15s  %3s  %9s", "ID", "NAME", "QTY", "PRICE");
+        int itemsTotal = 0;
+        BigDecimal itemsProfit = new BigDecimal("0");
 
         if (products.isEmpty()) {
             io.println("No Products Available");
@@ -60,10 +61,16 @@ public class View {
                         name,
                         qty,
                         price);
+
+                itemsTotal += qty;
+                BigDecimal subtotal = price.multiply(BigDecimal.valueOf(qty));
+                itemsProfit = itemsProfit.add(subtotal);
             }
         }
         io.println("═".repeat(tableHeader.length()));
-        io.println("");
+        io.println("Total Products: " + products.size() +
+                "\nTotal Items: " + itemsTotal +
+                "\nGross Profit: $" + itemsProfit);
     }
 
     public Product createProduct() {
@@ -82,21 +89,19 @@ public class View {
         displayMessage("Current Details:");
 
         io.println(p.toString());
+        io.println("");
 
-        Integer qty = io.readInt("Enter New Quantity (or press Enter to skip): ");
+        Integer qty = io.readInt("Enter New Quantity (or press Enter to skip): ", true);
         if (qty != null) {
             p.setQuantity(qty);
         }
 
-        BigDecimal price = io.getBigDecimal("Enter New Price (or press Enter to skip): ");
+        BigDecimal price = io.getBigDecimal("Enter New Price (or press Enter to skip): ", true);
         if (price != null) {
             p.setPrice(price);
         }
 
-        if (io.getConfirmation("Are you sure you want to update changes? (y/n): ")) {
-            return p;
-        }
-        return null;
+        return p;
     }
 
     public Product deleteProduct(Product p) {
@@ -122,7 +127,7 @@ public class View {
     }
 
     public void pressEnterToContinue() {
-        io.readString("Press Enter to return to the main menu...");
+        io.readString("\nPress Enter to return to the main menu...");
     }
 
     public void displayErrors(List<String> errors) {
@@ -130,7 +135,6 @@ public class View {
         for (String error : errors) {
             io.println(error);
         }
-
     }
 
     public void displayMessage(String message) {
