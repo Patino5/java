@@ -40,12 +40,84 @@ class InventoryServiceTest {
     }
 
     @Test
+    void shouldNotAddProductWithoutId() throws DataAccessException {
+        Product product = new Product("", "itemName", 20, new BigDecimal("23.99"));
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`ID`"));
+    }
+
+    @Test
+    void shouldNotAddProductWithoutName() throws DataAccessException {
+        Product product = new Product("55", "", 20, new BigDecimal("23.99"));
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`name`"));
+    }
+
+    @Test
+    void shouldNotAddProductWithoutQty() throws DataAccessException {
+        Product product = new Product();
+        product.setProductName("Item");
+        product.setProductID("productID");
+        product.setPrice(new BigDecimal("23.44"));
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+    }
+
+    @Test
+    void shouldNotAddProductWithoutPrice() throws DataAccessException {
+        Product product = new Product();
+        product.setProductName("Item");
+        product.setProductID("productID");
+        product.setQuantity(4);
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`price`"));
+    }
+
+    @Test
+    void shouldNotAddProductWithDuplicateId() throws DataAccessException {
+        // id 101 already exists in sample data
+        Product product = new Product("101", "Item", 10, new BigDecimal("15.00"));
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertTrue(result.getErrorMessages().contains("Product `ID` must be unique."));
+    }
+
+    @Test
     void shouldAdd() throws DataAccessException {
         Product product = new Product("299", "Headphones", 30, new BigDecimal("249.99"));
 
         InventoryResult result = service.add(product);
 
         assertTrue(result.isSuccess());
+    }
+
+    @Test
+    void shouldNotAddProductWithZeroQuantity() throws DataAccessException {
+        Product product = new Product("200", "Zero Quantity Item", 0, new BigDecimal("15.99"));
+
+        InventoryResult result = service.add(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
     }
 
     @Test
@@ -120,6 +192,7 @@ class InventoryServiceTest {
         assertTrue(result.getErrorMessages().getFirst().contains("`price`"));
     }
 
+
     @Test
     void shouldNotUpdateNegativeQuantity() throws DataAccessException {
         Product product = service.getAvailableInventory().getFirst();
@@ -130,6 +203,28 @@ class InventoryServiceTest {
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
         assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+    }
+
+    @Test
+    void shouldNotUpdateProductWithZeroQuantity() throws DataAccessException {
+        Product product = service.getAvailableInventory().getFirst();
+        product.setQuantity(0);
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertEquals(1, result.getErrorMessages().size());
+        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+    }
+
+    @Test
+    void shouldNotUpdateNonExistentProduct() throws DataAccessException {
+        Product product = new Product("999", "Non-existent", 5, new BigDecimal("10.00"));
+
+        InventoryResult result = service.update(product);
+
+        assertFalse(result.isSuccess());
+        assertTrue(result.getErrorMessages().contains("Product id 999 was not found."));
     }
 
     @Test
