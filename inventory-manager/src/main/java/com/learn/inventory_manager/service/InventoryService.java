@@ -28,8 +28,6 @@ public class InventoryService {
         return repository.findByName(productName);
     }
 
-    //Add a new product to inventory
-    // validation reqs: unique ProductId, Quantity and Price are valid numeric inputs;
     public InventoryResult add(Product product) throws DataAccessException {
         InventoryResult result = validate(product);
 
