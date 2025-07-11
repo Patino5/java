@@ -80,13 +80,16 @@ public class View {
     public Product createProduct() {
         displayHeader("Add Product");
 
-        String productId = io.readString("Enter Product ID: ");
+        String productId = io.readString("Enter Product ID or Leave Blank to cancel: ");
+        if (productId.isEmpty()) {
+            io.println("Add Product operation cancelled, ID cannot be blank.");
+            return null;
+        }
         String productName = io.readString("Enter Product Name: ");
         int quantity = io.readInt("Enter Quantity: ");
         BigDecimal price = io.getBigDecimal("Enter Price: ");
 
-        Product result = new Product(productId, productName, quantity, price);
-        return result;
+        return new Product(productId, productName, quantity, price);
     }
 
     public Product updateProduct(Product p) {

@@ -31,6 +31,10 @@ public class InventoryService {
     public InventoryResult add(Product product) throws DataAccessException {
         InventoryResult result = validate(product);
 
+        if (!result.isSuccess()) {
+            return result;
+        }
+
         if (product.getProductID() != null) {
             Product existingProduct = getProductById(product.getProductID());
             if (existingProduct != null) {
