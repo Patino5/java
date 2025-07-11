@@ -4,6 +4,7 @@ import com.learn.inventory_manager.model.Product;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -46,7 +47,9 @@ public class View {
         io.println("═".repeat(tableHeader.length()));
 
         if (products.isEmpty()) {
-            io.println("No Products Available");
+            io.println("");
+            io.println("     No products in inventory");
+            io.println("");
         } else {
             io.println(tableHeader);
             io.println("─".repeat(tableHeader.length()));
@@ -119,18 +122,53 @@ public class View {
         return null;
     }
 
-    public Product chooseProduct(List<Product> products) {
-        Product result = null;
-        if (!products.isEmpty()) {
-            String productNameOrId = io.readString("Enter Product ID or Name: ");
-            for (Product p : products) {
-                if (p.getProductID().equalsIgnoreCase(productNameOrId) || p.getProductName().equalsIgnoreCase(productNameOrId)) { // contains method for partial search
-                    result = p;
-                    return result;
-                }
+    // returns a list of products from search input
+    public List<Product> searchProducts(List<Product> products) {
+        List<Product> foundProducts = new ArrayList<>();
+
+        if (products.isEmpty()) {
+            return foundProducts;
+        }
+
+        String searchTerm = io.readString("Enter Product ID or Name: ");
+
+        if (searchTerm.isEmpty()) {
+            return foundProducts;
+        }
+
+        String lowerSearchTerm = searchTerm.toLowerCase();
+
+        for (Product p : products) {
+            if (p.getProductID().toLowerCase().contains(lowerSearchTerm) ||
+                    p.getProductName().toLowerCase().contains(lowerSearchTerm)) {
+                foundProducts.add(p);
             }
         }
-        return result;
+
+        return foundProducts;
+    }
+
+    //   method to choose a one product from the list of found products
+    public Product chooseFromProducts(List<Product> products) {
+        if (products.isEmpty()) {
+            return null;
+        }
+
+        io.println("\nSelect a product:");
+        for (int i = 0; i < products.size(); i++) {
+            Product p = products.get(i);
+            io.printf("%d. %s - %s%n", (i + 1), p.getProductID(), p.getProductName());
+
+        }
+        io.println("0. Cancel\n");
+
+        int choice = io.readInt("Enter number of choice: ", 0, products.size());
+
+        if (choice == 0) {
+            return null;
+        }
+
+        return products.get(choice - 1);
     }
 
     public void pressEnterToContinue() {

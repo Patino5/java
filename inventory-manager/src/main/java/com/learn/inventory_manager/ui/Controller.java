@@ -61,19 +61,23 @@ public class Controller {
 
     private void searchProducts() {
         view.displayHeader("Search Product");
-        Product p = getProduct();
+        List<Product> foundProducts = getProductsWithPartialSearch();
 
-        if (p == null) return;
-
-        view.displayMessage("Product Found:");
-        view.displayMessage(p.toString());
+        if (foundProducts.isEmpty()) {
+            view.displayMessage("No products found matching your search.");
+        } else {
+            view.displayMessage(foundProducts.size() + ((foundProducts.size() > 1) ? " Products Found:" : " Product Found:"));
+            for (Product p : foundProducts) {
+                String msg = p.toString();
+                view.displayMessage(msg);
+            }
+        }
         view.pressEnterToContinue();
     }
 
-
     private void updateProduct() throws DataAccessException {
         view.displayHeader("Update Product");
-        Product p = getProduct();
+        Product p = getSingleProduct();
 
         if (p == null) return;
         int existingQty = p.getQuantity();
@@ -99,7 +103,7 @@ public class Controller {
 
     public void deleteProduct() throws DataAccessException {
         view.displayHeader("Delete Product");
-        Product p = getProduct();
+        Product p = getSingleProduct();
         if (p == null) return;
 
         view.displayMessage("Product to delete:");
@@ -123,14 +127,27 @@ public class Controller {
         view.pressEnterToContinue();
     }
 
-    private Product getProduct() {
-        Product p = view.chooseProduct(service.getAvailableInventory());
+    // method for partial search that returns a list of products from search
+    private List<Product> getProductsWithPartialSearch() {
+        return view.searchProducts(service.getAvailableInventory());
+    }
 
-        if (p == null) {
-            view.displayMessage("Product not found.");
+    //  method for update/delete operations that need a single product
+    private Product getSingleProduct() {
+        List<Product> foundProducts = getProductsWithPartialSearch();
+
+        if (foundProducts.isEmpty()) {
+            view.displayMessage("No products found matching your search.");
             view.pressEnterToContinue();
             return null;
         }
-        return p;
+
+        if (foundProducts.size() == 1) {
+            return foundProducts.getFirst();
+        }
+
+        // If multiple products found, let user choose from the list
+        view.displayMessage("Multiple products found. Please choose one:");
+        return view.chooseFromProducts(foundProducts);
     }
 }
