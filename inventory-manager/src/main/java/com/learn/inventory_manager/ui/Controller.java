@@ -66,7 +66,7 @@ public class Controller {
         if (p == null) return;
 
         view.displayMessage("Product Found:");
-        view.displayMessage(p.toString());   // string format
+        view.displayMessage(p.toString());
         view.pressEnterToContinue();
     }
 
