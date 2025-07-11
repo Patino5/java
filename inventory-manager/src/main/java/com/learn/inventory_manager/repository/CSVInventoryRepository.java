@@ -1,7 +1,6 @@
 package com.learn.inventory_manager.repository;
 
 import com.learn.inventory_manager.model.Product;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
@@ -12,7 +11,7 @@ import java.util.Objects;
 
 @Repository
 public class CSVInventoryRepository implements InventoryRepository {
-    private final String filePath = "data/products-test.csv";
+    private final String filePath = "data/products.csv";
     private static final String CSV_HEADER = "ProductId,ProductName,Quantity,Price";
 
     @Override
@@ -40,8 +39,8 @@ public class CSVInventoryRepository implements InventoryRepository {
                         Product product = new Product(
                                 parts[0].trim(),
                                 parts[1].trim(),
-                                Integer.parseInt(parts[2]),
-                                new BigDecimal(parts[3])
+                                Integer.parseInt(parts[2].trim()),
+                                new BigDecimal(parts[3].trim())
                         );
                         products.add(product);
                     } catch (Exception e) {
@@ -113,7 +112,7 @@ public class CSVInventoryRepository implements InventoryRepository {
     }
 
     private void writeToFile(List<Product> products) throws DataAccessException {
-        try (PrintWriter writer = new PrintWriter(filePath)) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
             writer.println(CSV_HEADER);
             for (Product product : products) {
                 writer.println(productToLine(product));
