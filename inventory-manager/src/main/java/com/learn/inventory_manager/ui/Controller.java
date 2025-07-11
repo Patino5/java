@@ -30,9 +30,9 @@ public class Controller {
     }
 
     private void runApp() throws DataAccessException {
-        for (int option = view.chooseMenuOption(); option < 6; option = view.chooseMenuOption()) {
-
-            switch (option) {
+        int choice;
+        while ((choice = view.chooseMenuOption()) != 6) {
+            switch (choice) {
                 case 1 -> addProduct();
                 case 2 -> viewProducts();
                 case 3 -> searchProducts();
@@ -66,7 +66,7 @@ public class Controller {
         if (p == null) return;
 
         view.displayMessage("Product Found:");
-        view.displayMessage(p.toString());
+        view.displayMessage(p.toString());   // string format
         view.pressEnterToContinue();
     }
 
@@ -108,6 +108,7 @@ public class Controller {
         p = view.deleteProduct(p);
         if (p == null) {
             view.displayMessage("Product not deleted");
+            view.pressEnterToContinue();
             return;
         }
 
