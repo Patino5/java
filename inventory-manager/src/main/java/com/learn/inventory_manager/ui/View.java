@@ -35,15 +35,19 @@ public class View {
     }
 
     public void displayProducts(List<Product> products) {
-        displayHeader("Inventory List");
         String tableHeader = String.format(" %-3s  %-15s  %3s  %9s", "ID", "NAME", "QTY", "PRICE");
         int itemsTotal = 0;
         BigDecimal itemsProfit = new BigDecimal("0");
 
+        io.println("═".repeat(tableHeader.length()));
+        io.println("=".repeat(tableHeader.length() / 4 + 1) +
+                " INVENTORY  LIST " +
+                "=".repeat(tableHeader.length() / 4 + 1));
+        io.println("═".repeat(tableHeader.length()));
+
         if (products.isEmpty()) {
             io.println("No Products Available");
         } else {
-            io.println("─".repeat(tableHeader.length()));
             io.println(tableHeader);
             io.println("─".repeat(tableHeader.length()));
             for (Product product : products) {
@@ -117,7 +121,7 @@ public class View {
         if (!products.isEmpty()) {
             String productNameOrId = io.readString("Enter Product ID or Name: ");
             for (Product p : products) {
-                if (p.getProductID().equalsIgnoreCase(productNameOrId) || p.getProductName().equalsIgnoreCase(productNameOrId)) {
+                if (p.getProductID().equalsIgnoreCase(productNameOrId) || p.getProductName().equalsIgnoreCase(productNameOrId)) { // contains method for partial search
                     result = p;
                     return result;
                 }
