@@ -17,7 +17,7 @@ public class InventoryService {
     }
 
     public List<Product> getAvailableInventory() {
-        return repository.loadInventory();
+        return repository.getAll();
     }
 
     public Product getProductById(String productId) {

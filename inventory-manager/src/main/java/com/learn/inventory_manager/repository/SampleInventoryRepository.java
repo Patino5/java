@@ -16,7 +16,7 @@ public class SampleInventoryRepository implements InventoryRepository {
     }
 
     @Override
-    public List<Product> loadInventory() {
+    public List<Product> getAll() {
         return new ArrayList<>(products);
     }
 

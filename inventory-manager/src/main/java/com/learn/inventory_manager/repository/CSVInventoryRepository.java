@@ -1,26 +1,91 @@
 package com.learn.inventory_manager.repository;
 
 import com.learn.inventory_manager.model.Product;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
 @Repository
 public class CSVInventoryRepository implements InventoryRepository {
-    private final String filePath = "data/products.csv";
+    private final List<Product> products = new ArrayList<>();
+    @Value("${products.csv.filepath:data/products.csv}")
+    private String filePath;
     private static final String CSV_HEADER = "ProductId,ProductName,Quantity,Price";
 
+    @PostConstruct
+    public void init() {
+        loadFile();
+    }
+
     @Override
-    public List<Product> loadInventory() {
-        List<Product> products = new ArrayList<>();
+    public List<Product> getAll() {
+        return new ArrayList<>(products);
+    }
+
+
+    @Override
+    public Product findById(String productId) {
+        for (Product product : products) {
+            if (product.getProductID().equalsIgnoreCase(productId)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Product findByName(String productName) {
+        for (Product product : products) {
+            if (product.getProductName().equalsIgnoreCase(productName)) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Product add(Product product) throws DataAccessException {
+        products.add(product);
+        writeToFile(products);
+        return product;
+    }
+
+    @Override
+    public boolean update(Product product) throws DataAccessException {
+        for (int i = 0; i < products.size(); i++) {
+            if (Objects.equals(products.get(i).getProductID(), product.getProductID())) {
+                products.set(i, product);
+                writeToFile(products);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteById(String productId) throws DataAccessException {
+        for (Product product : products) {
+            if (product.getProductID().equalsIgnoreCase(productId)) {
+                products.remove(product);
+                writeToFile(products);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void loadFile() {
         File csvFile = new File(filePath);
 
         if(!csvFile.exists()) {
-            return products;
+            return;
         }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile))) {
@@ -51,65 +116,8 @@ public class CSVInventoryRepository implements InventoryRepository {
         } catch (IOException e) {
             System.err.println("Error reading CSV file: " + e.getMessage());
         }
-
-        return products;
     }
 
-    @Override
-    public Product findById(String productId) {
-        List<Product> products = loadInventory();
-        for (Product product : products) {
-            if (product.getProductID().equalsIgnoreCase(productId)) {
-                return product;
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public Product findByName(String productName) {
-        List<Product> products = loadInventory();
-        for (Product product : products) {
-            if (product.getProductName().equalsIgnoreCase(productName)) {
-                return product;
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public Product add(Product product) throws DataAccessException {
-        List<Product> products = loadInventory();
-        products.add(product);
-        writeToFile(products);
-        return product;
-    }
-
-    @Override
-    public boolean update(Product product) throws DataAccessException {
-        List<Product> products = loadInventory();
-        for (int i = 0; i < products.size(); i++) {
-            if (Objects.equals(products.get(i).getProductID(), product.getProductID())) {
-                products.set(i, product);
-                writeToFile(products);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
-    public boolean deleteById(String productId) throws DataAccessException {
-        List<Product> products = loadInventory();
-        for (Product product : products) {
-            if (product.getProductID().equalsIgnoreCase(productId)) {
-                products.remove(product);
-                writeToFile(products);
-                return true;
-            }
-        }
-        return false;
-    }
 
     private void writeToFile(List<Product> products) throws DataAccessException {
         try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
