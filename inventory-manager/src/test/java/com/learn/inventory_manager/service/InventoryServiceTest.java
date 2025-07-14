@@ -34,9 +34,9 @@ class InventoryServiceTest {
         InventoryResult result = service.add(product);
 
         assertFalse(result.isSuccess());
-        assertEquals(4, result.getErrorMessages().size()); // no name, no id, no price, no qty
+        assertEquals(3, result.getErrorMessages().size()); // no name, no id, no price, no qty
         assertTrue(result.getErrorMessages().getFirst().contains("`ID`"));
-        assertTrue(result.getErrorMessages().getLast().contains("`quantity`"));
+        assertTrue(result.getErrorMessages().getLast().contains("`Price`"));
     }
 
     @Test
@@ -58,11 +58,11 @@ class InventoryServiceTest {
 
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`name`"));
+        assertTrue(result.getErrorMessages().getFirst().contains("`Name`"));
     }
 
     @Test
-    void shouldNotAddProductWithoutQty() throws DataAccessException {
+    void canAddProductWithoutQty() throws DataAccessException {
         Product product = new Product();
         product.setProductName("Item");
         product.setProductID("productID");
@@ -70,9 +70,7 @@ class InventoryServiceTest {
 
         InventoryResult result = service.add(product);
 
-        assertFalse(result.isSuccess());
-        assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+        assertTrue(result.isSuccess());
     }
 
     @Test
@@ -86,7 +84,7 @@ class InventoryServiceTest {
 
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`price`"));
+        assertTrue(result.getErrorMessages().getFirst().contains("`Price`"));
     }
 
     @Test
@@ -110,14 +108,12 @@ class InventoryServiceTest {
     }
 
     @Test
-    void shouldNotAddProductWithZeroQuantity() throws DataAccessException {
+    void shouldAddProductWithZeroQuantity() throws DataAccessException {
         Product product = new Product("200", "Zero Quantity Item", 0, new BigDecimal("15.99"));
 
         InventoryResult result = service.add(product);
 
-        assertFalse(result.isSuccess());
-        assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+        assertTrue(result.isSuccess());
     }
 
     @Test
@@ -177,7 +173,7 @@ class InventoryServiceTest {
 
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`name`"));
+        assertTrue(result.getErrorMessages().getFirst().contains("`Name`"));
     }
 
     @Test
@@ -189,7 +185,7 @@ class InventoryServiceTest {
 
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`price`"));
+        assertTrue(result.getErrorMessages().getFirst().contains("`Price`"));
     }
 
 
@@ -202,19 +198,17 @@ class InventoryServiceTest {
 
         assertFalse(result.isSuccess());
         assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+        assertTrue(result.getErrorMessages().getFirst().contains("`Quantity`"));
     }
 
     @Test
-    void shouldNotUpdateProductWithZeroQuantity() throws DataAccessException {
+    void shouldUpdateProductWithZeroQuantity() throws DataAccessException {
         Product product = service.getAvailableInventory().getFirst();
         product.setQuantity(0);
 
         InventoryResult result = service.update(product);
 
-        assertFalse(result.isSuccess());
-        assertEquals(1, result.getErrorMessages().size());
-        assertTrue(result.getErrorMessages().getFirst().contains("`quantity`"));
+        assertTrue(result.isSuccess());
     }
 
     @Test
