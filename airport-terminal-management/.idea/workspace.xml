@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1574aa0d-57b4-4668-9c4f-ef7f5519de41" name="Changes" comment="" />
+    <list default="true" id="1574aa0d-57b4-4668-9c4f-ef7f5519de41" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/learn/inventory_manager/InventoryManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../inventory-manager/src/main/java/com/learn/inventory_manager/InventoryManagerApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,32 +47,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "JUnit.AppTest.shouldAnswerWithTrue.executor": "Run",
-    "JUnit.CSVUtilTest.executor": "Run",
-    "JUnit.CSVUtilTest.loadReservations.executor": "Run",
-    "JUnit.CSVUtilTest.shouldSaveAndLoadReservationsWithPassenger.executor": "Run",
-    "JUnit.ReservationSystemTest.addReservation.executor": "Run",
-    "JUnit.ReservationSystemTest.emptyPassengerListForFlight.executor": "Run",
-    "JUnit.ReservationSystemTest.executor": "Run",
-    "JUnit.ReservationSystemTest.shouldAddAndRetrieveFlight.executor": "Run",
-    "JUnit.ReservationSystemTest.shouldAddReservationWithPassenger.executor": "Run",
-    "JUnit.ReservationSystemTest.shouldInitializeFlights.executor": "Run",
-    "JUnit.ReservationSystemTest.testAddReservation.executor": "Run",
-    "JUnit.ReservationSystemTest.testNewReservationSystem.executor": "Run",
-    "JUnit.ReservationSystemTest.testReservationSystem.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/ryanpatino/Desktop/GitHub/Apprenti/Java/airport-terminal-management"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AppTest.shouldAnswerWithTrue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVUtilTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVUtilTest.loadReservations.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVUtilTest.shouldSaveAndLoadReservationsWithPassenger.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.addReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.emptyPassengerListForFlight.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.shouldAddAndRetrieveFlight.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.shouldAddReservationWithPassenger.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.shouldInitializeFlights.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.testAddReservation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.testNewReservationSystem.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ReservationSystemTest.testReservationSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ryanpatino/Desktop/GitHub/Apprenti/Java/airport-terminal-management&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
